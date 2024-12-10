@@ -1,1 +1,1 @@
-# bootcamp-2024-free-nextjs-behzad-ahmadi
+# Smart Doc
