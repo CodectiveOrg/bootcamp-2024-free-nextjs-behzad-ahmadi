@@ -5,7 +5,7 @@ type Post = {
 };
 
 export default async function Home() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const posts: Post[] = await res.json();
 
   return (
