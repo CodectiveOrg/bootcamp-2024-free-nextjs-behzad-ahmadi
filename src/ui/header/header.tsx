@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import styles from "./header.module.css";
-import { usePathname } from "next/navigation";
-import clsx from "clsx";
+import Link from 'next/link';
+import styles from './header.module.css';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 
 type HeaderItem = { title: string; href: string };
 
 const headerItems: HeaderItem[] = [
-  { title: "خانه", href: "/" },
-  { title: "جستجو", href: "/search" },
+  { title: 'خانه', href: '/' },
+  { title: 'جستجو', href: '/search' },
 ];
 
-export default function HeaderFC() {
+export default function Header() {
   const pathname = usePathname();
 
   return (
