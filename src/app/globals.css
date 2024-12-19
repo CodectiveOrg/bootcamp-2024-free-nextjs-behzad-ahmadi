@@ -68,7 +68,21 @@ body {
   background-color: var(--color-default-background);
   color: var(--color-default-foreground);
 
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+
   > * {
     padding-inline: var(--full-width-padding-inline);
+  }
+
+  .tagline {
+    background-color: var(--color-gray-16);
+
+    padding-block: 1rem;
+
+    text-align: center;
   }
 }

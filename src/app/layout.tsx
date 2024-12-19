@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Vazirmatn } from 'next/font/google';
 import Header from '@/ui/header/header';
+import Footer from '@/ui/footer/footer';
 
 const vazirmatn = Vazirmatn({
   subsets: ['latin', 'arabic'],
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={vazirmatn.className}>
       <body>
-        <main>
-          <Header />
-          {children}
-        </main>
+        <Header />
+        <main>{children}</main>
+        <p className="tagline">
+          نوبت دهی پزشکی، سامانه نوبت دهی اینترنتی بیمارستان و پزشکان
+        </p>
+        <Footer />
       </body>
     </html>
   );
