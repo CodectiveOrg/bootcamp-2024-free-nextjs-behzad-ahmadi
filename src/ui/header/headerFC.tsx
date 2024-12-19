@@ -19,22 +19,16 @@ export default function HeaderFC() {
     <header className={styles.header}>
       <nav>
         <ul>
-          <li>
-            <Link
-              href={"/"}
-              className={clsx(pathname === "/" && styles.active)}
-            >
-              خانه
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/search"}
-              className={clsx(pathname === "/search" && styles.active)}
-            >
-              جستجو
-            </Link>
-          </li>
+          {headerItems.map(({ href, title }, index) => (
+            <li key={index}>
+              <Link
+                href={href}
+                className={clsx(pathname === href && styles.active)}
+              >
+                {title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <button className={styles.cta}>ورود ثبنام</button>
