@@ -38,6 +38,14 @@
         padding: 0.25rem 0.75rem;
 
         border-radius: 999rem;
+
+        cursor: pointer;
+
+        transition: background-color var(--animation-duration-fast);
+
+        &:hover {
+          background-color: var(--color-gray-30);
+        }
       }
     }
   }

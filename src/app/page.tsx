@@ -1,6 +1,9 @@
 import SmartDocLogo from '@/logo/smartDocLogo';
 import GlobalSearchBox from '@/ui/globalSearchBox';
 import styles from './style.module.css';
+import Link from 'next/link';
+
+const searchHistory = ['ارتوپد', 'قلب و عروق', 'داخلی'];
 
 export default async function Home() {
   return (
@@ -15,8 +18,11 @@ export default async function Home() {
       <div className={styles.history}>
         <div className={styles.title}>آخرین جستجوهای شما</div>
         <ul>
-          <li>ارتوپد</li>
-          <li>قلب و عروق</li>
+          {searchHistory.map(item => (
+            <li key={item}>
+              <Link href={`/?search=${item}`}>{item}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
