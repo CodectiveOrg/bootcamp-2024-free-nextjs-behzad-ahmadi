@@ -69,7 +69,7 @@ body {
   color: var(--color-default-foreground);
 
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
 
   min-block-size: 100vh;
   min-block-size: 100dvh;

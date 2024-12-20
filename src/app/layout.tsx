@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Vazirmatn } from 'next/font/google';
 import Header from '@/ui/header/header';
-import Footer from '@/ui/footer/footer';
+import Footer from '@/ui/footer';
 
 const vazirmatn = Vazirmatn({
   subsets: ['latin', 'arabic'],
@@ -11,7 +11,7 @@ const vazirmatn = Vazirmatn({
 
 export const metadata: Metadata = {
   title: 'روز نوبت هوشمند',
-  description: 'سامانه رزرو نوبت دکتر',
+  description: 'سامانه رزرو نوبت پزشک',
 };
 
 export default function RootLayout({

@@ -11,13 +11,13 @@ import MingcuteLinkedinFill from '@/icons/MingcuteLinkedinFill';
 import MingcuteTelegramFill from '@/icons/MingcuteTelegramFill';
 import MingcuteYoutubeFill from '@/icons/MingcuteYoutubeFill';
 
-import styles from './footer.module.css';
+import styles from './style.module.css';
 
 export default function Footer(): ReactElement {
   return (
     <footer className={styles.footer}>
       <div className={styles.writings}>
-        <div className={styles.logo}>دکتر، هوشمند</div>
+        <div className={styles.logo}>پزشک؛ هوشمند</div>
         <p className={styles.description}>
           تجربه مشاوره آنلاین و دریافت نوبت از بهترین پزشکان ایران
         </p>
