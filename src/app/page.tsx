@@ -1,30 +1,30 @@
-type Post = {
-  id: number;
-  title: string;
-  body: string;
-};
+import SmartDocLogo from '@/logo/smartDocLogo';
+import GlobalSearchBox from '@/ui/globalSearchBox';
+import styles from './style.module.css';
+import Link from 'next/link';
+
+const searchHistory = ['ارتوپد', 'قلب و عروق', 'داخلی'];
 
 export default async function Home() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts: Post[] = await res.json();
-
   return (
-    <main>
-      <h1>شروع بوت کمپ!</h1>
+    <div className={styles.container}>
+      <h1>
+        <SmartDocLogo />
+        <span>پزشک؛ هوشمند</span>
+      </h1>
 
-      {/* It's better to be "ltr", because of English content*/}
-      <p dir="ltr">Post List</p>
+      <GlobalSearchBox />
 
-      <ul dir="ltr">
-        {posts.map((post: Post) => (
-          <>
-            <li key={post.id}>Title: {post.title}</li>
-            <ul>
-              <li>{post.body}</li>
-            </ul>
-          </>
-        ))}
-      </ul>
-    </main>
+      <div className={styles.history}>
+        <div className={styles.title}>آخرین جستجوهای شما</div>
+        <ul>
+          {searchHistory.map(item => (
+            <li key={item}>
+              <Link href={`/?search=${item}`}>{item}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }

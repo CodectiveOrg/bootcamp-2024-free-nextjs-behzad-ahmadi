@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Vazirmatn } from 'next/font/google'
-
+import type { Metadata } from 'next';
+import './globals.css';
+import { Vazirmatn } from 'next/font/google';
+import Header from '@/ui/header/header';
+import Footer from '@/ui/footer';
 
 const vazirmatn = Vazirmatn({
   subsets: ['latin', 'arabic'],
   display: 'swap',
-})
-
+});
 
 export const metadata: Metadata = {
-  title: "روز نوبت هوشمند",
-  description: "سامانه رزرو نوبت دکتر",
+  title: 'روز نوبت هوشمند',
+  description: 'سامانه رزرو نوبت پزشک',
 };
 
 export default function RootLayout({
@@ -21,8 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={vazirmatn.className}>
-      <body >
-        {children}
+      <body>
+        <Header />
+        <main>{children}</main>
+        <p className="tagline">نوبت دهی هوشمند پزشکان</p>
+        <Footer />
       </body>
     </html>
   );
