@@ -1,7 +1,49 @@
 .not-found {
-  .content {
+  display: flex;
+
+  min-block-size: 100%;
+
+  a {
+    color: var(--color-primary);
   }
 
-  .image-container {
+  .container {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    margin: auto;
+
+    .writings {
+      .status-code {
+        font-size: var(--fz-800);
+        font-weight: 300;
+
+        line-height: 0.8;
+      }
+
+      h1 {
+        margin-block-end: 1rem;
+
+        font-size: var(--fz-600);
+      }
+
+      p {
+        max-inline-size: 40ch;
+      }
+
+      .search {
+        margin-top: 1rem;
+      }
+    }
+
+    .visuals {
+      img {
+        min-block-size: 100%;
+        block-size: 0;
+        inline-size: auto;
+      }
+    }
   }
 }
