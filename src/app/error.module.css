@@ -1,0 +1,70 @@
+.error {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-block-size: 100%;
+
+  a {
+    color: var(--color-primary);
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+
+    button {
+      background-color: var(--color-primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-block-start: 2rem;
+
+      transition:
+        background-color var(--animation-duration-fast),
+        color var(--animation-duration-fast);
+
+      &:hover {
+        background-color: var(--color-primary-darker);
+      }
+    }
+
+    img {
+      min-block-size: 150px;
+      block-size: 0;
+      inline-size: auto;
+    }
+
+    .stackTrace {
+      flex-basis: 100%;
+
+      min-inline-size: 100%;
+      inline-size: 0;
+
+      margin-block-start: 2rem;
+
+      details {
+        summary {
+          cursor: pointer;
+        }
+
+        pre {
+          overflow: auto;
+
+          max-block-size: 12rem;
+
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
