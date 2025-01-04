@@ -1,0 +1,39 @@
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  margin-block-start: 1.5rem;
+
+  .filter-items {
+    min-inline-size: 16rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    > * {
+      background-color: green;
+
+      border-radius: 0.5rem;
+
+      padding: 0.5rem;
+    }
+  }
+
+  .results {
+    flex: 1;
+    background-color: blue;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .main-container {
+    .panel {
+      display: none;
+    }
+  }
+} */
