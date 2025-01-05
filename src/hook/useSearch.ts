@@ -1,13 +1,56 @@
 'use client';
 
-import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation';
+import {
+  ReadonlyURLSearchParams,
+  useRouter,
+  useSearchParams,
+} from 'next/navigation';
+import { useCallback, useMemo } from 'react';
+
+export type SearchParamsItems = 's' | 'doc';
+
+type SearchParam = {
+  name: SearchParamsItems;
+  value: string;
+};
 
 export default function useSearch() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
-  const query = parseSearchParams(searchParams);
+  const getParam = useCallback(
+    (name: string) => searchParams.get(name),
+    [searchParams],
+  );
 
-  return query;
+  const setParam = useCallback(
+    ({ name, value }: SearchParam) => {
+      const params = new URLSearchParams(searchParams);
+      if (value == '') {
+        params.delete(name);
+        router.push(`?${params.toString()}`);
+        return;
+      }
+
+      params.set(name, value);
+      router.push(`?${params.toString()}`);
+    },
+
+    [searchParams],
+  );
+
+  const paramsList = useMemo(
+    () => parseSearchParams(searchParams),
+    [searchParams],
+  );
+
+  const deleteParam = useCallback((name: SearchParamsItems) => {
+    const params = new URLSearchParams(searchParams);
+    params.delete(name);
+    router.push(`?${params.toString()}`);
+  }, []);
+
+  return { getParam, setParam, paramsList, deleteParam };
 }
 
 const parseSearchParams = (searchParams: ReadonlyURLSearchParams) => {
