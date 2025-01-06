@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style.module.css';
 import GlobalSearchBox from '@/ui/globalSearchBox';
-import SearchItems from '@/app/search/ui/searchItems';
+import SearchedItems from '@/app/search/ui/searchedItems';
 import SpecialtyItems from '@/app/search/ui/specialtyItems';
 
 export default function Search() {
@@ -12,7 +12,7 @@ export default function Search() {
       </div>
       <div className={styles['main-container']}>
         <div className={styles['filter-items']}>
-          <SearchItems />
+          <SearchedItems />
 
           <SpecialtyItems />
         </div>
