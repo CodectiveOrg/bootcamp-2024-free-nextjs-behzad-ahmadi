@@ -3,18 +3,17 @@
 import { doctorSpecialties } from '@/mock/doctorSpecialties';
 import styles from './style.module.css';
 import useSearch, { SearchParamsItems } from '@/hook/useSearch';
-import { MingcuteCloseLine } from '@/icons/MingcuteCloseLine';
-import FilterCard from '@/app/search/ui/filterCard';
+import Card from '@/app/search/ui/card';
 
-export default function FilterItems() {
+export default function SpecialtyItems() {
   const { setParam } = useSearch();
 
   const handleAddFilter = (name: SearchParamsItems, value: string) => {
-    setParam({ name, value });
+    setParam(name, value);
   };
 
   return (
-    <FilterCard className={styles.container}>
+    <Card className={styles.container}>
       <ul className={styles.list}>
         {doctorSpecialties.map((item, index) => (
           <li
@@ -26,6 +25,6 @@ export default function FilterItems() {
           </li>
         ))}
       </ul>
-    </FilterCard>
+    </Card>
   );
 }

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 type Props = PropsWithChildren & { className?: string };
 
-export default function FilterCard({ children, className }: Props) {
+export default function Card({ children, className }: Props) {
   return (
     <div className={clsx(styles['filter-card'], className)}>{children}</div>
   );

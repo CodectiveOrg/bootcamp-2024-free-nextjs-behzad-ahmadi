@@ -3,7 +3,7 @@
 import useSearch, { SearchParamsItems } from '@/hook/useSearch';
 import styles from './style.module.css';
 import { MingcuteCloseLine } from '@/icons/MingcuteCloseLine';
-import FilterCard from '@/app/search/ui/filterCard';
+import Card from '@/app/search/ui/card';
 
 export default function SearchItems() {
   const { paramsList, deleteParam } = useSearch();
@@ -15,7 +15,7 @@ export default function SearchItems() {
   if (!paramsList.length) return null;
 
   return (
-    <FilterCard>
+    <Card>
       <div className={styles['search-items']}>
         {paramsList?.map((item, index) => (
           <div key={index}>
@@ -31,6 +31,6 @@ export default function SearchItems() {
           </div>
         ))}
       </div>
-    </FilterCard>
+    </Card>
   );
 }
