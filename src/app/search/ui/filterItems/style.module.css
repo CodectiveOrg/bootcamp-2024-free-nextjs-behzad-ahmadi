@@ -1,0 +1,16 @@
+.container {
+  max-block-size: 20rem;
+  padding-block-end: 1rem !important;
+  overflow: auto;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    cursor: pointer;
+
+    .item {
+      font-size: var(--fz-300);
+    }
+  }
+}

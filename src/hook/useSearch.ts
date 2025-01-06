@@ -7,7 +7,7 @@ import {
 } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
-export type SearchParamsItems = 's' | 'doc';
+export type SearchParamsItems = 's' | 'specialty';
 
 type SearchParam = {
   name: SearchParamsItems;

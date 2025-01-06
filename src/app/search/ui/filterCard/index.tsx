@@ -1,6 +1,11 @@
 import { PropsWithChildren } from 'react';
 import styles from './style.module.css';
+import clsx from 'clsx';
 
-export default function FilterCard({ children }: PropsWithChildren) {
-  return <div className={styles['filter-card']}>{children}</div>;
+type Props = PropsWithChildren & { className?: string };
+
+export default function FilterCard({ children, className }: Props) {
+  return (
+    <div className={clsx(styles['filter-card'], className)}>{children}</div>
+  );
 }
