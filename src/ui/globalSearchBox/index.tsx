@@ -16,7 +16,7 @@ export default function GlobalSearchBox() {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setValue(newValue);
-    setParam({ name: 's', value: newValue });
+    setParam('s', newValue);
   };
 
   return (

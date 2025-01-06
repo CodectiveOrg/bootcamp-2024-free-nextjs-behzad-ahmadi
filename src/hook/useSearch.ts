@@ -24,7 +24,7 @@ export default function useSearch() {
   );
 
   const setParam = useCallback(
-    ({ name, value }: SearchParam) => {
+    (name: SearchParamsItems, value: string) => {
       const params = new URLSearchParams(searchParams);
       if (value == '') {
         params.delete(name);
@@ -44,13 +44,26 @@ export default function useSearch() {
     [searchParams],
   );
 
+  const addParam = useCallback(
+    (name: SearchParamsItems, value: string) => {
+      const currentParams = new URLSearchParams(searchParams.toString());
+      const existingValues = currentParams.getAll(name) || [];
+      const newValue = [...existingValues, value];
+
+      currentParams.set(name, newValue.join(','));
+
+      router.push(`?${currentParams.toString()}`);
+    },
+    [router, searchParams],
+  );
+
   const deleteParam = useCallback((name: SearchParamsItems) => {
     const params = new URLSearchParams(searchParams);
     params.delete(name);
     router.push(`?${params.toString()}`);
   }, []);
 
-  return { getParam, setParam, paramsList, deleteParam };
+  return { getParam, setParam, paramsList, addParam, deleteParam };
 }
 
 const parseSearchParams = (searchParams: ReadonlyURLSearchParams) => {
