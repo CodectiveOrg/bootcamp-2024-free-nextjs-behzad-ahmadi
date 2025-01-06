@@ -41,3 +41,20 @@ export type DoctorSpecialty =
   | 'دکتر کرونا ویروس'
   | 'دکتر داروسازی'
   | 'دکتر سلامت جنسی';
+
+export interface ResultTypeItem {
+  value: string;
+  count: number;
+  checked: boolean;
+}
+
+export interface FilterItem {
+  label: string;
+  id: string;
+  checked: boolean;
+}
+
+export interface ResultType {
+  [key: string]: Array<ResultTypeItem>;
+  filters: Array<FilterItem>;
+}
