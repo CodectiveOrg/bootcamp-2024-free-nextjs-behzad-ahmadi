@@ -7,10 +7,8 @@ import {
 } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
-export type SearchParamsItems = 's' | 'specialty';
-
-type SearchParam = {
-  name: SearchParamsItems;
+export type SearchParam = {
+  name: string;
   value: string;
 };
 
@@ -24,7 +22,7 @@ export default function useSearch() {
   );
 
   const setParam = useCallback(
-    (name: SearchParamsItems, value: string) => {
+    ({ name, value }: SearchParam) => {
       const params = new URLSearchParams(searchParams);
       if (value == '') {
         params.delete(name);
@@ -33,7 +31,7 @@ export default function useSearch() {
       }
 
       params.set(name, value);
-      router.push(`?${params.toString()}`);
+      router.push(`?${params.toString()}`, { scroll: false });
     },
 
     [searchParams],
@@ -45,22 +43,22 @@ export default function useSearch() {
   );
 
   const addParam = useCallback(
-    (name: SearchParamsItems, value: string) => {
+    ({ name, value }: SearchParam) => {
       const currentParams = new URLSearchParams(searchParams.toString());
       const existingValues = currentParams.getAll(name) || [];
       const newValue = [...existingValues, value];
 
       currentParams.set(name, newValue.join(','));
 
-      router.push(`?${currentParams.toString()}`);
+      router.push(`?${currentParams.toString()}`, { scroll: false });
     },
     [router, searchParams],
   );
 
-  const deleteParam = useCallback((name: SearchParamsItems) => {
+  const deleteParam = useCallback((name: string) => {
     const params = new URLSearchParams(searchParams);
     params.delete(name);
-    router.push(`?${params.toString()}`);
+    router.push(`?${params.toString()}`, { scroll: false });
   }, []);
 
   return { getParam, setParam, paramsList, addParam, deleteParam };
