@@ -24,9 +24,14 @@
     }
   }
 
-  .results {
+  .center-container {
     flex: 1;
-    background-color: blue;
+
+    .sort {
+    }
+
+    .results {
+    }
   }
 }
 

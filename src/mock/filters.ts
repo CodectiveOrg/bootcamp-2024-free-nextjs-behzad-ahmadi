@@ -1,4 +1,5 @@
 import { Filters } from '@/types/type';
+import { SelectOption } from '@/ui/selectInput';
 
 export const filters: Filters = {
   resultType: [
@@ -31,3 +32,23 @@ export const filters: Filters = {
     { label: 'نسخه نویسی آنلاین', id: ':rk:' },
   ],
 };
+
+export const sortOptions: SelectOption[] = [
+  { label: 'بهترین', value: 'بهترین' },
+  { label: 'محبوب‌ترین', value: 'محبوب‌ترین' },
+  { label: 'نزدیک‌ترین نوبت', value: 'نزدیک‌ترین نوبت' },
+  {
+    label: 'کمترین زمان معطلی در مرکز درمانی',
+    value: 'کمترین زمان معطلی در مرکز درمانی',
+  },
+  { label: 'پربازدیدترین', value: 'پربازدیدترین' },
+];
+
+export const appointmentOptions = [
+  { label: 'هر زمان', value: 'هر زمان' },
+  { label: 'امروز', value: 'امروز' },
+  { label: 'تا فردا', value: 'تا فردا' },
+  { label: 'تا سه روز آینده', value: 'تا سه روز آینده' },
+  { label: 'تا پنج روز آینده', value: 'تا پنج روز آینده' },
+  { label: 'تا هفت روز آینده', value: 'تا هفت روز آینده' },
+];
