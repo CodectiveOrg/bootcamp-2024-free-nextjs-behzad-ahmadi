@@ -11,8 +11,8 @@ export default function SortInputs() {
 
   const sortItem = useMemo(() => getParam('sort'), [getParam('sort')]);
   const appointmentItem = useMemo(
-    () => getParam('appointment'),
-    [getParam('appointment')],
+    () => getParam('firstAvailableAppointment'),
+    [getParam('firstAvailableAppointment')],
   );
 
   const handleSortChange = useCallback(
@@ -24,7 +24,10 @@ export default function SortInputs() {
 
   const handleAppointmentChange = useCallback(
     (option: SelectOption) => {
-      setParam({ name: 'appointment', value: option.value.toString() });
+      setParam({
+        name: 'firstAvailableAppointment',
+        value: option.value.toString(),
+      });
     },
     [setParam],
   );

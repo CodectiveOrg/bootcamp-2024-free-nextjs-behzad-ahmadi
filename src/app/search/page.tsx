@@ -5,8 +5,18 @@ import SearchedItems from '@/app/search/ui/searchedItems';
 import SpecialtyItems from '@/app/search/ui/specialtyItems';
 import ResultsType from '@/app/search/ui/filters';
 import SortInputs from '@/app/search/ui/sortInputs';
+import { doctors } from '@/mock/doctors';
+import { DoctorData } from '@/types/type';
 
-export default function Search() {
+interface Props {
+  searchParams: {
+    [key: string]: any;
+  };
+}
+
+export default function Search({ searchParams }: Props) {
+  const results: DoctorData[] = doctors.filter(doctor => {});
+
   return (
     <>
       <div className={styles.search}>
