@@ -4,14 +4,9 @@ import GlobalSearchBox from '@/ui/globalSearchBox';
 import SearchedItems from '@/app/search/ui/searchedItems';
 import SpecialtyItems from '@/app/search/ui/specialtyItems';
 import ResultsType from '@/app/search/ui/filters';
-import { SelectOption } from '@/ui/selectInput';
 import SortInputs from '@/app/search/ui/sortInputs';
 
 export default function Search() {
-  const handleChange = (option: SelectOption) => {
-    console.log('handleChange', option.value);
-  };
-
   return (
     <>
       <div className={styles.search}>
