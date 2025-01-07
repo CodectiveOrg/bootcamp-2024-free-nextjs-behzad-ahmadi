@@ -3,6 +3,7 @@ import styles from './style.module.css';
 import GlobalSearchBox from '@/ui/globalSearchBox';
 import SearchedItems from '@/app/search/ui/searchedItems';
 import SpecialtyItems from '@/app/search/ui/specialtyItems';
+import ResultsType from '@/app/search/ui/filters';
 
 export default function Search() {
   return (
@@ -15,6 +16,8 @@ export default function Search() {
           <SearchedItems />
 
           <SpecialtyItems />
+
+          <ResultsType />
         </div>
         <div className={styles.results}>results</div>
       </div>

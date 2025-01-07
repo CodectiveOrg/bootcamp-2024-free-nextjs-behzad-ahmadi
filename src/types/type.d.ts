@@ -42,19 +42,20 @@ export type DoctorSpecialty =
   | 'دکتر داروسازی'
   | 'دکتر سلامت جنسی';
 
-export interface ResultTypeItem {
+export interface FilterItem {
   value: string;
   count: number;
-  checked: boolean;
 }
 
-export interface FilterItem {
+export interface FilterFilterItem {
   label: string;
   id: string;
-  checked: boolean;
 }
 
-export interface ResultType {
-  [key: string]: Array<ResultTypeItem>;
-  filters: Array<FilterItem>;
+export interface Filters {
+  resultType: Array<FilterItem>;
+  gender: Array<FilterItem>;
+  degree: Array<FilterItem>;
+  turnType: Array<FilterItem>;
+  filters: Array<FilterFilterItem>;
 }
