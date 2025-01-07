@@ -1,0 +1,31 @@
+'use client';
+
+import Switch from '@/ui/switch';
+import styles from './style.module.css';
+import useSearch, { SearchParam } from '@/hook/useSearch';
+import { useMemo } from 'react';
+
+interface Props {
+  id: string;
+  title: string;
+}
+
+export default function SwitchFilter({ id, title }: Props) {
+  const { setParam, getParam, deleteParam } = useSearch();
+  const checkedItem = useMemo(() => getParam(id) != null, [getParam(id)]);
+
+  const handleSetFilter = ({ name, value }: SearchParam) => {
+    if (checkedItem) deleteParam(value);
+    else setParam({ name, value });
+  };
+
+  return (
+    <div className={styles.container}>
+      <Switch
+        title={title}
+        checked={checkedItem}
+        onClick={() => handleSetFilter({ name: id, value: title })}
+      />
+    </div>
+  );
+}
