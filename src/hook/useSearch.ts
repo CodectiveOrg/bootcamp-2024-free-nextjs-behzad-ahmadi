@@ -7,8 +7,22 @@ import {
 } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
+export type SearchParams =
+  | 's'
+  | 'result_type'
+  | 'gender'
+  | 'degree'
+  | 'turn_type'
+  | 'badge1'
+  | 'badge2'
+  | 'badge3'
+  | 'badge4'
+  | 'firstAvailableAppointment'
+  | 'sort'
+  | 'specialty';
+
 export type SearchParam = {
-  name: string;
+  name: SearchParams;
   value: string;
 };
 
