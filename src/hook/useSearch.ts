@@ -26,12 +26,12 @@ export default function useSearch() {
       const params = new URLSearchParams(searchParams);
       if (value == '') {
         params.delete(name);
-        router.push(`?${params.toString()}`);
+        router.replace(`?${params.toString()}`);
         return;
       }
 
       params.set(name, value);
-      router.push(`?${params.toString()}`, { scroll: false });
+      router.replace(`?${params.toString()}`, { scroll: false });
     },
 
     [searchParams],
@@ -50,16 +50,19 @@ export default function useSearch() {
 
       currentParams.set(name, newValue.join(','));
 
-      router.push(`?${currentParams.toString()}`, { scroll: false });
+      router.replace(`?${currentParams.toString()}`, { scroll: false });
     },
     [router, searchParams],
   );
 
-  const deleteParam = useCallback((name: string) => {
-    const params = new URLSearchParams(searchParams);
-    params.delete(name);
-    router.push(`?${params.toString()}`, { scroll: false });
-  }, []);
+  const deleteParam = useCallback(
+    (name: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.delete(name);
+      router.replace(`?${params.toString()}`, { scroll: false });
+    },
+    [searchParams],
+  );
 
   return { getParam, setParam, paramsList, addParam, deleteParam };
 }
