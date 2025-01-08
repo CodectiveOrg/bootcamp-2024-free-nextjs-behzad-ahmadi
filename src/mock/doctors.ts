@@ -1,10 +1,13 @@
 import { DoctorData } from '@/types/type';
 
+const url = 'https://cdn.paziresh24.com';
+
 export const doctors: DoctorData[] = [
   {
     id: '97420f0d-b576-4f65-9ffc-a81b4b1b4e77',
     name: 'پوراندخت جعفري',
     image:
+      url +
       '/getImage/p24/search-men/155442212a4f2d04e5514bf6f61fd686.jpg?size=150',
     isVerified: true,
     averageRating: 4.99,
@@ -19,6 +22,7 @@ export const doctors: DoctorData[] = [
     id: 'e6719f23-e846-4a95-88f9-c013c5d9cb4f',
     name: 'مجتبی قدسی',
     image:
+      url +
       '/getImage/p24/search-men/75fb4a009a8ab4af3a5c4f819f1846c7.jpg?size=150',
     isVerified: true,
     averageRating: 4.92,
@@ -33,6 +37,7 @@ export const doctors: DoctorData[] = [
     id: '4a7403d4-e0a2-406c-8dea-3e557bae54d2',
     name: 'امیرحسین پورداود',
     image:
+      url +
       '/getImage/p24/search-men/98c386aa9c77f7792a4b777137b9fc55.jpg?size=150',
     isVerified: true,
     averageRating: 5,
@@ -45,7 +50,7 @@ export const doctors: DoctorData[] = [
   {
     id: '06d3a495-160d-4722-815e-286ff5d82ed2',
     name: 'اعظم قهساره اردستانی',
-    image: '/getImage/p24/search-women/noimage.png?size=150',
+    image: url + '/getImage/p24/search-women/noimage.url+png?size=150',
     isVerified: true,
     averageRating: 4.95,
     totalVotes: 759,
@@ -59,6 +64,7 @@ export const doctors: DoctorData[] = [
     id: '7f39ff5b-4c81-4c59-80fa-7872b675bb18',
     name: 'رضا پورعلی',
     image:
+      url +
       '/getImage/p24/search-men/d7ec05f5b918e11df6a65e65616140a6.jpg?size=150',
     isVerified: true,
     averageRating: 4.8259,
@@ -76,7 +82,7 @@ export const doctors: DoctorData[] = [
   {
     id: '1515',
     name: 'نادیا پرور',
-    image: '/getImage/p24/search-women/noimage.png?size=150',
+    image: url + '/getImage/p24/search-women/noimage.url+png?size=150',
     isVerified: true,
     averageRating: 4.4884,
     totalVotes: 154,
@@ -89,6 +95,7 @@ export const doctors: DoctorData[] = [
     id: 'ba7333ef-9e18-11ea-9877-005056b09c11',
     name: 'محمدرضا ادراکی',
     image:
+      url +
       '/getImage/p24/search-men/01fffb3a5571c71c0d23baa1703af593.jpg?size=150',
     isVerified: true,
     averageRating: 4.95,
@@ -102,6 +109,7 @@ export const doctors: DoctorData[] = [
     id: 'a8a27637-9e67-11ea-9877-005056b09c11',
     name: 'محسن رضائی مقدم',
     image:
+      url +
       '/getImage/p24/search-men/c5fbfe5e84dff93b4ea9e1d899ddf22a.jpeg?size=150',
     isVerified: true,
     averageRating: 4.93,
@@ -116,6 +124,7 @@ export const doctors: DoctorData[] = [
     id: '286439d9-617a-4d5c-a77a-e1ac0c088780',
     name: 'پیمان شاه حسینی',
     image:
+      url +
       '/getImage/p24/search-men/12ff70d98e027620cce5d82906076724.jpg?size=150',
     isVerified: true,
     averageRating: 4.93,
@@ -129,6 +138,7 @@ export const doctors: DoctorData[] = [
     id: '601e14cb-c7f7-4668-b883-3c61ebd11f52',
     name: 'رضا افتخار',
     image:
+      url +
       '/getImage/p24/search-men/a6676efea5cc45be71de3391f126696d.jpg?size=150',
     isVerified: true,
     averageRating: 4.95679012345679,
@@ -143,6 +153,7 @@ export const doctors: DoctorData[] = [
     id: '4009802',
     name: 'سیدرامین مدنی',
     image:
+      url +
       '/getImage/p24/search-men/24148401234ae124eb8346f40c370eb4.jpg?size=150',
     isVerified: true,
     averageRating: 4.86,
@@ -157,6 +168,7 @@ export const doctors: DoctorData[] = [
     id: '85882eb5-1d70-4453-9f67-2a232527590c',
     name: 'پژمان روحانی',
     image:
+      url +
       '/getImage/p24/search-men/5b4488a3f56e3fe53e2f8b8cc2800801.jpg?size=150',
     isVerified: true,
     averageRating: 4.93,
@@ -171,6 +183,7 @@ export const doctors: DoctorData[] = [
     id: '6b59b263-73fe-4316-ae81-4fe50968a723',
     name: 'عباس ریحانی',
     image:
+      url +
       '/getImage/p24/search-men/c8a56ac6d693ee7de3ee638f3cf96642.jpeg?size=150',
     isVerified: true,
     averageRating: 4.86,
@@ -184,6 +197,7 @@ export const doctors: DoctorData[] = [
     id: '1eb139dc-42d2-4110-8a09-f04a2561372c',
     name: 'نرگس رخش بهار',
     image:
+      url +
       '/getImage/p24/search-men/5f2b15855a7d9b9bb648dabd501b4c67.jpg?size=150',
     isVerified: true,
     averageRating: 4.99,
@@ -198,6 +212,7 @@ export const doctors: DoctorData[] = [
     id: '7572',
     name: 'مهران شکری',
     image:
+      url +
       '/getImage/p24/search-men/9c13b879760e5474ea6b64f1485b148f.jpg?size=150',
     isVerified: true,
     averageRating: 4.5214,
@@ -212,6 +227,7 @@ export const doctors: DoctorData[] = [
     id: '4917678e-5e19-4322-b9e4-eb73e8ec622c',
     name: 'نوید دانائی',
     image:
+      url +
       '/getImage/p24/search-men/ae791c7376eb36c7e10ab35a47f4d163.jpeg?size=150',
     isVerified: true,
     averageRating: 4.88,
@@ -226,6 +242,7 @@ export const doctors: DoctorData[] = [
     id: '22409',
     name: 'یوسف رحمانی',
     image:
+      url +
       '/getImage/p24/search-men/58e7f297268f59d93f310057aa747dcd.jpg?size=150',
     isVerified: true,
     averageRating: 4.87,
@@ -240,6 +257,7 @@ export const doctors: DoctorData[] = [
     id: '2488',
     name: 'منصور مظفری',
     image:
+      url +
       '/getImage/p24/search-men/92b9b61a759f116fe5712f80d1749cb4.jpg?size=150',
     isVerified: true,
     averageRating: 4.75,
@@ -254,6 +272,7 @@ export const doctors: DoctorData[] = [
     id: '1855',
     name: 'مهراد فخرالدینی',
     image:
+      url +
       '/getImage/p24/search-men/b847b2a26f6f0151d22b7ea396044550.jpg?size=150',
     isVerified: true,
     averageRating: 4.7128,
@@ -267,7 +286,7 @@ export const doctors: DoctorData[] = [
   {
     id: 'c1d1fa23-ec60-11ec-b214-005056ad7555',
     name: 'جلال امینی',
-    image: '/getImage/p24/search-men/noimage.png?size=150',
+    image: url + '/getImage/p24/search-men/noimage.url+png?size=150',
     isVerified: true,
     averageRating: 4.8442,
     totalVotes: 223,
