@@ -1,6 +1,6 @@
 'use client';
 
-import useSearch, { SearchParamsItems } from '@/hook/useSearch';
+import useSearch from '@/hook/useSearch';
 import styles from './style.module.css';
 import { MingcuteCloseLine } from '@/icons/MingcuteCloseLine';
 import Card from '@/app/search/ui/card';
@@ -8,7 +8,7 @@ import Card from '@/app/search/ui/card';
 export default function SearchedItems() {
   const { paramsList, deleteParam } = useSearch();
 
-  const handleDelete = (name: SearchParamsItems) => {
+  const handleDelete = (name: string) => {
     deleteParam(name);
   };
 
@@ -23,7 +23,7 @@ export default function SearchedItems() {
               {item.value}
               <span
                 className={styles.delete}
-                onClick={() => handleDelete(item.name as SearchParamsItems)}
+                onClick={() => handleDelete(item.name)}
               >
                 <MingcuteCloseLine />
               </span>

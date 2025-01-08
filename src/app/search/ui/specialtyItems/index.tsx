@@ -2,14 +2,14 @@
 
 import { doctorSpecialties } from '@/mock/doctorSpecialties';
 import styles from './style.module.css';
-import useSearch, { SearchParamsItems } from '@/hook/useSearch';
+import useSearch, { SearchParam } from '@/hook/useSearch';
 import Card from '@/app/search/ui/card';
 
 export default function SpecialtyItems() {
   const { setParam } = useSearch();
 
-  const handleAddFilter = (name: SearchParamsItems, value: string) => {
-    setParam(name, value);
+  const handleAddFilter = ({ name, value }: SearchParam) => {
+    setParam({ name, value });
   };
 
   return (
@@ -19,7 +19,7 @@ export default function SpecialtyItems() {
           <li
             key={index}
             className={styles.item}
-            onClick={() => handleAddFilter('specialty', item)}
+            onClick={() => handleAddFilter({ name: 'specialty', value: item })}
           >
             {item}
           </li>
