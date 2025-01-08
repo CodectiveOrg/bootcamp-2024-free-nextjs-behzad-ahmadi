@@ -1,6 +1,4 @@
-import { DoctorSpecialty } from '@/types/type';
-
-export const doctorSpecialties: DoctorSpecialty[] = [
+export const doctorSpecialties: string[] = [
   'پزشک خانواده',
   'پزشک متخصص داخلی',
   'پزشک متخصص اطفال و کودکان',
