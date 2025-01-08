@@ -1,28 +1,27 @@
 .search-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  .item {
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--border-radius);
     display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    background-color: var(--color-gray-30);
-    font-size: var(--fz-300);
+    flex-wrap: wrap;
+    gap: 0.5rem;
 
-    .delete {
-      cursor: pointer;
-      color: var(--color-red-50);
-      border-radius: 50%;
-      padding: 0.25rem;
-      line-height: 1;
-      font-size: 0.75rem;
+    .item {
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        background-color: var(--color-gray-30);
+        font-size: var(--fz-200);
 
-      svg {
-        display: block;
-      }
+        .delete {
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 0.25rem;
+            line-height: 1;
+            font-size: 0.75rem;
+
+            svg {
+                display: block;
+            }
+        }
     }
-  }
 }
