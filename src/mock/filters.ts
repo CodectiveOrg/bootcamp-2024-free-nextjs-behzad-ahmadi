@@ -26,10 +26,10 @@ export const filters: Filters = {
   ],
 
   filters: [
-    { label: 'خوش برخورد', id: ':rh:' },
-    { label: 'محبوب', id: ':ri:' },
-    { label: 'کمترین معطلی', id: ':rj:' },
-    { label: 'نسخه نویسی آنلاین', id: ':rk:' },
+    { label: 'خوش برخورد', id: 'badge1' },
+    { label: 'محبوب', id: 'badge2' },
+    { label: 'کمترین معطلی', id: 'badge3' },
+    { label: 'نسخه نویسی آنلاین', id: 'badge4' },
   ],
 };
 
