@@ -15,7 +15,7 @@ export default function SwitchFilter({ id, title }: Props) {
   const checkedItem = useMemo(() => getParam(id) != null, [getParam(id)]);
 
   const handleSetFilter = ({ name, value }: SearchParam) => {
-    if (checkedItem) deleteParam(value);
+    if (checkedItem) deleteParam(name);
     else setParam({ name, value });
   };
 
