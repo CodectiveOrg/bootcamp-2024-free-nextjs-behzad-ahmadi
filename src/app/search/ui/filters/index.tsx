@@ -5,6 +5,7 @@ import styles from './style.module.css';
 import Card from '@/app/search/ui/card';
 import { filters } from '@/mock/filters';
 import SwitchFilter from '@/app/search/ui/switchFilter';
+import { SearchParams } from '@/hook/useSearch';
 
 export default function ResultsType() {
   return (
@@ -34,7 +35,11 @@ export default function ResultsType() {
       />
 
       {filters.filters.map((item, index) => (
-        <SwitchFilter key={index} title={item.label} id={item.id.toString()} />
+        <SwitchFilter
+          key={index}
+          title={item.label}
+          id={item.id.toString() as Partial<SearchParams>}
+        />
       ))}
     </Card>
   );

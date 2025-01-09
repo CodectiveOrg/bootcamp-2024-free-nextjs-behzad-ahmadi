@@ -1,6 +1,6 @@
 'use client';
 
-import useSearch, { SearchParam } from '@/hook/useSearch';
+import useSearch, { SearchParam, SearchParams } from '@/hook/useSearch';
 import { FilterItem } from '@/types/type';
 import { useMemo } from 'react';
 
@@ -8,7 +8,7 @@ import styles from './style.module.css';
 
 interface Props {
   items: FilterItem[];
-  groupName: string;
+  groupName: Partial<SearchParams>;
   title: string;
 }
 
