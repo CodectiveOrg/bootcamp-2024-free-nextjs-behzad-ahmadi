@@ -4,7 +4,6 @@ import FilterRadioGroup from '@/app/search/ui/filterRadioGroup';
 import styles from './style.module.css';
 import Card from '@/app/search/ui/card';
 import { filters } from '@/mock/filters';
-import Switch from '@/ui/switch';
 import SwitchFilter from '@/app/search/ui/switchFilter';
 
 export default function ResultsType() {
@@ -30,7 +29,7 @@ export default function ResultsType() {
 
       <FilterRadioGroup
         items={filters.turnType}
-        groupName="turnType"
+        groupName="turn_type"
         title="خدمت"
       />
 
