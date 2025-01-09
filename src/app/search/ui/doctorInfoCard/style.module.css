@@ -1,108 +1,107 @@
 .card {
-    background-color: var(--color-gray-20);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    color: var(--color-gray-98);
-    inline-size: 100%;
+  background-color: var(--color-gray-20);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  color: var(--color-gray-98);
+  inline-size: 100%;
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-block-end: 1rem;
-        gap: 1rem;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-block-end: 1rem;
+    gap: 1rem;
 
-        .profileImage {
-            inline-size: 80px;
-            block-size: 80px;
-            border-radius: 50%;
-            border: 2px solid #3366ff;
-        }
-
-        .info {
-            flex: 1;
-            margin-inline-end: 1rem;
-
-            .name {
-                font-size: var(--fz-500);
-            }
-
-            .credentials {
-                margin-block-start: 0.5rem;
-                font-size: var(--fz-200);
-            }
-
-            .rating {
-                display: flex;
-                align-items: center;
-                gap: 0.25rem;
-                margin-block-start: 0.5rem;
-                line-height: 1rem;
-                font-size: var(--fz-200);
-
-                .stars {
-                    color: var(---color-rating);
-                }
-            }
-        }
+    .profileImage {
+      inline-size: 80px;
+      block-size: 80px;
+      border-radius: 50%;
+      border: 2px solid #3366ff;
     }
 
-    .location {
-        display: flex;
-        gap: 0.5rem;
-        color: var(--color-gray-80);
-        font-size: var(--fz-300);
+    .info {
+      flex: 1;
+      margin-inline-end: 1rem;
 
+      .name {
+        font-size: var(--fz-500);
+      }
 
-        svg {
-            inline-size: 1rem;
-            min-inline-size: 1rem;
-            margin-block-start: 0.25rem;
-        }
-    }
+      .credentials {
+        margin-block-start: 0.5rem;
+        font-size: var(--fz-200);
+      }
 
-    .status {
+      .rating {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        margin-block: 1rem;
+        gap: 0.25rem;
+        margin-block-start: 0.5rem;
+        line-height: 1rem;
+        font-size: var(--fz-200);
 
-        .statusItem {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-gray-80);
-            font-size: 0.9rem;
+        .stars {
+          color: var(---color-rating);
         }
+      }
     }
+  }
 
-    .nextAvailable {
-        display: flex;
-        justify-content: space-between;
-        color: var(--color-gray-80);
-        font-size: 0.9rem;
-        margin-block-start: 1rem;
+  .location {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--color-gray-80);
+    font-size: var(--fz-300);
+
+    svg {
+      inline-size: 1rem;
+      min-inline-size: 1rem;
+      margin-block-start: 0.25rem;
     }
+  }
 
-    .actions {
-        display: flex;
-        gap: 1rem;
-        margin-block-start: 1.5rem;
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 1rem;
 
-        .button {
-            flex: 1;
-            background-color: #3366ff;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.75rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-
-            &:hover {
-                background-color: #2952cc;
-            }
-        }
+    .statusItem {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-gray-80);
+      font-size: 0.9rem;
     }
+  }
+
+  .nextAvailable {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-gray-80);
+    font-size: 0.9rem;
+    margin-block-start: 1rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    margin-block-start: 1.5rem;
+
+    .button {
+      flex: 1;
+      background-color: #3366ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #2952cc;
+      }
+    }
+  }
 }
