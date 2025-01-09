@@ -2,11 +2,11 @@
 
 import Switch from '@/ui/switch';
 import styles from './style.module.css';
-import useSearch, { SearchParam } from '@/hook/useSearch';
+import useSearch, { SearchParam, SearchParams } from '@/hook/useSearch';
 import { useMemo } from 'react';
 
 interface Props {
-  id: string;
+  id: Partial<SearchParams>;
   title: string;
 }
 
