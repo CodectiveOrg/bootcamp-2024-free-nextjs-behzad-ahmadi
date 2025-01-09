@@ -42,7 +42,7 @@ export default function Search({ searchParams }: Props) {
 
   return (
     <>
-      <center style={{ marginBlock: '3rem' }}>
+      <center style={{ marginBlock: '2.5rem' }}>
         <small>
           توضیح: به دلیل Data ناقص فقط برخی از فیلتر ها عمکرد صحیحی یا نسبتا
           صحیح دارد. مانند تایپ در باکس جستجو، مرتب سازی، خوش برخورد، کمترین
