@@ -1,0 +1,43 @@
+.description {
+  display: flex;
+  justify-content: center;
+  margin-block: 4rem;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  margin-block-start: 2rem;
+  gap: 1rem;
+
+  .filter-items {
+    inline-size: 20rem;
+
+    display: flex;
+    flex-direction: column;
+    overflow-inline: scroll;
+    gap: 1rem;
+
+    > * {
+      padding: 0.5rem;
+    }
+  }
+
+  .center-container {
+    flex: 1;
+
+    .sort {
+    }
+
+    .results {
+      margin-block-start: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}
