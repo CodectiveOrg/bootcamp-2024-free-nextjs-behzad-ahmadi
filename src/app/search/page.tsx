@@ -42,13 +42,13 @@ export default function Search({ searchParams }: Props) {
 
   return (
     <>
-      <center style={{ marginBlock: '2.5rem' }}>
+      <div className={styles.description}>
         <small>
           توضیح: به دلیل Data ناقص فقط برخی از فیلتر ها عمکرد صحیحی یا نسبتا
           صحیح دارد. مانند تایپ در باکس جستجو، مرتب سازی، خوش برخورد، کمترین
           معطلی
         </small>
-      </center>
+      </div>
 
       <div className={styles.search}>
         <GlobalSearchBox />
