@@ -1,0 +1,15 @@
+.container {
+  .info {
+    border-radius: var(--border-radius);
+    background-color: var(--color-gray-12);
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    overflow-x: auto;
+  }
+}
