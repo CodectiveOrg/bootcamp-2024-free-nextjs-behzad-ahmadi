@@ -21,9 +21,14 @@
     font-size: var(--fz-500);
   }
 
-  .credentials {
+  .sub-title1 {
     margin-block-start: 0.5rem;
     font-size: var(--fz-200);
+  }
+
+  .sub-title2 {
+    margin-block-start: 0.5rem;
+    font-size: var(--fz-100);
   }
 
   .rating {

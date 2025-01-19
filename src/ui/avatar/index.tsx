@@ -2,11 +2,13 @@ import Image from 'next/image';
 
 import styles from './style.module.css';
 import MingcuteStarFill from '@/icons/MingcuteStarFill';
+import { ReactNode } from 'react';
 
 interface Props {
   image: string;
   name: string;
-  brief?: string;
+  subtitle1?: ReactNode;
+  subtitle2?: ReactNode;
   averageRating?: number;
   totalVotes?: number;
 }
@@ -24,7 +26,8 @@ export default function Avatar({ ...info }: Props) {
 
       <div className={styles.info}>
         <h2 className={styles.name}>{info.name}</h2>
-        <p className={styles.credentials}>{info.brief}</p>
+        <p className={styles['sub-title1']}>{info.subtitle1}</p>
+        <p className={styles['sub-title2']}>{info.subtitle2}</p>
         <div className={styles.rating}>
           <div className={styles.stars}>
             <MingcuteStarFill />
