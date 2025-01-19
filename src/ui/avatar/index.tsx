@@ -28,13 +28,15 @@ export default function Avatar({ ...info }: Props) {
         <h2 className={styles.name}>{info.name}</h2>
         <p className={styles['sub-title1']}>{info.subtitle1}</p>
         <p className={styles['sub-title2']}>{info.subtitle2}</p>
-        <div className={styles.rating}>
-          <div className={styles.stars}>
-            <MingcuteStarFill />
+        {info.averageRating && (
+          <div className={styles.rating}>
+            <div className={styles.stars}>
+              <MingcuteStarFill />
+            </div>
+            <span>{info.averageRating}</span>
+            {info.totalVotes && <span>({info.totalVotes} نظر)</span>}
           </div>
-          <span>{info.averageRating}</span>
-          <span>({info.totalVotes} نظر)</span>
-        </div>
+        )}
       </div>
     </div>
   );
