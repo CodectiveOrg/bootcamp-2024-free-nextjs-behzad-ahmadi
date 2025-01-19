@@ -4,7 +4,7 @@ const url = 'https://cdn.paziresh24.com';
 
 export const doctors: DoctorData[] = [
   {
-    id: '97420f0d-b576-4f65-9ffc-a81b4b1b4e77',
+    id: '97420f0d',
     name: 'پوراندخت جعفري',
     image:
       url +
@@ -19,7 +19,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد', 'کمترین معطلی'],
   },
   {
-    id: 'e6719f23-e846-4a95-88f9-c013c5d9cb4f',
+    id: 'e6719f23',
     name: 'مجتبی قدسی',
     image:
       url +
@@ -34,7 +34,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد', 'کمترین معطلی'],
   },
   {
-    id: '4a7403d4-e0a2-406c-8dea-3e557bae54d2',
+    id: '4a7403d4',
     name: 'امیرحسین پورداود',
     image:
       url +
@@ -48,7 +48,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد', 'کمترین معطلی'],
   },
   {
-    id: '06d3a495-160d-4722-815e-286ff5d82ed2',
+    id: '06d3a495',
     name: 'اعظم قهساره اردستانی',
     image: url + '/getImage/p24/search-women/noimage.url+png?size=150',
     isVerified: true,
@@ -61,7 +61,7 @@ export const doctors: DoctorData[] = [
     badges: ['فعال شدن نوبت‌دهی اینترنتی 12 دی 23:59', 'خوش برخورد'],
   },
   {
-    id: '7f39ff5b-4c81-4c59-80fa-7872b675bb18',
+    id: '7f39ff5b',
     name: 'رضا پورعلی',
     image:
       url +
@@ -80,7 +80,7 @@ export const doctors: DoctorData[] = [
     ],
   },
   {
-    id: '1515',
+    id: '151',
     name: 'نادیا پرور',
     image: url + '/getImage/p24/search-women/noimage.url+png?size=150',
     isVerified: true,
@@ -92,7 +92,7 @@ export const doctors: DoctorData[] = [
     badges: ['فعال شدن نوبت‌دهی اینترنتی 18 دی 23:59', 'کمترین معطلی'],
   },
   {
-    id: 'ba7333ef-9e18-11ea-9877-005056b09c11',
+    id: 'ba7333ef',
     name: 'محمدرضا ادراکی',
     image:
       url +
@@ -106,7 +106,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد'],
   },
   {
-    id: 'a8a27637-9e67-11ea-9877-005056b09c11',
+    id: 'a8a27637',
     name: 'محسن رضائی مقدم',
     image:
       url +
@@ -121,7 +121,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد'],
   },
   {
-    id: '286439d9-617a-4d5c-a77a-e1ac0c088780',
+    id: '286439d9',
     name: 'پیمان شاه حسینی',
     image:
       url +
@@ -135,7 +135,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد'],
   },
   {
-    id: '601e14cb-c7f7-4668-b883-3c61ebd11f52',
+    id: '601e14cb',
     name: 'رضا افتخار',
     image:
       url +
@@ -150,7 +150,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد', 'کمترین معطلی'],
   },
   {
-    id: '4009802',
+    id: '400980',
     name: 'سیدرامین مدنی',
     image:
       url +
@@ -165,7 +165,7 @@ export const doctors: DoctorData[] = [
     badges: ['فعال شدن نوبت‌دهی اینترنتی 15 دی 06:00', 'خوش برخورد'],
   },
   {
-    id: '85882eb5-1d70-4453-9f67-2a232527590c',
+    id: '85882eb5',
     name: 'پژمان روحانی',
     image:
       url +
@@ -180,7 +180,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد'],
   },
   {
-    id: '6b59b263-73fe-4316-ae81-4fe50968a723',
+    id: '6b59b263',
     name: 'عباس ریحانی',
     image:
       url +
@@ -194,7 +194,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد'],
   },
   {
-    id: '1eb139dc-42d2-4110-8a09-f04a2561372c',
+    id: '1eb139dc',
     name: 'نرگس رخش بهار',
     image:
       url +
@@ -209,7 +209,7 @@ export const doctors: DoctorData[] = [
     badges: ['خوش برخورد', 'کمترین معطلی'],
   },
   {
-    id: '7572',
+    id: '757',
     name: 'مهران شکری',
     image:
       url +
@@ -224,7 +224,7 @@ export const doctors: DoctorData[] = [
     badges: [],
   },
   {
-    id: '4917678e-5e19-4322-b9e4-eb73e8ec622c',
+    id: '4917678e',
     name: 'نوید دانائی',
     image:
       url +
@@ -239,7 +239,7 @@ export const doctors: DoctorData[] = [
     badges: ['فعال شدن نوبت‌دهی اینترنتی 13 دی 23:59', 'خوش برخورد'],
   },
   {
-    id: '22409',
+    id: '2240',
     name: 'یوسف رحمانی',
     image:
       url +
@@ -254,7 +254,7 @@ export const doctors: DoctorData[] = [
     badges: ['فعال شدن نوبت‌دهی اینترنتی 15 دی 08:00', 'خوش برخورد'],
   },
   {
-    id: '2488',
+    id: '248',
     name: 'منصور مظفری',
     image:
       url +
@@ -269,7 +269,7 @@ export const doctors: DoctorData[] = [
     badges: ['فعال شدن نوبت‌دهی اینترنتی 9 اسفند 00:01'],
   },
   {
-    id: '1855',
+    id: 'c1d1fa23',
     name: 'مهراد فخرالدینی',
     image:
       url +
@@ -284,7 +284,7 @@ export const doctors: DoctorData[] = [
     badges: ['کمترین معطلی'],
   },
   {
-    id: 'c1d1fa23-ec60-11ec-b214-005056ad7555',
+    id: 'c1d1fa23',
     name: 'جلال امینی',
     image: url + '/getImage/p24/search-men/noimage.url+png?size=150',
     isVerified: true,
