@@ -1,4 +1,8 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
   .info {
     border-radius: var(--border-radius);
     background-color: var(--color-gray-12);

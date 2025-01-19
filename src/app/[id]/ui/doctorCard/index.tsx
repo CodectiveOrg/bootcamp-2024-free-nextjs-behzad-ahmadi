@@ -2,6 +2,7 @@ import Actions from '@/app/[id]/ui/doctorCard/actions';
 import styles from './style.module.css';
 import Avatar from '@/ui/avatar';
 import Badge from '@/ui/badge';
+import Card from '@/ui/card';
 
 interface Props {
   badges: string[];
@@ -9,7 +10,7 @@ interface Props {
 
 export default function DoctorCard({ badges }: Props) {
   return (
-    <div className={styles.container}>
+    <Card className={styles.container}>
       <div className={styles.actions}>
         <Actions />
       </div>
@@ -25,6 +26,6 @@ export default function DoctorCard({ badges }: Props) {
       </div>
 
       <div className={styles.rating}></div>
-    </div>
+    </Card>
   );
 }
