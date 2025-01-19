@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 1.5rem;
+
+  .view-count {
+    background-color: red;
+    flex: 1;
+    justify-content: end;
+  }
+}
