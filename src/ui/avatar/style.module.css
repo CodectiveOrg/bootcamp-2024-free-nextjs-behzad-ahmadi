@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-block-end: 1rem;
+  gap: 1rem;
+}
+
+.profileImage {
+  inline-size: 80px;
+  block-size: 80px;
+  border-radius: 50%;
+  border: 2px solid #3366ff;
+}
+
+.info {
+  flex: 1;
+  margin-inline-end: 1rem;
+
+  .name {
+    font-size: var(--fz-500);
+  }
+
+  .credentials {
+    margin-block-start: 0.5rem;
+    font-size: var(--fz-200);
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-block-start: 0.5rem;
+    line-height: 1rem;
+    font-size: var(--fz-200);
+
+    .stars {
+      color: var(---color-rating);
+    }
+  }
+}
