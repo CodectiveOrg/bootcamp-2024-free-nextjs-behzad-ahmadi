@@ -2,7 +2,7 @@
 
 import FilterRadioGroup from '@/app/search/ui/filterRadioGroup';
 import styles from './style.module.css';
-import Card from '@/app/search/ui/card';
+import Card from '@/ui/card';
 import { filters } from '@/mock/filters';
 import SwitchFilter from '@/app/search/ui/switchFilter';
 import { SearchParams } from '@/hook/useSearch';

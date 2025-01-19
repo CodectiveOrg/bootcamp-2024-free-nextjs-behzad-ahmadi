@@ -3,7 +3,7 @@
 import useSearch from '@/hook/useSearch';
 import styles from './style.module.css';
 import { MingcuteCloseLine } from '@/icons/MingcuteCloseLine';
-import Card from '@/app/search/ui/card';
+import Card from '@/ui/card';
 
 export default function SearchedItems() {
   const { paramsList, deleteParam } = useSearch();
