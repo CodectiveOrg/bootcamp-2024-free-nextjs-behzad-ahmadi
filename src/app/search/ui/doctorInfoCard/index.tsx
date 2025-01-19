@@ -6,6 +6,8 @@ import MingcuteStarFill from '@/icons/MingcuteStarFill';
 import Badge from '@/ui/badge';
 import MingcuteLocationLine from '@/icons/MingcuteLocationLine';
 import { DoctorData } from '@/types/type';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 interface Props {
   info: DoctorData;
@@ -14,27 +16,29 @@ interface Props {
 export default function DoctorCard({ info }: Props) {
   return (
     <div className={styles.card}>
-      <div className={styles.header}>
-        <Image
-          src={info.image}
-          alt="Doctor profile"
-          width={80}
-          height={80}
-          className={styles.profileImage}
-        />
+      <Link href={`/${info.id}`}>
+        <div className={styles.header}>
+          <Image
+            src={info.image}
+            alt="Doctor profile"
+            width={80}
+            height={80}
+            className={styles.profileImage}
+          />
 
-        <div className={styles.info}>
-          <h2 className={styles.name}>{info.name}</h2>
-          <p className={styles.credentials}>{info.brief}</p>
-          <div className={styles.rating}>
-            <div className={styles.stars}>
-              <MingcuteStarFill />
+          <div className={styles.info}>
+            <h2 className={styles.name}>{info.name}</h2>
+            <p className={styles.credentials}>{info.brief}</p>
+            <div className={styles.rating}>
+              <div className={styles.stars}>
+                <MingcuteStarFill />
+              </div>
+              <span>{info.averageRating}</span>
+              <span>({info.totalVotes} نظر)</span>
             </div>
-            <span>{info.averageRating}</span>
-            <span>({info.totalVotes} نظر)</span>
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className={styles.location}>
         <MingcuteLocationLine />
