@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MingcuteDownLine } from '@/icons/MingcuteDownLine';
 import styles from './style.module.css';
+import clsx from 'clsx';
 
 export type SelectOption = {
   label: React.ReactNode;
@@ -15,6 +16,8 @@ interface Props {
   onChange?: (value: SelectOption) => void;
   value?: SelectOption | undefined;
   placeholder?: string;
+  className?: string;
+  inputClassName?: string;
 }
 
 export default function SelectInput({
@@ -23,6 +26,8 @@ export default function SelectInput({
   onChange,
   value,
   placeholder,
+  className,
+  inputClassName,
 }: Props) {
   const [selectedOption, setSelectedOption] = useState<SelectOption | null>(
     null,
@@ -61,7 +66,7 @@ export default function SelectInput({
   return (
     <div
       ref={dropdownRef}
-      className={styles.container}
+      className={clsx(styles.container, className)}
       onClick={() => setIsDropdownOpen(prev => !prev)}
     >
       <span className={styles.label}>{label}</span>
@@ -71,7 +76,7 @@ export default function SelectInput({
           autoComplete="off"
           value={selectedOption?.label?.toString() || ''}
           placeholder={placeholder}
-          className={styles.input}
+          className={clsx(styles.input, inputClassName)}
         />
         <MingcuteDownLine />
       </div>
