@@ -1,0 +1,31 @@
+.ratingItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ratingHeader {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.ratingLabel,
+.ratingScore {
+  font-size: var(--fz-200);
+}
+
+.progressBarBg {
+  height: 0.5rem;
+  width: 100%;
+  background-color: var(--color-gray-20);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.progressBar {
+  block-size: 100%;
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  transition: width 300ms ease;
+}
