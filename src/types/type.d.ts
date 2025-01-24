@@ -59,3 +59,29 @@ export interface Filters {
   turnType: Array<FilterItem>;
   filters: Array<FilterFilterItem>;
 }
+
+export interface Feedback {
+  id: number;
+  avgRateValue: number;
+  description: string;
+  userDisplayName: string | null;
+  recommended: boolean | null;
+  treatmentStatus: string | null;
+  qualityOfTreatment: number;
+  countLike: number | null;
+  show: number;
+  doctorEncounter: number;
+  replyToFeedbackId: number | null;
+  recommendRange: number;
+  explanationOfIssue: number;
+  centerName: string;
+  createdAt: string; // ISO date string
+  visitDate: string | null;
+  visitStatus: 'visited' | 'not_visited' | null;
+  visitReason: string | null;
+  userId: number;
+  waitingTime: number;
+  centerId: string;
+  clinicFeedbackId: string | null;
+  doctorSlug: string;
+}

@@ -35,10 +35,11 @@ export default function SelectInput({
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleOptionClick = (option: SelectOption) => {
+  const handleOptionClick = (option: SelectOption, event: React.MouseEvent) => {
+    event.stopPropagation(); // Prevent the click event from propagating
     setSelectedOption(option);
-    setIsDropdownOpen(false);
     onChange?.(option);
+    setIsDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -89,7 +90,7 @@ export default function SelectInput({
               className={`${styles.option} ${
                 selectedOption?.value === item.value ? styles.selected : ''
               }`}
-              onClick={() => handleOptionClick(item)}
+              onClick={event => handleOptionClick(item, event)}
             >
               {item.label}
             </div>
