@@ -8,6 +8,7 @@ import styles from './style.module.css';
 import FilterSection from '@/app/[id]/ui/commentsCard/filterSection';
 import Card from '@/ui/card';
 import { Feedback } from '@/types/type';
+import { useCommentStore } from '@/app/[id]/context/commentsStore';
 
 const BaseApiURL = 'https://apigw.paziresh24.com/ravi/v1';
 const feedbackApi = (query?: string) =>
@@ -24,28 +25,14 @@ export default function CommentsCard({}: Props) {
   const [feedbacks, setFeedbacks] = React.useState<Feedback[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [doctorSlug, setDoctorSlug] = useState<string | null>(
-    'دکتر--محمدرسول-نظام-آبادی',
-  );
-  const [minRate, setMinRate] = useState<number | null>(0);
-  const [feedbackSort, setFeedbackSort] = useState<string>('');
-  const [feedbackType, setFeedbackType] = useState<string | null>('all');
-
-  const filteredFeedbackType = useMemo(() => {
-    if (feedbackType === 'visited') return '(visit_status,eq,visited)';
-
-    return '';
-  }, [feedbackType]);
-
-  const filterFeedbackSort = useMemo(() => {
-    if (feedbackSort === '-count_like') return '-count_like';
-
-    if (feedbackSort === '-default_order') return '-default_order';
-
-    if (feedbackSort === '-created_at') return '-created_at';
-
-    return '';
-  }, [feedbackSort]);
+  const {
+    doctorSlug,
+    feedbackSort,
+    feedbackType,
+    filterFeedbackSort,
+    filteredFeedbackType,
+    minRate,
+  } = useCommentStore();
 
   useEffect(() => {
     const fetchFeedbacks = async () => {
@@ -87,18 +74,15 @@ export default function CommentsCard({}: Props) {
     fetchFeedbacks();
   }, [doctorSlug, minRate, feedbackSort, feedbackType]);
 
-  if (loading) return <p>Loading feedbacks...</p>;
-  if (error) return <p>Error: {error}</p>;
+  // if (loading) return <p>Loading feedbacks...</p>;
+  // if (error) return <p>Error: {error}</p>;
 
   return (
     <Card>
       <div className={styles.container}>
         <RatingBars ratings={CommentRatings} />
 
-        <FilterSection
-          onFeedbackChange={option => setFeedbackSort(option.value.toString())}
-          onSortChange={option => setFeedbackType(option.value.toString())}
-        />
+        <FilterSection />
       </div>
     </Card>
   );

@@ -1,8 +1,9 @@
 'use client';
 
-import SelectInput, { SelectOption } from '@/ui/selectInput';
+import SelectInput from '@/ui/selectInput';
 import styles from './style.module.css';
 import { Input } from '@/ui/input';
+import { useCommentStore } from '@/app/[id]/context/commentsStore';
 
 const feedbackTypeOptions = [
   { label: 'همه', value: 'all' },
@@ -15,17 +16,11 @@ const sortOptions = [
   { label: 'محبوب ترین', value: '-count_like' },
 ];
 
-interface Props {
-  onFeedbackChange?: (option: SelectOption) => void;
-  onSortChange?: (option: SelectOption) => void;
-  onSearch?: (value: string) => void;
-}
+interface Props {}
 
-export default function FilterSection({
-  onFeedbackChange,
-  onSortChange,
-  onSearch,
-}: Props) {
+export default function FilterSection({}: Props) {
+  const { setFeedbackSort, setFeedbackType, setSearch } = useCommentStore();
+
   return (
     <div className={styles.container}>
       <div className={styles.selects}>
@@ -33,21 +28,21 @@ export default function FilterSection({
           options={feedbackTypeOptions}
           label=""
           className={styles.item}
-          onChange={onFeedbackChange}
+          onChange={option => setFeedbackType(option.value.toString())}
         />
 
         <SelectInput
           options={sortOptions}
           label=""
           className={styles.item}
-          onChange={onSortChange}
+          onChange={option => setFeedbackSort(option.value.toString())}
         />
       </div>
 
       <Input
         label=""
         placeholder="جستجو در نظرات بیماران"
-        onChange={e => onSearch?.(e.target.value)}
+        onChange={e => setSearch(e.target.value)}
       />
     </div>
   );
