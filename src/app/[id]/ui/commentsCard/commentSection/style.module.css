@@ -1,0 +1,14 @@
+.container {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .comment {
+  }
+
+  .actions {
+    display: flex;
+    align-items: end;
+  }
+}

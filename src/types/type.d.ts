@@ -64,24 +64,24 @@ export interface Feedback {
   id: number;
   avgRateValue: number;
   description: string;
-  userDisplayName: string | null;
-  recommended: boolean | null;
-  treatmentStatus: string | null;
+  userDisplayName: string;
+  recommended: boolean;
+  treatmentStatus: string;
   qualityOfTreatment: number;
-  countLike: number | null;
+  countLike: number;
   show: number;
   doctorEncounter: number;
-  replyToFeedbackId: number | null;
+  replyToFeedbackId: number;
   recommendRange: number;
   explanationOfIssue: number;
   centerName: string;
   createdAt: string; // ISO date string
-  visitDate: string | null;
-  visitStatus: 'visited' | 'not_visited' | null;
-  visitReason: string | null;
+  visitDate: string;
+  visitStatus: 'visited' | 'not_visited';
+  visitReason: string;
   userId: number;
   waitingTime: number;
   centerId: string;
-  clinicFeedbackId: string | null;
+  clinicFeedbackId: string;
   doctorSlug: string;
 }

@@ -9,6 +9,7 @@ import FilterSection from '@/app/[id]/ui/commentsCard/filterSection';
 import Card from '@/ui/card';
 import { Feedback } from '@/types/type';
 import { useCommentStore } from '@/app/[id]/context/commentsStore';
+import CommentSection from '@/app/[id]/ui/commentsCard/commentSection';
 
 const BaseApiURL = 'https://apigw.paziresh24.com/ravi/v1';
 const feedbackApi = (query?: string) =>
@@ -83,6 +84,8 @@ export default function CommentsCard({}: Props) {
         <RatingBars ratings={CommentRatings} />
 
         <FilterSection />
+
+        <CommentSection />
       </div>
     </Card>
   );

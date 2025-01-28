@@ -3,12 +3,13 @@ import styles from './style.module.css';
 import Avatar from '@/ui/avatar';
 import Badge from '@/ui/badge';
 import Card from '@/ui/card';
+import { DoctorData } from '@/types/type';
 
 interface Props {
-  badges: string[];
+  doctor: DoctorData;
 }
 
-export default function DoctorCard({ badges }: Props) {
+export default function DoctorCard({ doctor }: Props) {
   return (
     <Card className={styles.container}>
       <div className={styles.actions}>
@@ -16,11 +17,16 @@ export default function DoctorCard({ badges }: Props) {
       </div>
 
       <div className={styles.info}>
-        <Avatar image="" name="" subtitle1="" subtitle2="" />
+        <Avatar
+          image={doctor.image}
+          name={doctor.name}
+          subtitle1={''}
+          subtitle2={''}
+        />
       </div>
 
       <div className={styles.badges}>
-        {badges.map((item, index) => (
+        {doctor.badges.map((item, index) => (
           <Badge key={index}>{item}</Badge>
         ))}
       </div>
