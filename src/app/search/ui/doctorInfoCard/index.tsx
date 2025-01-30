@@ -1,13 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './style.module.css';
-import MingcuteStarFill from '@/icons/MingcuteStarFill';
 import Badge from '@/ui/badge';
 import MingcuteLocationLine from '@/icons/MingcuteLocationLine';
 import { DoctorData } from '@/types/type';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Avatar from '@/ui/avatar';
 
 interface Props {
@@ -15,6 +13,12 @@ interface Props {
 }
 
 export default function DoctorCard({ info }: Props) {
+  const router = useRouter();
+
+  const handleReserve = () => {
+    router.push(`/${info.id}`);
+  };
+
   return (
     <div className={styles.card}>
       <Link href={`/${info.id}`}>
@@ -44,8 +48,12 @@ export default function DoctorCard({ info }: Props) {
       </div>
 
       <div className={styles.actions}>
-        <button className={styles.button}>نوبت دهی اینترنتی</button>
-        <button className={styles.button}>ویزیت آنلاین</button>
+        <button className={styles.button} onClick={handleReserve}>
+          نوبت دهی اینترنتی
+        </button>
+        <button className={styles.button} onClick={handleReserve}>
+          ویزیت آنلاین
+        </button>
       </div>
     </div>
   );
