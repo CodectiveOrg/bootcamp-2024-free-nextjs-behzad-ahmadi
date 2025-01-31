@@ -61,27 +61,27 @@ export interface Filters {
 }
 
 export interface Feedback {
-  id: number;
-  avgRateValue: number;
+  Id: number;
+  avg_rate_value: number;
   description: string;
-  userDisplayName: string;
+  user_display_name: string;
   recommended: boolean;
-  treatmentStatus: string;
-  qualityOfTreatment: number;
-  countLike: number;
+  treatment_status: string;
+  quality_of_treatment: number;
+  count_like: number;
   show: number;
-  doctorEncounter: number;
-  replyToFeedbackId: number;
-  recommendRange: number;
-  explanationOfIssue: number;
-  centerName: string;
-  createdAt: string; // ISO date string
-  visitDate: string;
-  visitStatus: 'visited' | 'not_visited';
-  visitReason: string;
-  userId: number;
-  waitingTime: number;
+  doctor_encounter: number;
+  reply_to_feedback_id: number;
+  recommend_range: number;
+  explanation_of_issue: number;
+  center_name: string;
+  created_at: string; // ISO date string
+  visit_date: string;
+  visit_status: 'visited' | 'not_visited';
+  visit_reason: string;
+  user_id: number;
+  waiting_time: number;
   centerId: string;
-  clinicFeedbackId: string;
-  doctorSlug: string;
+  clinic_feedback_id: string;
+  doctor_slug: string;
 }
