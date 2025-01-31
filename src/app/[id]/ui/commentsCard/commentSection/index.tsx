@@ -14,7 +14,7 @@ export default function CommentSection({ id, comments }: Props) {
   return (
     <div className={styles.list}>
       {comments?.map(comment => (
-        <div className={styles.container}>
+        <div className={styles.container} key={comment.Id}>
           <div className={styles.header}>
             <UserInfo
               name={comment?.user_display_name}
@@ -35,7 +35,7 @@ export default function CommentSection({ id, comments }: Props) {
           <div className={styles.actions}>
             <Actions
               shareUrl={shareUrl}
-              shareText={comment.description.slice(
+              shareText={comment.description?.slice(
                 0,
                 Math.min(10, comment.description.length - 10),
               )}
