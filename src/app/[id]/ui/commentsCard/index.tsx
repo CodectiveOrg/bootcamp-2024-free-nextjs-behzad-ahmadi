@@ -2,7 +2,7 @@
 
 import { RatingBars } from '@/app/[id]/ui/commentsCard/ratingBars';
 import { CommentRatings } from '@/mock/commentRatings';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 import FilterSection from '@/app/[id]/ui/commentsCard/filterSection';
@@ -18,8 +18,14 @@ const feedbackApi = (query?: string) =>
 type Props = {};
 
 type ApiResponse = {
-  data: Feedback[];
-  totalCount: number;
+  list: Feedback[];
+  pageInfo: {
+    isFirstPage: boolean;
+    isLastPage: boolean;
+    page: number;
+    pageSize: number;
+    totalRows: number;
+  };
 };
 
 export default function CommentsCard({}: Props) {
@@ -49,7 +55,6 @@ export default function CommentsCard({}: Props) {
           minRate !== null
             ? `(avg_rate_value,gt,${minRate})~or(avg_rate_value,is,null)`
             : '',
-          ,
           filteredFeedbackType,
         ]
           .filter(Boolean) // Remove null or undefined values
@@ -64,7 +69,8 @@ export default function CommentsCard({}: Props) {
         }
 
         const result: ApiResponse = await response.json();
-        setFeedbacks(result.data);
+
+        setFeedbacks(result.list);
       } catch (err: unknown) {
         setError((err as Error).message);
       } finally {
@@ -85,7 +91,7 @@ export default function CommentsCard({}: Props) {
 
         <FilterSection />
 
-        <CommentSection />
+        <CommentSection comments={feedbacks} />
       </div>
     </Card>
   );
