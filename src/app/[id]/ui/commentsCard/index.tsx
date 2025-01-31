@@ -11,6 +11,7 @@ import { Feedback } from '@/types/type';
 import { useCommentStore } from '@/app/[id]/context/commentsStore';
 import CommentSection from '@/app/[id]/ui/commentsCard/commentSection';
 import { useParams } from 'next/navigation';
+import Loading from '@/ui/loading/loading';
 
 const BaseApiURL = 'https://apigw.paziresh24.com/ravi/v1';
 const feedbackApi = (query?: string) =>
@@ -92,6 +93,8 @@ export default function CommentsCard({}: Props) {
         <RatingBars ratings={CommentRatings} />
 
         <FilterSection />
+
+        {loading && <Loading />}
 
         <CommentSection comments={feedbacks} id={id} />
       </div>
