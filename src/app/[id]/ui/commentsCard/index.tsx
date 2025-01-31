@@ -10,6 +10,7 @@ import Card from '@/ui/card';
 import { Feedback } from '@/types/type';
 import { useCommentStore } from '@/app/[id]/context/commentsStore';
 import CommentSection from '@/app/[id]/ui/commentsCard/commentSection';
+import { useParams } from 'next/navigation';
 
 const BaseApiURL = 'https://apigw.paziresh24.com/ravi/v1';
 const feedbackApi = (query?: string) =>
@@ -32,6 +33,7 @@ export default function CommentsCard({}: Props) {
   const [feedbacks, setFeedbacks] = React.useState<Feedback[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const { id } = useParams<{ id: string }>();
   const {
     doctorSlug,
     feedbackSort,
@@ -83,7 +85,7 @@ export default function CommentsCard({}: Props) {
 
   // if (loading) return <p>Loading feedbacks...</p>;
   // if (error) return <p>Error: {error}</p>;
-
+  console.log('list', feedbacks);
   return (
     <Card>
       <div className={styles.container}>
@@ -91,7 +93,7 @@ export default function CommentsCard({}: Props) {
 
         <FilterSection />
 
-        <CommentSection comments={feedbacks} />
+        <CommentSection comments={feedbacks} id={id} />
       </div>
     </Card>
   );

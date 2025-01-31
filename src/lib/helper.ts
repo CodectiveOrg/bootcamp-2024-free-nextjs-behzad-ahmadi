@@ -31,3 +31,23 @@ export function formatDateToRelativePersian(dateString: string): string {
     return rtf.format(diffInYears, 'year');
   }
 }
+
+export const shareContent = async ({
+  title,
+  text,
+  url,
+}: {
+  title: string;
+  text: string;
+  url: string;
+}) => {
+  try {
+    await navigator.share({
+      title,
+      text,
+      url,
+    });
+  } catch (err) {
+    console.log('Sharing failed:', err);
+  }
+};

@@ -4,11 +4,13 @@ import UserInfo from '@/app/[id]/ui/commentsCard/commentSection/ui/userInfo';
 import Rating from '@/app/[id]/ui/commentsCard/commentSection/ui/rating';
 import { Feedback } from '@/types/type';
 import Actions from '@/app/[id]/ui/commentsCard/commentSection/ui/actions';
+import { BaseSiteURL } from '@/lib/constants';
 
-type Props = { comments: Feedback[] };
+type Props = { id: string; comments: Feedback[] };
 
-export default function CommentSection({ comments }: Props) {
-  console.log('comments', comments);
+export default function CommentSection({ id, comments }: Props) {
+  const shareUrl = `${BaseSiteURL}/${id}`;
+
   return (
     <div className={styles.list}>
       {comments?.map(comment => (
@@ -31,8 +33,17 @@ export default function CommentSection({ comments }: Props) {
           <div className={styles.comment}>{comment.description}</div>
 
           <div className={styles.actions}>
-            <Actions />
+            <Actions
+              shareUrl={shareUrl}
+              shareText={comment.description.slice(
+                0,
+                Math.min(10, comment.description.length - 10),
+              )}
+              shareTitle={comment.doctor_slug}
+            />
           </div>
+
+          <hr />
         </div>
       ))}
     </div>
