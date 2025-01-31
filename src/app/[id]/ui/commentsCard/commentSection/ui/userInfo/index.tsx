@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use, useMemo } from 'react';
 import styles from './style.module.css';
 import clsx from 'clsx';
 import { formatDateToRelativePersian } from '@/lib/helper';
@@ -6,14 +6,11 @@ import { formatDateToRelativePersian } from '@/lib/helper';
 type Props = { name: string; id: number; status: string; date: string };
 
 export default function UserInfo({ name, id, status, date }: Props) {
+  const color = useMemo(() => Math.trunc(Math.random() * 5 + 1), [name]);
+
   return (
     <div className={styles.container}>
-      <div
-        className={clsx(
-          styles.avatar,
-          styles[`bg-color-${Math.trunc(Math.random() * 5 + 1)}`],
-        )}
-      >
+      <div className={clsx(styles.avatar, styles[`bg-color-${color}`])}>
         {name?.slice(0, 1)}
       </div>
 
