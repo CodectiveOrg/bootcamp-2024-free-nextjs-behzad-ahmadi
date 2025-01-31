@@ -5,27 +5,32 @@ import Rating from '@/app/[id]/ui/commentsCard/commentSection/ui/rating';
 import { Feedback } from '@/types/type';
 import Actions from '@/app/[id]/ui/commentsCard/commentSection/ui/actions';
 
-type Props = { comment: Feedback };
+type Props = { comments: Feedback[] };
 
-export default function CommentSection({ comment }: Props) {
+export default function CommentSection({ comments }: Props) {
+  console.log('comments', comments);
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <UserInfo
-          name={comment.userDisplayName}
-          id={comment.userId}
-          status={comment.visitStatus}
-          date={comment.createdAt}
-        />
+    <div className={styles.list}>
+      {comments?.map(comment => (
+        <div className={styles.container}>
+          <div className={styles.header}>
+            <UserInfo
+              name={comment?.user_display_name}
+              id={comment.user_id}
+              status={comment.visit_status}
+              date={comment.created_at}
+            />
 
-        <Rating rating={comment.avgRateValue} />
-      </div>
+            <Rating rating={comment.avg_rate_value} />
+          </div>
 
-      <div className={styles.comment}>{comment.description}</div>
+          <div className={styles.comment}>{comment.description}</div>
 
-      <div className={styles.actions}>
-        <Actions />
-      </div>
+          <div className={styles.actions}>
+            <Actions />
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
