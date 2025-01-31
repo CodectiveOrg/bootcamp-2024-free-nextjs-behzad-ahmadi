@@ -20,7 +20,7 @@ export default function UserInfo({ name, id, status, date }: Props) {
       <div className={styles.info}>
         <div className={styles.r1}>
           <span className={styles.name}>{name}</span>
-          <span className={styles.status}>{status}و</span>
+          {status && <span className={styles.status}>{status}</span>}
         </div>
 
         <div>

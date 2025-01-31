@@ -21,7 +21,11 @@ export default function CommentSection({ comments }: Props) {
               date={comment.created_at}
             />
 
-            <Rating rating={comment.avg_rate_value} />
+            <Rating
+              rating={
+                comment.avg_rate_value ? comment.avg_rate_value : 'بدون امتیاز'
+              }
+            />
           </div>
 
           <div className={styles.comment}>{comment.description}</div>

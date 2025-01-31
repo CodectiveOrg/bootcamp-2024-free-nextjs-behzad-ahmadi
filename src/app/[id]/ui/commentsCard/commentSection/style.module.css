@@ -10,6 +10,9 @@
     }
 
     .comment {
+      padding-block-start: 0.5rem;
+      font-size: var(--fz-300);
+      line-height: 1.8;
     }
 
     .actions {

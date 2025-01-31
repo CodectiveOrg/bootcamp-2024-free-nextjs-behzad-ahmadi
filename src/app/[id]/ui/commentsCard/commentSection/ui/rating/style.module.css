@@ -1,7 +1,14 @@
 .rating {
   display: flex;
   align-items: center;
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  background-color: var(--color-primary);
+  justify-content: center;
+  align-self: flex-start;
+  min-inline-size: 2.5rem;
+  block-size: 1.8rem;
+  padding-inline: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-rating);
+  color: var(--color-gray-10);
+  font-weight: 500;
+  font-size: var(--fz-200);
 }

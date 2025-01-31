@@ -21,7 +21,7 @@
   --color-primary-darker: hsl(120deg 50% 44%);
   --color-primary-opposite: var(--color-gray-10);
 
-  ---color-rating: hsl(51, 100%, 50%);
+  --color-rating: hsl(51, 100%, 50%);
 
   --border-radius: 0.875rem;
 
