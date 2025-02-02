@@ -4,6 +4,7 @@ import Avatar from '@/ui/avatar';
 import Badge from '@/ui/badge';
 import Card from '@/ui/card';
 import { DoctorData } from '@/types/type';
+import { BaseSiteURL } from '@/lib/constants';
 
 interface Props {
   doctor: DoctorData;
@@ -13,7 +14,12 @@ export default function DoctorCard({ doctor }: Props) {
   return (
     <Card className={styles.container}>
       <div className={styles.actions}>
-        <Actions />
+        <Actions
+          viewCount={doctor.totalVotes}
+          isBookmarked={false}
+          shareTitle={doctor.name}
+          shareUrl={`${BaseSiteURL}/${doctor.id}`}
+        />
       </div>
 
       <div className={styles.info}>
