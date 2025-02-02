@@ -1,11 +1,12 @@
 .container {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: 1.5rem;
+    cursor: pointer;
 
-  .view-count {
-    background-color: red;
-    flex: 1;
-    justify-content: end;
-  }
+    .view-count {
+        background-color: red;
+        flex: 1;
+        justify-content: end;
+    }
 }
