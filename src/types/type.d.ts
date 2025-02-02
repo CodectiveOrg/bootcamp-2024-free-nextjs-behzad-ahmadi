@@ -9,6 +9,8 @@ export type DoctorData = {
   firstAvailableAppointment: string;
   brief: string;
   badges: string[];
+  phone: string;
+  location: string;
 };
 
 export type DoctorSpecialty =
