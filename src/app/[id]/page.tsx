@@ -5,6 +5,7 @@ import CommentsCard from '@/app/[id]/ui/commentsCard';
 import { CommentStoreProvider } from '@/app/[id]/context/commentsStore';
 import { doctors } from '@/mock/doctors';
 import NotFound from '@/app/not-found';
+import ContactCard from './ui/contactCard';
 
 interface Props {
   params: { id: string };
@@ -21,10 +22,21 @@ export default async function DoctorDetails({ params }: Props) {
         <DoctorCard doctor={info} />
 
         <CommentStoreProvider>
+          <div>نظرات در مورد دکتر {info.name}</div>
           <CommentsCard />
         </CommentStoreProvider>
       </div>
-      <div className={styles['left-col']}>L</div>
+
+      <div className={styles['left-col']}>
+        <div>آدرس و تلفن تماس</div>
+        <ContactCard
+          adress={info.address}
+          name={info.name}
+          phone={info.phone}
+          location={info.location}
+          calendar={[]}
+        />
+      </div>
     </div>
   );
 }

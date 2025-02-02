@@ -3,8 +3,6 @@
 import { RatingBars } from '@/app/[id]/ui/commentsCard/ratingBars';
 import { CommentRatings } from '@/mock/commentRatings';
 import React, { useEffect, useState } from 'react';
-
-import styles from './style.module.css';
 import FilterSection from '@/app/[id]/ui/commentsCard/filterSection';
 import Card from '@/ui/card';
 import { Feedback } from '@/types/type';
@@ -12,10 +10,9 @@ import { useCommentStore } from '@/app/[id]/context/commentsStore';
 import CommentSection from '@/app/[id]/ui/commentsCard/commentSection';
 import { useParams } from 'next/navigation';
 import Loading from '@/ui/loading/loading';
+import styles from './style.module.css';
 
 const BaseApiURL = 'https://apigw.paziresh24.com/ravi/v1';
-const feedbackApi = (query?: string) =>
-  fetch(`https://apigw.paziresh24.com/ravi/v1/feedbacks?${query}`);
 
 type Props = {};
 

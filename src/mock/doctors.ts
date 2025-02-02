@@ -17,6 +17,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'کمتر از یک ساعت دیگر',
     brief: 'متخصص گفتاردرمانی ، گفتار درمانی کودکان',
     badges: ['خوش برخورد', 'کمترین معطلی', 'متخصص برتر'],
+    phone: '09156415151',
+    location: 'geo:37.786971,-122.399677',
   },
   {
     id: 'e6719f23',
@@ -32,6 +34,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '16 دی 11 صبح',
     brief: 'متخصص بیماری‌های کودکان',
     badges: ['تجربه بالا', 'امکانات پیشرفته', 'کمترین معطلی'],
+    phone: '09153456789',
+    location: 'geo:38.210000,48.300000',
   },
   {
     id: '4a7403d4',
@@ -46,6 +50,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '15 دی 4 عصر',
     brief: 'جراحی عمومی،جراحی پلاستیک و زیبایی،درمان هموروئید و فیشر و...',
     badges: ['خوش برخورد', 'نتایج درمانی عالی', 'دسترسی آسان'],
+    phone: '09176543210',
+    location: 'geo:28.500000,53.566667',
   },
   {
     id: '06d3a495',
@@ -59,6 +65,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '13 اسفند 5 عصر',
     brief: 'فوق تخصص طب نوزادی و پیرامون تولد',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 12 دی 23:59', 'خوش برخورد'],
+    phone: '09132456789',
+    location: 'geo:32.654238,51.667446',
   },
   {
     id: '7f39ff5b',
@@ -78,6 +86,8 @@ export const doctors: DoctorData[] = [
       'خوش برخورد',
       'متخصص کودکان',
     ],
+    phone: '09153334444',
+    location: 'geo:36.216080,58.779830',
   },
   {
     id: '151',
@@ -94,6 +104,8 @@ export const doctors: DoctorData[] = [
       'تجهیزات مدرن',
       'کمترین معطلی',
     ],
+    phone: '09176543210',
+    location: 'geo:27.186389,56.276944',
   },
   {
     id: 'ba7333ef',
@@ -112,6 +124,8 @@ export const doctors: DoctorData[] = [
       'متخصص اطفال',
       'مشاوره آنلاین',
     ],
+    phone: '09171234567',
+    location: 'geo:29.621460,52.538540',
   },
   {
     id: 'a8a27637',
@@ -127,6 +141,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '19 دی 7 عصر',
     brief: 'متخصص چشم پزشکی دارای بورد تخصصی',
     badges: ['خوش برخورد', 'فوق تخصص قلب کودکان', 'سابقه درخشان'],
+    phone: '09153334444',
+    location: 'geo:33.723000,59.510000',
   },
   {
     id: '286439d9',
@@ -141,6 +157,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '16 دی 4 عصر',
     brief: 'فوق تخصص طب نوزادی و پیرامون تولد متخصص کودکان',
     badges: ['خوش برخورد', 'جراح ماهر', 'مشاوره رایگان'],
+    phone: '09121112233',
+    location: 'geo:35.696111,51.423056',
   },
   {
     id: '601e14cb',
@@ -156,6 +174,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'فردا 9 صبح',
     brief: 'کارشناسی علوم تغذیه',
     badges: ['خوش برخورد', 'متخصص نوزادان', 'پیگیری منظم بیماران'],
+    phone: '09155556666',
+    location: 'geo:36.299900,59.610000',
   },
   {
     id: '400980',
@@ -171,6 +191,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '17 دی 5 عصر',
     brief: 'فوق تخصص گوارش اطفال',
     badges: ['خوش برخورد', 'کمترین معطلی', 'مشاوره تغذیه'],
+    phone: '09131234567',
+    location: 'geo:33.983333,51.433333',
   },
   {
     id: '85882eb5',
@@ -186,6 +208,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'کمتر از پنج ساعت دیگر',
     brief: 'فوق تخصص گوارش اطفال',
     badges: ['خوش برخورد', 'متخصص گوارش کودکان'],
+    phone: '09122223333',
+    location: 'geo:35.696111,51.423056',
   },
   {
     id: '6b59b263',
@@ -200,6 +224,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'کمتر از پنج ساعت دیگر',
     brief: 'متخصص بیماری‌های قلب و عروق',
     badges: ['خوش برخورد', 'درمان سریع', 'مشاوره 24 ساعته'],
+    phone: '09183334444',
+    location: 'geo:34.800000,48.516667',
   },
   {
     id: '1eb139dc',
@@ -215,6 +241,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'کمتر از یک ساعت دیگر',
     brief: 'متخصص زنان و زایمان',
     badges: ['خوش برخورد', 'کمترین معطلی'],
+    phone: '09151112233',
+    location: 'geo:36.299900,59.610000',
   },
   {
     id: '757',
@@ -230,6 +258,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'کمتر از پنج ساعت دیگر',
     brief: 'متخصص بیماریهای عفونی و گرمسیری',
     badges: [],
+    phone: '09112223344',
+    location: 'geo:36.551111,52.676111',
   },
   {
     id: '4917678e',
@@ -245,6 +275,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '15 دی 4 عصر',
     brief: 'فوق تخصص طب نوزادی و پیرامون تولد',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 13 دی 23:59', 'خوش برخورد'],
+    phone: '09123334444',
+    location: 'geo:35.583333,53.383333',
   },
   {
     id: '2240',
@@ -260,6 +292,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '16 دی 4 عصر',
     brief: 'متخصص بیماریهای قلب و عروق',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 15 دی 08:00', 'خوش برخورد'],
+    phone: '09121112233',
+    location: 'geo:34.316667,47.066667',
   },
   {
     id: '248',
@@ -275,6 +309,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '9 فروردین 5 عصر',
     brief: 'متخصص چشم پزشکی',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 9 اسفند 00:01'],
+    phone: '09131112233',
+    location: 'geo:35.696111,51.423056',
   },
   {
     id: 'c1d1fa23',
@@ -290,6 +326,8 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '18 دی 6 عصر',
     brief: 'متخصص قلب و عروق',
     badges: ['کمترین معطلی'],
+    phone: '09112223344',
+    location: 'geo:35.783333,51.416667',
   },
   {
     id: 'c1d1fa23',
@@ -303,5 +341,7 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '14 اردیبهشت 12 عصر',
     brief: 'فلوشیپ ارولوژی اطفال',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 30 فروردین 23:59', 'خوش برخورد'],
+    phone: '09121112233',
+    location: 'geo:35.696111,51.423056',
   },
 ];
