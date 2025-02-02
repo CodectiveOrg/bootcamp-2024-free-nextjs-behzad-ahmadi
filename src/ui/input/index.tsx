@@ -51,7 +51,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
       pattern,
       title,
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={clsx(styles.container, className)}>
@@ -81,8 +81,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = 'Input';
-
