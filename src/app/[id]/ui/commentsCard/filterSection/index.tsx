@@ -27,6 +27,7 @@ export default function FilterSection({}: Props) {
         <SelectInput
           options={feedbackTypeOptions}
           label=""
+          placeholder="نوع بازخورد"
           className={styles.item}
           onChange={option => setFeedbackType(option.value.toString())}
         />
@@ -34,6 +35,7 @@ export default function FilterSection({}: Props) {
         <SelectInput
           options={sortOptions}
           label=""
+          placeholder="ترتیب نمایش"
           className={styles.item}
           onChange={option => setFeedbackSort(option.value.toString())}
         />
