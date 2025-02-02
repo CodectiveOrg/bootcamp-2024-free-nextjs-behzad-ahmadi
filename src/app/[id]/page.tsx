@@ -6,6 +6,7 @@ import { CommentStoreProvider } from '@/app/[id]/context/commentsStore';
 import { doctors } from '@/mock/doctors';
 import NotFound from '@/app/not-found';
 import ContactCard from './ui/contactCard';
+import SocialCard from './ui/socialCard';
 
 interface Props {
   params: { id: string };

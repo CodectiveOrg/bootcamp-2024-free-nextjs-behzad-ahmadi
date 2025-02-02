@@ -1,11 +1,11 @@
-import React, { use, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import styles from './style.module.css';
 import clsx from 'clsx';
 import { formatDateToRelativePersian } from '@/lib/helper';
 
 type Props = { name: string; id: number; status: string; date: string };
 
-export default function UserInfo({ name, id, status, date }: Props) {
+export default function UserInfo({ name, status, date }: Props) {
   const color = useMemo(() => Math.trunc(Math.random() * 5 + 1), [name]);
 
   const translatedStatus = useMemo(() => {

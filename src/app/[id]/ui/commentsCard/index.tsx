@@ -14,8 +14,6 @@ import styles from './style.module.css';
 
 const BaseApiURL = 'https://apigw.paziresh24.com/ravi/v1';
 
-type Props = {};
-
 type ApiResponse = {
   list: Feedback[];
   pageInfo: {
@@ -27,7 +25,7 @@ type ApiResponse = {
   };
 };
 
-export default function CommentsCard({}: Props) {
+export default function CommentsCard() {
   const [feedbacks, setFeedbacks] = React.useState<Feedback[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -97,6 +95,8 @@ export default function CommentsCard({}: Props) {
 
   return (
     <Card>
+      {error && <div>{error}</div>}
+
       <div className={styles.container}>
         <RatingBars ratings={CommentRatings} />
 

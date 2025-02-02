@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './style.module.css';
 import Card from '@/ui/card';
+import Image from 'next/image';
 
 type Props = {
   socials: {
@@ -20,12 +21,15 @@ export default function SocialCard({ socials }: Props) {
         </div>
 
         <div className={styles.body}>
-          <div></div>
-
           <div className={styles.socials}>
             {socials.map((item, index) => (
               <>
-                <img key={index} src={item.image} alt={item.name} />
+                <Image
+                  key={index}
+                  src={item.image}
+                  alt={item.name}
+                  layout="fill"
+                />
                 <span>{item.name}</span>
               </>
             ))}

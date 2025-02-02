@@ -16,9 +16,7 @@ const sortOptions = [
   { label: 'محبوب ترین', value: '-count_like' },
 ];
 
-interface Props {}
-
-export default function FilterSection({}: Props) {
+export default function FilterSection() {
   const { setFeedbackSort, setFeedbackType, setSearch } = useCommentStore();
 
   return (
