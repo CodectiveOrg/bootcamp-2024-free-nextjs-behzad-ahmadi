@@ -42,10 +42,12 @@ export default function CommentsCard({}: Props) {
     filterFeedbackSort,
     filteredFeedbackType,
     minRate,
+    search,
   } = useCommentStore();
 
   useEffect(() => {
-    const fetchFeedbacks = async () => {
+    const controller = new AbortController();
+    const debounceTimeout = setTimeout(async () => {
       setLoading(true);
       setError(null);
 
@@ -58,6 +60,8 @@ export default function CommentsCard({}: Props) {
           minRate !== null
             ? `(avg_rate_value,gt,${minRate})~or(avg_rate_value,is,null)`
             : '',
+          `)`,
+          `(description,like,${search})`,
           filteredFeedbackType,
         ]
           .filter(Boolean) // Remove null or undefined values
@@ -65,7 +69,9 @@ export default function CommentsCard({}: Props) {
 
         const url = `${BaseApiURL}/feedbacks?where=${query}&limit=10&offset=0&sort=${filterFeedbackSort}`;
 
-        const response = await fetch(url);
+        const response = await fetch(url, {
+          signal: controller.signal,
+        });
 
         if (!response.ok) {
           throw new Error(`Failed to fetch feedbacks: ${response.statusText}`);
@@ -74,19 +80,24 @@ export default function CommentsCard({}: Props) {
         const result: ApiResponse = await response.json();
 
         setFeedbacks(result.list);
-      } catch (err: unknown) {
-        setError((err as Error).message);
+      } catch (err) {
+        if (err instanceof Error && err.name === 'AbortError') return;
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError('An unknown error occurred');
+        }
       } finally {
         setLoading(false);
       }
+    }, 500); // 500ms delay
+
+    return () => {
+      controller.abort();
+      clearTimeout(debounceTimeout);
     };
+  }, [doctorSlug, minRate, feedbackSort, feedbackType, search]);
 
-    fetchFeedbacks();
-  }, [doctorSlug, minRate, feedbackSort, feedbackType]);
-
-  // if (loading) return <p>Loading feedbacks...</p>;
-  // if (error) return <p>Error: {error}</p>;
-  console.log('list', feedbacks);
   return (
     <Card>
       <div className={styles.container}>
