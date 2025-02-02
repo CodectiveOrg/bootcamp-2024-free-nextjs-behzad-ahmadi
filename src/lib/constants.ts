@@ -1,1 +1,1 @@
-export const BaseSiteURL = 'https://smart-doctor.vercel.app/';
+export const BaseSiteURL = 'https://smart-doctor.vercel.app';
