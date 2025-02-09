@@ -35,6 +35,8 @@
 
 html {
   color-scheme: dark;
+  font-feature-settings: 'ss01';
+  font-family: 'Vazirmatn', sans-serif;
 }
 
 *,

@@ -1,14 +1,8 @@
 import type { Metadata } from 'next';
-import { Vazirmatn } from 'next/font/google';
 import Header from '@/ui/header/header';
 import Footer from '@/ui/footer';
 import './globals.css';
 import '@/styles/typography.css';
-
-const vazirmatn = Vazirmatn({
-  subsets: ['latin', 'arabic'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'روز نوبت هوشمند',
@@ -21,7 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl" className={vazirmatn.className}>
+    <html lang="fa" dir="rtl">
+      <head>
+        <link
+          href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+          rel="stylesheet"
+          type="text/css"
+        />
+      </head>
       <body>
         <Header />
         <main>{children}</main>
