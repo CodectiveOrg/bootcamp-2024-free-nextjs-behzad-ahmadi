@@ -29,8 +29,9 @@ export default async function DoctorDetails({ params }: Props) {
 
       <div className={styles['left-col']}>
         <div>آدرس و تلفن تماس</div>
+
         <ContactCard
-          adress={info.address}
+          address={info.address}
           name={info.name}
           phone={info.phone}
           location={info.location}

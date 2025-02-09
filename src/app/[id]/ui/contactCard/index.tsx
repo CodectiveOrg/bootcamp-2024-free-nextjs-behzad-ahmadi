@@ -9,13 +9,13 @@ import Link from 'next/link';
 
 interface Props {
   name: string;
-  adress: string;
+  address: string;
   phone: string;
   calendar: { day: string; time: string }[];
   location: string;
 }
 
-export default function ContactCard({ adress, location, name, phone }: Props) {
+export default function ContactCard({ address, location, name, phone }: Props) {
   const call = () => {
     window?.open(`tel:${phone}`);
   };
@@ -24,7 +24,7 @@ export default function ContactCard({ adress, location, name, phone }: Props) {
     <Card>
       <div className={styles.container}>
         <div className={styles.name}>{name}</div>
-        <div className={styles.address}>{adress}</div>
+        <div className={styles.address}>{address}</div>
 
         <div className={styles.calendar}>
           <MingcuteCalendar2Line />
