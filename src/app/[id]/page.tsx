@@ -27,7 +27,7 @@ export default async function DoctorDetails({ params }: Props) {
         </CommentStoreProvider>
       </div>
 
-      <div className={styles['left-col']}>
+      <div className={styles['contact-col']}>
         <div>آدرس و تلفن تماس</div>
 
         <ContactCard
