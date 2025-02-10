@@ -23,7 +23,12 @@ export default function GlobalSearchBox() {
     <div className={styles['global-search-box']}>
       <div className={styles.prefix}></div>
 
-      <input className={styles.input} onChange={handleOnChange} value={value} />
+      <input
+        className={styles.input}
+        onChange={handleOnChange}
+        value={value}
+        placeholder="نام دکتر یا تخصص مورد نظر را جستو کنید"
+      />
 
       <div className={styles.divider}></div>
 
