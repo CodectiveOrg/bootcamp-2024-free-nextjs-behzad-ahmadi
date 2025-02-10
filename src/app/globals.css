@@ -20,6 +20,8 @@
   --color-primary-lighter: hsl(120deg 50% 52%);
   --color-primary-darker: hsl(120deg 50% 44%);
   --color-primary-opposite: var(--color-gray-10);
+  --color-accent: hsl(45deg, 65%, 50%);
+  --color-error: hsl(0, 100%, 63%);
 
   --color-rating: hsl(45deg, 65%, 50%);
 
