@@ -26,18 +26,16 @@ export default function DoctorCard({ doctor }: Props) {
         <Avatar
           image={doctor.image}
           name={doctor.name}
-          subtitle1={''}
-          subtitle2={''}
+          averageRating={doctor.averageRating}
+          subtitle1={doctor.brief}
         />
-      </div>
 
-      <div className={styles.badges}>
-        {doctor.badges.map((item, index) => (
-          <Badge key={index}>{item}</Badge>
-        ))}
+        <div className={styles.badges}>
+          {doctor.badges.map((item, index) => (
+            <Badge key={index}>{item}</Badge>
+          ))}
+        </div>
       </div>
-
-      <div className={styles.rating}></div>
     </Card>
   );
 }

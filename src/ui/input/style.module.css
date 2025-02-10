@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
-  background-color: field; /* Updated to use a CSS variable for better control */
+  background-color: var(--color-gray-12);
   position: relative;
   cursor: pointer;
+  outline: solid 1px var(--color-gray-20);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:focus-within {
-    outline: solid 1px var(--color-gray-30);
+    outline: solid 1px var(--color-gray-40);
   }
 
   .label {
@@ -37,7 +39,7 @@
       font-weight: 500;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
-      background-color: field;
+      background-color: var(--color-gray-12);
 
       &:focus-within {
         outline: none;

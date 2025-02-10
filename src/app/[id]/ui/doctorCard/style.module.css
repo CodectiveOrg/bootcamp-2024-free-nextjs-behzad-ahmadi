@@ -1,19 +1,19 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
 
   .info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
     border-radius: var(--border-radius);
     background-color: var(--color-gray-12);
-    width: 100%;
-    padding: 1rem;
-  }
 
-  .badges {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    overflow-x: auto;
+    .badges {
+      display: flex;
+      column-gap: 0.4rem;
+      align-items: start;
+      flex-wrap: wrap;
+    }
   }
 }

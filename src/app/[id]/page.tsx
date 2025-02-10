@@ -18,7 +18,7 @@ export default async function DoctorDetails({ params }: Props) {
 
   return (
     <div className={styles.container}>
-      <div className={styles['right-col']}>
+      <div className={styles['main-col']}>
         <DoctorCard doctor={info} />
 
         <CommentStoreProvider>

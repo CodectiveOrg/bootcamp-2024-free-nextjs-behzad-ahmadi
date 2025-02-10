@@ -100,7 +100,11 @@ export default function CommentsCard() {
       <div className={styles.container}>
         <RatingBars ratings={CommentRatings} />
 
+        <hr />
+
         <FilterSection />
+
+        <hr />
 
         {loading && <Loading />}
 

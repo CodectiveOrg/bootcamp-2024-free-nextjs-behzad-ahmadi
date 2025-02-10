@@ -12,6 +12,7 @@
     .status {
       display: flex;
       align-items: center;
+      margin-block-start: 1rem;
 
       .statusItem {
         display: flex;

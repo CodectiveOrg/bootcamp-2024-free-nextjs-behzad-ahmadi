@@ -7,6 +7,7 @@
   display: flex;
   margin-block-start: 2rem;
   gap: 1rem;
+  padding-block-end: 1rem;
 
   .filter-items {
     inline-size: 20rem;
@@ -23,9 +24,6 @@
 
   .center-container {
     flex: 1;
-
-    .sort {
-    }
 
     .results {
       margin-block-start: 1.5rem;
