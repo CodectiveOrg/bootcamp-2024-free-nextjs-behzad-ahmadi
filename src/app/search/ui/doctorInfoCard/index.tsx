@@ -7,6 +7,7 @@ import { DoctorData } from '@/types/type';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Avatar from '@/ui/avatar';
+import Rating from '@/app/[id]/ui/commentsCard/commentSection/ui/rating';
 
 interface Props {
   info: DoctorData;
@@ -21,39 +22,56 @@ export default function DoctorCard({ info }: Props) {
 
   return (
     <div className={styles.card}>
-      <Link href={`/${info.id}`}>
-        <Avatar
-          averageRating={info.averageRating}
-          image={info.image}
-          name={info.name}
-        />
-      </Link>
+      <div className={styles.container}>
+        <div>
+          <Link href={`/${info.id}`}>
+            <Avatar
+              image={info.image}
+              name={info.name}
+              subtitle1={
+                <>
+                  <span>تخصص: </span>
+                  <span>{info.brief}</span>
+                </>
+              }
+              subtitle2={
+                <span>اولین نوبت: {info.firstAvailableAppointment}</span>
+              }
+            />
+          </Link>
+        </div>
 
-      <div className={styles.location}>
-        <MingcuteLocationLine />
-        <span>{info.address}</span>
-      </div>
+        <div>
+          <div className={styles.status}>
+            <div className={styles.statusItem}>
+              {info.badges.map((item, index) => (
+                <Badge key={index} className={styles.statusItem}>
+                  {item}
+                </Badge>
+              ))}
+            </div>
+          </div>
 
-      <div className={styles.status}>
-        <div className={styles.statusItem}>
-          {info.badges.map((item, index) => (
-            <Badge key={index}>{item}</Badge>
-          ))}
+          <div className={styles.location}>
+            <MingcuteLocationLine />
+            <span>{info.address}</span>
+          </div>
         </div>
       </div>
 
-      <div className={styles.nextAvailable}>
-        <span>اولین نوبت: {info.firstAvailableAppointment}</span>
-        {/*<span>پاسخ: آنلاین و آماده مشاوره</span>*/}
-      </div>
+      <div className={styles.actionsContainer}>
+        <div className={styles.actions}>
+          <button className={styles.button} onClick={handleReserve}>
+            نوبت دهی اینترنتی
+          </button>
+          <button className={styles.button} onClick={handleReserve}>
+            ویزیت آنلاین
+          </button>
+        </div>
 
-      <div className={styles.actions}>
-        <button className={styles.button} onClick={handleReserve}>
-          نوبت دهی اینترنتی
-        </button>
-        <button className={styles.button} onClick={handleReserve}>
-          ویزیت آنلاین
-        </button>
+        <div className={styles.contact}>
+          <Rating rating={info.averageRating.toFixed(1)} />
+        </div>
       </div>
     </div>
   );

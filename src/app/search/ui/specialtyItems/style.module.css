@@ -5,11 +5,16 @@
   .list {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
     cursor: pointer;
 
     .item {
+      padding: 0.3rem;
       font-size: var(--fz-300);
+      border-radius: 0.5rem;
+
+      &:hover {
+        background-color: var(--color-gray-12);
+      }
     }
   }
 }

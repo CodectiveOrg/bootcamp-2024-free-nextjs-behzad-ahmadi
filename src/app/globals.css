@@ -10,7 +10,7 @@
   --color-gray-12: hsl(0deg 0% 12%);
   --color-gray-10: hsl(0deg 0% 10%);
 
-  --color-card-background: hsl(0deg 0% 8%);
+  --color-card-background: var(--color-gray-12);
 
   --color-default-background: hsl(200deg 4% 10%);
   --color-default-foreground: var(--color-gray-98);
@@ -21,7 +21,7 @@
   --color-primary-darker: hsl(120deg 50% 44%);
   --color-primary-opposite: var(--color-gray-10);
 
-  --color-rating: hsl(51, 100%, 50%);
+  --color-rating: hsl(45deg, 65%, 50%);
 
   --border-radius: 0.875rem;
 
