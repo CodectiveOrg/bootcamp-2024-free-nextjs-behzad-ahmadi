@@ -8,11 +8,12 @@ export default function SmartDocLogo(props: SVGProps<SVGSVGElement>) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      viewBox="0 0 976 976"
-      enableBackground="new 0 0 976 976"
+      viewBox="0 0 1000 1000"
+      enableBackground="new 0 0 1000 1000"
       xmlSpace="preserve"
       width="1em"
       height="1em"
+      preserveAspectRatio="none"
       {...props}
     >
       <path

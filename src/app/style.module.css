@@ -9,13 +9,12 @@
 
   h1 {
     display: inline-flex;
-    gap: 1rem;
     align-items: center;
 
     font-size: var(--fz-700);
 
     svg {
-      font-size: 2em;
+      font-size: 3em;
     }
   }
 
