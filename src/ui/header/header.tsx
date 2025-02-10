@@ -31,7 +31,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <button className={styles.cta}>ورود ثبنام</button>
+      <button className={styles.cta}>ورود - ثبت نام</button>
     </header>
   );
 }
