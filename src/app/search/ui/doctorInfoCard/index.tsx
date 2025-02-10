@@ -7,7 +7,6 @@ import { DoctorData } from '@/types/type';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Avatar from '@/ui/avatar';
-import Rating from '@/app/[id]/ui/commentsCard/commentSection/ui/rating';
 
 interface Props {
   info: DoctorData;
