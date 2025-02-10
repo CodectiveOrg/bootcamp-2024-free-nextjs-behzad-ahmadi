@@ -78,7 +78,12 @@ export default function useSearch() {
     [searchParams],
   );
 
-  return { getParam, setParam, paramsList, addParam, deleteParam };
+  const clearAll = useCallback(() => {
+    const params = new URLSearchParams();
+    router.replace(`?${params.toString()}`, { scroll: false });
+  }, []);
+
+  return { getParam, setParam, paramsList, addParam, deleteParam, clearAll };
 }
 
 const parseSearchParams = (searchParams: ReadonlyURLSearchParams) => {

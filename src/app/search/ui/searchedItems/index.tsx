@@ -6,16 +6,27 @@ import { MingcuteCloseLine } from '@/icons/MingcuteCloseLine';
 import Card from '@/ui/card';
 
 export default function SearchedItems() {
-  const { paramsList, deleteParam } = useSearch();
+  const { paramsList, deleteParam, clearAll } = useSearch();
 
   const handleDelete = (name: string) => {
     deleteParam(name);
+  };
+
+  const handleClearAll = () => {
+    clearAll();
   };
 
   if (!paramsList.length) return null;
 
   return (
     <Card>
+      <span className={styles['delete-all']} onClick={handleClearAll}>
+        حذف همه
+        <span className={styles.delete}>
+          <MingcuteCloseLine />
+        </span>
+      </span>
+
       <div className={styles['search-items']}>
         {paramsList?.map((item, index) => (
           <div key={index}>
