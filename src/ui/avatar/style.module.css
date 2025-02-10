@@ -7,8 +7,8 @@
 }
 
 .profileImage {
-  inline-size: 80px;
-  block-size: 80px;
+  inline-size: 64px;
+  block-size: 64px;
   border-radius: 50%;
   border: 2px solid #3366ff;
 }
@@ -18,12 +18,12 @@
   margin-inline-end: 1rem;
 
   .name {
-    font-size: var(--fz-500);
+    font-size: var(--fz-400);
   }
 
   .sub-title1 {
     margin-block-start: 0.5rem;
-    font-size: var(--fz-200);
+    font-size: var(--fz-100);
   }
 
   .sub-title2 {

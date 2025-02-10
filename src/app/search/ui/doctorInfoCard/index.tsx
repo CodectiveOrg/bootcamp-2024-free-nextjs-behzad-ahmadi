@@ -28,20 +28,16 @@ export default function DoctorCard({ info }: Props) {
             <Avatar
               image={info.image}
               name={info.name}
+              averageRating={info.averageRating}
               subtitle1={
                 <>
                   <span>تخصص: </span>
                   <span>{info.brief}</span>
                 </>
               }
-              subtitle2={
-                <span>اولین نوبت: {info.firstAvailableAppointment}</span>
-              }
             />
           </Link>
-        </div>
 
-        <div>
           <div className={styles.status}>
             <div className={styles.statusItem}>
               {info.badges.map((item, index) => (
@@ -51,26 +47,26 @@ export default function DoctorCard({ info }: Props) {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className={styles.info}>
+          <div>اولین نوبت: {info.firstAvailableAppointment}</div>
 
           <div className={styles.location}>
             <MingcuteLocationLine />
             <span>{info.address}</span>
           </div>
-        </div>
-      </div>
 
-      <div className={styles.actionsContainer}>
-        <div className={styles.actions}>
-          <button className={styles.button} onClick={handleReserve}>
-            نوبت دهی اینترنتی
-          </button>
-          <button className={styles.button} onClick={handleReserve}>
-            ویزیت آنلاین
-          </button>
-        </div>
-
-        <div className={styles.contact}>
-          <Rating rating={info.averageRating.toFixed(1)} />
+          <div className={styles.actionsContainer}>
+            <div className={styles.actions}>
+              <button className={styles.button} onClick={handleReserve}>
+                نوبت دهی اینترنتی
+              </button>
+              <button className={styles.button} onClick={handleReserve}>
+                ویزیت آنلاین
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
