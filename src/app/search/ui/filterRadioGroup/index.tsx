@@ -12,7 +12,11 @@ interface Props {
   title: string;
 }
 
-export default function FilterRadioGroup({ items, groupName, title }: Props) {
+export default function FilterRadioGroup({
+  items,
+  groupName,
+  title,
+}: Props): JSX.Element {
   const { setParam, getParam } = useSearch();
 
   const handleSetFilter = ({ name, value }: SearchParam) => {

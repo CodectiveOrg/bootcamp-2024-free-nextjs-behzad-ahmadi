@@ -40,7 +40,7 @@ export const shareContent = async ({
   title: string;
   text: string;
   url: string;
-}) => {
+}): Promise<void> => {
   try {
     await navigator.share({
       title,

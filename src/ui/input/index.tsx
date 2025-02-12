@@ -52,7 +52,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
       title,
     },
     ref,
-  ) => {
+  ): JSX.Element => {
     return (
       <div className={clsx(styles.input, className)}>
         <span className={styles.label}>{label}</span>

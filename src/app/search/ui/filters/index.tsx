@@ -7,7 +7,7 @@ import { filters } from '@/mock/filters';
 import SwitchFilter from '@/app/search/ui/SwitchFilter';
 import { SearchParams } from '@/hook/useSearch';
 
-export default function ResultsType() {
+export default function ResultsType(): JSX.Element {
   return (
     <Card className={styles.results}>
       <FilterRadioGroup

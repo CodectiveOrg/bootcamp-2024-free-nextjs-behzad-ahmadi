@@ -1,6 +1,6 @@
 'use client';
 
-import { RatingBars } from '@/app/[id]/ui/CommentsCard/RatingBars';
+import RatingBars from '@/app/[id]/ui/CommentsCard/RatingBars';
 import { CommentRatings } from '@/mock/commentRatings';
 import React, { useEffect, useState } from 'react';
 import FilterSection from '@/app/[id]/ui/CommentsCard/FilterSection';
@@ -25,7 +25,7 @@ type ApiResponse = {
   };
 };
 
-export default function CommentsCard() {
+export default function CommentsCard(): JSX.Element {
   const [feedbacks, setFeedbacks] = React.useState<Feedback[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

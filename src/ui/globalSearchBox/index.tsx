@@ -5,7 +5,7 @@ import styles from './style.module.css';
 import useSearch from '@/hook/useSearch';
 import { useEffect, useState } from 'react';
 
-export default function GlobalSearchBox() {
+export default function GlobalSearchBox(): JSX.Element {
   const { setParam, getParam } = useSearch();
   const [value, setValue] = useState('');
 

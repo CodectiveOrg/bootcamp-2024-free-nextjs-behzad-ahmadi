@@ -1,6 +1,6 @@
 import type React from 'react';
 import styles from './style.module.css';
-import { RatingBar } from '@/ui/RatingBar';
+import RatingBar from '@/ui/RatingBar';
 
 interface Props {
   ratings: {
@@ -9,7 +9,7 @@ interface Props {
   }[];
 }
 
-export const RatingBars: React.FC<Props> = ({ ratings }) => {
+export default function RatingBars({ ratings }: Props): JSX.Element {
   return (
     <div className={styles.ratingsWrapper}>
       {ratings.map((rating, index) => (
@@ -17,4 +17,4 @@ export const RatingBars: React.FC<Props> = ({ ratings }) => {
       ))}
     </div>
   );
-};
+}

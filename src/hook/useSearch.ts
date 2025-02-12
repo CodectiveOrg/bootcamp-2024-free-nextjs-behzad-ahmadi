@@ -7,6 +7,15 @@ import {
 } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
+interface UseSearch {
+  getParam: (name: string) => string | null;
+  setParam: (param: SearchParam) => void;
+  paramsList: { name: string; value: string }[];
+  addParam: (param: SearchParam) => void;
+  deleteParam: (name: string) => void;
+  clearAll: () => void;
+}
+
 export type SearchParams =
   | 's'
   | 'result_type'
@@ -26,7 +35,7 @@ export type SearchParam = {
   value: string;
 };
 
-export default function useSearch() {
+export default function useSearch(): UseSearch {
   const searchParams = useSearchParams();
   const router = useRouter();
 

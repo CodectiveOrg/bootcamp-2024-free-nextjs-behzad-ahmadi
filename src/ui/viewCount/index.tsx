@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-export default function ViewCount({ label, className }: Props) {
+export default function ViewCount({ label, className }: Props): JSX.Element {
   return (
     <span className={clsx(styles['view-count'], className)}>
       <span>{label}</span>

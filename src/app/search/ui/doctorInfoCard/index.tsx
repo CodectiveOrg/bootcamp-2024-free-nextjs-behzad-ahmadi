@@ -12,7 +12,7 @@ interface Props {
   info: DoctorData;
 }
 
-export default function DoctorCard({ info }: Props) {
+export default function DoctorCard({ info }: Props): JSX.Element {
   const router = useRouter();
 
   const handleReserve = () => {

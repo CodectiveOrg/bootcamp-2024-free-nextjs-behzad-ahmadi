@@ -1,7 +1,7 @@
-import SmartDocLogo from '@/logo/smartDocLogo';
 import GlobalSearchBox from '@/ui/GlobalSearchBox';
 import styles from './style.module.css';
 import Link from 'next/link';
+import SmartDocLogo from '@/logo/SmartDocLogo';
 
 const searchHistory = ['ارتوپد', 'قلب و عروق', 'داخلی'];
 

@@ -17,7 +17,7 @@ export default function Actions({
   shareTitle,
   shareUrl,
   isBookmarked,
-}: Props) {
+}: Props): JSX.Element {
   const { bookmark, toggleBookmark } = useBookmark({ isBookmarked });
 
   return (

@@ -10,7 +10,7 @@ interface Props {
   doctor: DoctorData;
 }
 
-export default function DoctorCard({ doctor }: Props) {
+export default function DoctorCard({ doctor }: Props): JSX.Element {
   return (
     <Card className={styles.doctor}>
       <div className={styles.actions}>

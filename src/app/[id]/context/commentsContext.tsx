@@ -21,7 +21,11 @@ interface CommentContextType {
 
 const CommentContext = createContext<CommentContextType | undefined>(undefined);
 
-export const CommentProvider = ({ children }: { children: ReactNode }) => {
+export const CommentProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}): JSX.Element => {
   const [feedbackSort, setFeedbackSort] = useState<string>('');
   const [feedbackType, setFeedbackType] = useState<string | null>('all');
   const [search, setSearch] = useState<string>('');

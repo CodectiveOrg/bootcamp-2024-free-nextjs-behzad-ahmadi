@@ -7,11 +7,11 @@ interface RatingBarProps {
   maxScore?: number;
 }
 
-export const RatingBar: React.FC<RatingBarProps> = ({
+export default function RatingBar({
   label,
   score,
   maxScore = 5,
-}) => {
+}: RatingBarProps): JSX.Element {
   return (
     <div className={styles.ratingItem}>
       <div className={styles.ratingHeader}>
@@ -28,4 +28,4 @@ export const RatingBar: React.FC<RatingBarProps> = ({
       </div>
     </div>
   );
-};
+}

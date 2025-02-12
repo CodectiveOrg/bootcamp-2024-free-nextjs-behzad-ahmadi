@@ -6,7 +6,11 @@ import { shareContent } from '@/lib/helper';
 
 type Props = { shareUrl: string; shareTitle: string; shareText: string };
 
-export default function Actions({ shareText, shareTitle, shareUrl }: Props) {
+export default function Actions({
+  shareText,
+  shareTitle,
+  shareUrl,
+}: Props): JSX.Element {
   return (
     <div className={styles.actions}>
       <span>

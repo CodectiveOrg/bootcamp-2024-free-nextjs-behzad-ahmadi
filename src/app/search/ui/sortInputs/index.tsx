@@ -6,7 +6,7 @@ import React, { useCallback, useMemo } from 'react';
 import useSearch from '@/hook/useSearch';
 import styles from './style.module.css';
 
-export default function SortInputs() {
+export default function SortInputs(): JSX.Element {
   const { getParam, setParam } = useSearch();
 
   const sortItem = useMemo(() => getParam('sort'), [getParam]);

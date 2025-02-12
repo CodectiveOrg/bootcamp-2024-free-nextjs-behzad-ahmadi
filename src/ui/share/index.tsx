@@ -14,8 +14,12 @@ interface Props {
   };
 }
 
-export default function Share({ title, shareData, className }: Props) {
-  const handleClick = () => {
+export default function Share({
+  title,
+  shareData,
+  className,
+}: Props): JSX.Element {
+  const handleClick = (): void => {
     if (navigator.share) {
       navigator
         .share({ title: shareData.title, url: shareData.url })

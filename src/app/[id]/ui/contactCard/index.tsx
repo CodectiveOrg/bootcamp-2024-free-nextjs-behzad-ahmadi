@@ -15,7 +15,12 @@ interface Props {
   location: string;
 }
 
-export default function ContactCard({ address, location, name, phone }: Props) {
+export default function ContactCard({
+  address,
+  location,
+  name,
+  phone,
+}: Props): JSX.Element {
   const call = () => {
     window?.open(`tel:${phone}`);
   };

@@ -12,7 +12,11 @@ interface Props {
   onClick?: () => void;
 }
 
-export default function Bookmark({ isBookmarked, title, onClick }: Props) {
+export default function Bookmark({
+  isBookmarked,
+  title,
+  onClick,
+}: Props): JSX.Element {
   return (
     <span onClick={onClick} className={styles.bookmark}>
       {isBookmarked ? <MingcuteBookmarkFill /> : <MingcuteBookmarkLine />}
