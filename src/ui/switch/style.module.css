@@ -3,59 +3,60 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-}
 
-.switch {
-  position: relative;
-  display: inline-block;
-  inline-size: 3.5rem;
-  block-size: 1.5rem;
-}
+  .switch {
+    position: relative;
+    display: inline-block;
+    inline-size: 3.5rem;
+    block-size: 1.5rem;
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  inline-size: 0;
-  block-size: 0;
-}
+    /* Hide default HTML checkbox */
+    input {
+      opacity: 0;
+      inline-size: 0;
+      block-size: 0;
 
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 34px;
-}
+      &:checked {
+        & + .slider {
+          background-color: #2196f3;
 
-.slider:before {
-  position: absolute;
-  content: '';
-  block-size: 85%;
-  inline-size: 40%;
-  left: 8%;
-  bottom: 8%;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 50%;
-}
+          &:before {
+            -webkit-transform: translateX(115%);
+            -ms-transform: translateX(115%);
+            transform: translateX(115%);
+          }
+        }
 
-input:checked + .slider {
-  background-color: #2196f3;
-}
+        &:focus + .slider {
+          box-shadow: 0 0 1px #2196f3;
+        }
+      }
+    }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 34px;
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(115%);
-  -ms-transform: translateX(115%);
-  transform: translateX(115%);
+      &:before {
+        position: absolute;
+        content: '';
+        block-size: 85%;
+        inline-size: 40%;
+        left: 8%;
+        bottom: 8%;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+    }
+  }
 }
