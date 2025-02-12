@@ -48,7 +48,7 @@ export default function useSearch() {
       router.replace(`?${params.toString()}`, { scroll: false });
     },
 
-    [searchParams],
+    [searchParams, router],
   );
 
   const paramsList = useMemo(
@@ -75,13 +75,13 @@ export default function useSearch() {
       params.delete(name);
       router.replace(`?${params.toString()}`, { scroll: false });
     },
-    [searchParams],
+    [searchParams, router],
   );
 
   const clearAll = useCallback(() => {
     const params = new URLSearchParams();
     router.replace(`?${params.toString()}`, { scroll: false });
-  }, []);
+  }, [router]);
 
   return { getParam, setParam, paramsList, addParam, deleteParam, clearAll };
 }
