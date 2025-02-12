@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './style.module.css';
-import Card from '@/ui/card';
+import Card from '@/ui/Card';
 import Image from 'next/image';
 
 type Props = {

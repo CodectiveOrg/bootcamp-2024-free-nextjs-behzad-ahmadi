@@ -1,10 +1,10 @@
 'use client';
 
-import FilterRadioGroup from '@/app/search/ui/filterRadioGroup';
+import FilterRadioGroup from '@/app/search/ui/FilterRadioGroup';
 import styles from './style.module.css';
-import Card from '@/ui/card';
+import Card from '@/ui/Card';
 import { filters } from '@/mock/filters';
-import SwitchFilter from '@/app/search/ui/switchFilter';
+import SwitchFilter from '@/app/search/ui/SwitchFilter';
 import { SearchParams } from '@/hook/useSearch';
 
 export default function ResultsType() {

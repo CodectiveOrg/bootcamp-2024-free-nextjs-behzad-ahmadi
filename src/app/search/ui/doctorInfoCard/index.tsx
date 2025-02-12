@@ -1,12 +1,12 @@
 'use client';
 
 import styles from './style.module.css';
-import Badge from '@/ui/badge';
+import Badge from '@/ui/Badge';
 import MingcuteLocationLine from '@/icons/MingcuteLocationLine';
 import { DoctorData } from '@/types/type';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Avatar from '@/ui/avatar';
+import Avatar from '@/ui/Avatar';
 
 interface Props {
   info: DoctorData;

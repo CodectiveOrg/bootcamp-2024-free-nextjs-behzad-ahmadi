@@ -1,9 +1,9 @@
 'use client';
 
-import SelectInput from '@/ui/selectInput';
+import SelectInput from '@/ui/SelectInput';
 import styles from './style.module.css';
-import { Input } from '@/ui/input';
-import { useCommentContext } from '@/app/[id]/context/commentsContext';
+import { Input } from '@/ui/Input';
+import { useCommentContext } from '@/app/[id]/context/CommentsContext';
 
 const feedbackTypeOptions = [
   { label: 'همه', value: 'all' },

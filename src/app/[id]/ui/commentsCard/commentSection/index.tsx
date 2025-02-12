@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './style.module.css';
-import UserInfo from '@/app/[id]/ui/commentsCard/commentSection/ui/userInfo';
-import Rating from '@/app/[id]/ui/commentsCard/commentSection/ui/rating';
+import UserInfo from '@/app/[id]/ui/CommentsCard/CommentSection/ui/userInfo';
+import Rating from '@/app/[id]/ui/CommentsCard/CommentSection/ui/rating';
 import { Feedback } from '@/types/type';
-import Actions from '@/app/[id]/ui/commentsCard/commentSection/ui/actions';
+import Actions from '@/app/[id]/ui/CommentsCard/CommentSection/ui/actions';
 import { BaseSiteURL } from '@/lib/constants';
 
 type Props = { id: string; comments: Feedback[] };

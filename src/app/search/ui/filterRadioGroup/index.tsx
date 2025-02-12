@@ -19,7 +19,7 @@ export default function FilterRadioGroup({ items, groupName, title }: Props) {
     setParam({ name, value });
   };
 
-  const checkedItem = useMemo(() => getParam(groupName), [getParam(groupName)]);
+  const checkedItem = useMemo(() => getParam(groupName), [getParam, groupName]);
 
   return (
     <div className={styles.container}>

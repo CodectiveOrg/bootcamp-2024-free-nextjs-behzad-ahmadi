@@ -1,5 +1,5 @@
 import { Filters } from '@/types/type';
-import { SelectOption } from '@/ui/selectInput';
+import { SelectOption } from '@/ui/SelectInput';
 
 export const filters: Filters = {
   resultType: [

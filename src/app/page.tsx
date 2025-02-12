@@ -1,5 +1,5 @@
 import SmartDocLogo from '@/logo/smartDocLogo';
-import GlobalSearchBox from '@/ui/globalSearchBox';
+import GlobalSearchBox from '@/ui/GlobalSearchBox';
 import styles from './style.module.css';
 import Link from 'next/link';
 

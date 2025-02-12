@@ -1,6 +1,6 @@
 'use client';
 
-import Card from '@/ui/card';
+import Card from '@/ui/Card';
 import styles from './style.module.css';
 import MingcuteLocationLine from '@/icons/MingcuteLocationLine';
 import MingcuteCalendar2Line from '@/icons/MingcuteCalendar2Line';

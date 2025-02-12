@@ -1,9 +1,9 @@
 'use client';
 
-import Bookmark, { useBookmark } from '@/ui/bookmark';
+import Bookmark, { useBookmark } from '@/ui/Bookmark';
 import styles from './style.module.css';
-import Share from '@/ui/share';
-import ViewCount from '@/ui/viewCount';
+import Share from '@/ui/Share';
+import ViewCount from '@/ui/ViewCount';
 
 interface Props {
   isBookmarked: boolean;

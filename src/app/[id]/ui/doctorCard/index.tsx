@@ -1,8 +1,8 @@
-import Actions from '@/app/[id]/ui/doctorCard/actions';
+import Actions from '@/app/[id]/ui/DoctorCard/Actions';
 import styles from './style.module.css';
-import Avatar from '@/ui/avatar';
-import Badge from '@/ui/badge';
-import Card from '@/ui/card';
+import Avatar from '@/ui/Avatar';
+import Badge from '@/ui/Badge';
+import Card from '@/ui/Card';
 import { DoctorData } from '@/types/type';
 import { BaseSiteURL } from '@/lib/constants';
 

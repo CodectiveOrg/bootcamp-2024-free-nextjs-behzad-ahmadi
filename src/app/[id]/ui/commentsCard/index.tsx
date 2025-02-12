@@ -1,15 +1,15 @@
 'use client';
 
-import { RatingBars } from '@/app/[id]/ui/commentsCard/ratingBars';
+import { RatingBars } from '@/app/[id]/ui/CommentsCard/ratingBars';
 import { CommentRatings } from '@/mock/commentRatings';
 import React, { useEffect, useState } from 'react';
-import FilterSection from '@/app/[id]/ui/commentsCard/filterSection';
-import Card from '@/ui/card';
+import FilterSection from '@/app/[id]/ui/CommentsCard/filterSection';
+import Card from '@/ui/Card';
 import { Feedback } from '@/types/type';
-import { useCommentContext } from '@/app/[id]/context/commentsContext';
-import CommentSection from '@/app/[id]/ui/commentsCard/commentSection';
+import { useCommentContext } from '@/app/[id]/context/CommentsContext';
+import CommentSection from '@/app/[id]/ui/CommentsCard/CommentSection';
 import { useParams } from 'next/navigation';
-import Loading from '@/ui/loading/loading';
+import Loading from '@/ui/Loading/loading';
 import styles from './style.module.css';
 
 const BaseApiURL = 'https://apigw.paziresh24.com/ravi/v1';
@@ -78,7 +78,13 @@ export default function CommentsCard() {
       controller.abort();
       clearTimeout(debounceTimeout);
     };
-  }, [feedbackSort, feedbackType, search, filterFeedbackSort]);
+  }, [
+    feedbackSort,
+    feedbackType,
+    search,
+    filterFeedbackSort,
+    filteredFeedbackType,
+  ]);
 
   return (
     <Card>

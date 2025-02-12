@@ -1,7 +1,7 @@
 'use client';
 
 import { appointmentOptions, sortOptions } from '@/mock/filters';
-import SelectInput, { SelectOption } from '@/ui/selectInput';
+import SelectInput, { SelectOption } from '@/ui/SelectInput';
 import React, { useCallback, useMemo } from 'react';
 import useSearch from '@/hook/useSearch';
 import styles from './style.module.css';
@@ -9,10 +9,10 @@ import styles from './style.module.css';
 export default function SortInputs() {
   const { getParam, setParam } = useSearch();
 
-  const sortItem = useMemo(() => getParam('sort'), [getParam('sort')]);
+  const sortItem = useMemo(() => getParam('sort'), [getParam]);
   const appointmentItem = useMemo(
     () => getParam('firstAvailableAppointment'),
-    [getParam('firstAvailableAppointment')],
+    [getParam],
   );
 
   const handleSortChange = useCallback(

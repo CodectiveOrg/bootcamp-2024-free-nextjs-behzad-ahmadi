@@ -1,6 +1,6 @@
 import type React from 'react';
 import styles from './style.module.css';
-import { RatingBar } from '@/ui/ratingBar/ratingBar';
+import { RatingBar } from '@/ui/RatingBar';
 
 interface Props {
   ratings: {

@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './style.module.css';
-import DoctorCard from '@/app/[id]/ui/doctorCard';
-import CommentsCard from '@/app/[id]/ui/commentsCard';
-import { CommentProvider } from '@/app/[id]/context/commentsContext';
+import DoctorCard from '@/app/[id]/ui/DoctorCard';
+import CommentsCard from '@/app/[id]/ui/CommentsCard';
+import { CommentProvider } from '@/app/[id]/context/CommentsContext';
 import { doctors } from '@/mock/doctors';
 import NotFound from '@/app/not-found';
-import ContactCard from './ui/contactCard';
+import ContactCard from './ui/ContactCard';
 
 interface Props {
   params: { id: string };
