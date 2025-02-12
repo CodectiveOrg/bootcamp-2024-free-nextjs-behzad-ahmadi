@@ -1,7 +1,7 @@
 import type React from 'react';
 import styles from './style.module.css';
 
-interface RatingBarProps {
+interface Props {
   label: string;
   score: number;
   maxScore?: number;
@@ -11,7 +11,7 @@ export default function RatingBar({
   label,
   score,
   maxScore = 5,
-}: RatingBarProps): JSX.Element {
+}: Props): JSX.Element {
   return (
     <div className={styles.ratingItem}>
       <div className={styles.ratingHeader}>
