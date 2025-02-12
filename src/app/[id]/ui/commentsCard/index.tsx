@@ -1,9 +1,9 @@
 'use client';
 
-import { RatingBars } from '@/app/[id]/ui/CommentsCard/ratingBars';
+import { RatingBars } from '@/app/[id]/ui/CommentsCard/RatingBars';
 import { CommentRatings } from '@/mock/commentRatings';
 import React, { useEffect, useState } from 'react';
-import FilterSection from '@/app/[id]/ui/CommentsCard/filterSection';
+import FilterSection from '@/app/[id]/ui/CommentsCard/FilterSection';
 import Card from '@/ui/Card';
 import { Feedback } from '@/types/type';
 import { useCommentContext } from '@/app/[id]/context/CommentsContext';
