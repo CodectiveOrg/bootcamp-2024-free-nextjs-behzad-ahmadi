@@ -3,7 +3,7 @@
 import SelectInput from '@/ui/selectInput';
 import styles from './style.module.css';
 import { Input } from '@/ui/input';
-import { useCommentStore } from '@/app/[id]/context/commentsStore';
+import { useCommentContext } from '@/app/[id]/context/commentsContext';
 
 const feedbackTypeOptions = [
   { label: 'همه', value: 'all' },
@@ -17,7 +17,7 @@ const sortOptions = [
 ];
 
 export default function FilterSection() {
-  const { setFeedbackSort, setFeedbackType, setSearch } = useCommentStore();
+  const { setFeedbackSort, setFeedbackType, setSearch } = useCommentContext();
 
   return (
     <div className={styles.container}>

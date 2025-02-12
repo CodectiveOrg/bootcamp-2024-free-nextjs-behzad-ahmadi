@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './style.module.css';
 import DoctorCard from '@/app/[id]/ui/doctorCard';
 import CommentsCard from '@/app/[id]/ui/commentsCard';
-import { CommentStoreProvider } from '@/app/[id]/context/commentsStore';
+import { CommentProvider } from '@/app/[id]/context/commentsContext';
 import { doctors } from '@/mock/doctors';
 import NotFound from '@/app/not-found';
 import ContactCard from './ui/contactCard';
@@ -21,10 +21,10 @@ export default async function DoctorDetails({ params }: Props) {
       <div className={styles['main-col']}>
         <DoctorCard doctor={info} />
 
-        <CommentStoreProvider>
+        <CommentProvider>
           <div>نظرات در مورد دکتر {info.name}</div>
           <CommentsCard />
-        </CommentStoreProvider>
+        </CommentProvider>
       </div>
 
       <div className={styles['contact-col']}>

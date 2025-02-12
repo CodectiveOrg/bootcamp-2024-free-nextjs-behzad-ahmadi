@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import FilterSection from '@/app/[id]/ui/commentsCard/filterSection';
 import Card from '@/ui/card';
 import { Feedback } from '@/types/type';
-import { useCommentStore } from '@/app/[id]/context/commentsStore';
+import { useCommentContext } from '@/app/[id]/context/commentsContext';
 import CommentSection from '@/app/[id]/ui/commentsCard/commentSection';
 import { useParams } from 'next/navigation';
 import Loading from '@/ui/loading/loading';
@@ -38,7 +38,7 @@ export default function CommentsCard() {
     filteredFeedbackType,
     minRate,
     search,
-  } = useCommentStore();
+  } = useCommentContext();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -91,7 +91,14 @@ export default function CommentsCard() {
       controller.abort();
       clearTimeout(debounceTimeout);
     };
-  }, [doctorSlug, minRate, feedbackSort, feedbackType, search]);
+  }, [
+    doctorSlug,
+    minRate,
+    feedbackSort,
+    feedbackType,
+    search,
+    filterFeedbackSort,
+  ]);
 
   return (
     <Card>

@@ -8,7 +8,7 @@ import React, {
   ReactNode,
 } from 'react';
 
-interface CommentStoreContextType {
+interface CommentContextType {
   doctorSlug: string | null;
   setDoctorSlug: (value: string | null) => void;
   minRate: number | null;
@@ -23,11 +23,9 @@ interface CommentStoreContextType {
   setSearch: (value: string) => void;
 }
 
-const CommentStoreContext = createContext<CommentStoreContextType | undefined>(
-  undefined,
-);
+const CommentContext = createContext<CommentContextType | undefined>(undefined);
 
-export const CommentStoreProvider = ({ children }: { children: ReactNode }) => {
+export const CommentProvider = ({ children }: { children: ReactNode }) => {
   const [doctorSlug, setDoctorSlug] = useState<string | null>(
     'دکتر--محمدرسول-نظام-آبادی',
   );
@@ -53,7 +51,7 @@ export const CommentStoreProvider = ({ children }: { children: ReactNode }) => {
   }, [feedbackSort]);
 
   return (
-    <CommentStoreContext.Provider
+    <CommentContext.Provider
       value={{
         doctorSlug,
         setDoctorSlug,
@@ -70,16 +68,14 @@ export const CommentStoreProvider = ({ children }: { children: ReactNode }) => {
       }}
     >
       {children}
-    </CommentStoreContext.Provider>
+    </CommentContext.Provider>
   );
 };
 
-export const useCommentStore = () => {
-  const context = useContext(CommentStoreContext);
+export const useCommentContext = () => {
+  const context = useContext(CommentContext);
   if (!context) {
-    throw new Error(
-      'useCommentStore must be used within a CommentStoreProvider',
-    );
+    throw new Error('useCommentContext must be used within a CommentProvider');
   }
   return context;
 };
