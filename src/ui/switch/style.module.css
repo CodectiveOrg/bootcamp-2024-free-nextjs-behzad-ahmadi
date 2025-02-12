@@ -8,8 +8,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  inline-size: 60px;
-  block-size: 34px;
+  inline-size: 3.5rem;
+  block-size: 1.5rem;
 }
 
 /* Hide default HTML checkbox */
@@ -36,10 +36,10 @@
 .slider:before {
   position: absolute;
   content: '';
-  block-size: 26px;
-  inline-size: 26px;
-  left: 4px;
-  bottom: 4px;
+  block-size: 85%;
+  inline-size: 40%;
+  left: 8%;
+  bottom: 8%;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -55,7 +55,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(115%);
+  -ms-transform: translateX(115%);
+  transform: translateX(115%);
 }
