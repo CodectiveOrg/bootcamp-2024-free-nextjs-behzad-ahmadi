@@ -9,8 +9,6 @@ import React, {
 } from 'react';
 
 interface CommentContextType {
-  minRate: number | null;
-  setMinRate: (value: number | null) => void;
   feedbackSort: string;
   setFeedbackSort: (value: string) => void;
   feedbackType: string | null;
@@ -24,7 +22,6 @@ interface CommentContextType {
 const CommentContext = createContext<CommentContextType | undefined>(undefined);
 
 export const CommentProvider = ({ children }: { children: ReactNode }) => {
-  const [minRate, setMinRate] = useState<number | null>(0);
   const [feedbackSort, setFeedbackSort] = useState<string>('');
   const [feedbackType, setFeedbackType] = useState<string | null>('all');
   const [search, setSearch] = useState<string>('');
@@ -48,8 +45,6 @@ export const CommentProvider = ({ children }: { children: ReactNode }) => {
   return (
     <CommentContext.Provider
       value={{
-        minRate,
-        setMinRate,
         feedbackSort,
         setFeedbackSort,
         feedbackType,

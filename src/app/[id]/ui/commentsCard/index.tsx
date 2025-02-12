@@ -35,7 +35,6 @@ export default function CommentsCard() {
     feedbackType,
     filterFeedbackSort,
     filteredFeedbackType,
-    minRate,
     search,
   } = useCommentContext();
 
@@ -46,15 +45,7 @@ export default function CommentsCard() {
       setError(null);
 
       try {
-        const query = [
-          `(reply_to_feedback_id,is,null)`,
-          minRate !== null
-            ? `(avg_rate_value,gt,${minRate})~or(avg_rate_value,is,null)`
-            : '',
-          `)`,
-          `(description,like,${search})`,
-          filteredFeedbackType,
-        ]
+        const query = [`(description,like,${search})`, filteredFeedbackType]
           .filter(Boolean) // Remove null or undefined values
           .join('~and');
 
@@ -87,7 +78,7 @@ export default function CommentsCard() {
       controller.abort();
       clearTimeout(debounceTimeout);
     };
-  }, [minRate, feedbackSort, feedbackType, search, filterFeedbackSort]);
+  }, [feedbackSort, feedbackType, search, filterFeedbackSort]);
 
   return (
     <Card>
