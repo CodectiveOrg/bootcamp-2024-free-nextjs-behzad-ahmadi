@@ -31,7 +31,6 @@ export default function CommentsCard() {
   const [error, setError] = useState<string | null>(null);
   const { id } = useParams<{ id: string }>();
   const {
-    doctorSlug,
     feedbackSort,
     feedbackType,
     filterFeedbackSort,
@@ -48,9 +47,6 @@ export default function CommentsCard() {
 
       try {
         const query = [
-          doctorSlug
-            ? `(doctor_slug,eq,${encodeURIComponent(doctorSlug)})`
-            : '',
           `(reply_to_feedback_id,is,null)`,
           minRate !== null
             ? `(avg_rate_value,gt,${minRate})~or(avg_rate_value,is,null)`
@@ -91,14 +87,7 @@ export default function CommentsCard() {
       controller.abort();
       clearTimeout(debounceTimeout);
     };
-  }, [
-    doctorSlug,
-    minRate,
-    feedbackSort,
-    feedbackType,
-    search,
-    filterFeedbackSort,
-  ]);
+  }, [minRate, feedbackSort, feedbackType, search, filterFeedbackSort]);
 
   return (
     <Card>

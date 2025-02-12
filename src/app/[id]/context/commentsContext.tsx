@@ -9,8 +9,6 @@ import React, {
 } from 'react';
 
 interface CommentContextType {
-  doctorSlug: string | null;
-  setDoctorSlug: (value: string | null) => void;
   minRate: number | null;
   setMinRate: (value: number | null) => void;
   feedbackSort: string;
@@ -26,9 +24,6 @@ interface CommentContextType {
 const CommentContext = createContext<CommentContextType | undefined>(undefined);
 
 export const CommentProvider = ({ children }: { children: ReactNode }) => {
-  const [doctorSlug, setDoctorSlug] = useState<string | null>(
-    'دکتر--محمدرسول-نظام-آبادی',
-  );
   const [minRate, setMinRate] = useState<number | null>(0);
   const [feedbackSort, setFeedbackSort] = useState<string>('');
   const [feedbackType, setFeedbackType] = useState<string | null>('all');
@@ -53,8 +48,6 @@ export const CommentProvider = ({ children }: { children: ReactNode }) => {
   return (
     <CommentContext.Provider
       value={{
-        doctorSlug,
-        setDoctorSlug,
         minRate,
         setMinRate,
         feedbackSort,
