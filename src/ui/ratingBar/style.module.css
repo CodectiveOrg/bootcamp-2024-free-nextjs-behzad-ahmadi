@@ -14,14 +14,14 @@
     }
   }
 
-  .progressBarBg {
+  .progressBar {
     height: 0.5rem;
     width: 100%;
     background-color: var(--color-gray-20);
     border-radius: 0.5rem;
     overflow: hidden;
 
-    .progressBar {
+    .progressed {
       block-size: 100%;
       background-color: var(--color-primary);
       border-radius: 0.5rem;

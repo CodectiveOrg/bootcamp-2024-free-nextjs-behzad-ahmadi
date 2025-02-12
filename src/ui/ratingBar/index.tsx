@@ -18,9 +18,9 @@ export default function RatingBar({
         <span className={styles.ratingLabel}>{label}</span>
         <span className={styles.ratingScore}>{score.toFixed(1)}</span>
       </div>
-      <div className={styles.progressBarBg}>
+      <div className={styles.progressBar}>
         <div
-          className={styles.progressBar}
+          className={styles.progressed}
           style={{
             width: `${(score / maxScore) * 100}%`,
           }}
