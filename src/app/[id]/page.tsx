@@ -17,7 +17,7 @@ export default async function DoctorDetails({ params }: Props) {
   if (!info) return <NotFound />;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.details}>
       <div className={styles['main-col']}>
         <DoctorCard doctor={info} />
 

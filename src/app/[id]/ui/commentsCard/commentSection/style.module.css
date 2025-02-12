@@ -8,7 +8,7 @@
     opacity: 0.2;
   }
 
-  .container {
+  .comments {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

@@ -54,7 +54,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
     ref,
   ) => {
     return (
-      <div className={clsx(styles.container, className)}>
+      <div className={clsx(styles.input, className)}>
         <span className={styles.label}>{label}</span>
         <div className={styles['input-wrapper']}>
           <input

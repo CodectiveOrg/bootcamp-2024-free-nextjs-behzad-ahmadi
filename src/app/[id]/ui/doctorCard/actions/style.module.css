@@ -1,4 +1,4 @@
-.container {
+.actions {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
   gap: 1.5rem;

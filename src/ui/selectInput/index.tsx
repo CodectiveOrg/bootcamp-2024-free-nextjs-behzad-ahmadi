@@ -67,7 +67,7 @@ export default function SelectInput({
   return (
     <div
       ref={dropdownRef}
-      className={clsx(styles.container, className)}
+      className={clsx(styles.select, className)}
       onClick={() => setIsDropdownOpen(prev => !prev)}
     >
       <span className={styles.label}>{label}</span>

@@ -1,4 +1,4 @@
-.container {
+.home {
   display: grid;
   align-content: center;
   justify-items: center;
@@ -23,9 +23,6 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
-
-    .title {
-    }
 
     > ul {
       display: flex;

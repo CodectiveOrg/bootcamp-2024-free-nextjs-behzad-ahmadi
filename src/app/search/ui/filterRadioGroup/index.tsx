@@ -22,7 +22,7 @@ export default function FilterRadioGroup({ items, groupName, title }: Props) {
   const checkedItem = useMemo(() => getParam(groupName), [getParam, groupName]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.filter}>
       <p className={styles.title}>{title}</p>
       <div className={styles.list}>
         {items.map((item, index) => (

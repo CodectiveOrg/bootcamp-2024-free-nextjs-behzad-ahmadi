@@ -8,7 +8,7 @@ type Props = { shareUrl: string; shareTitle: string; shareText: string };
 
 export default function Actions({ shareText, shareTitle, shareUrl }: Props) {
   return (
-    <div className={styles.container}>
+    <div className={styles.actions}>
       <span>
         <MingcuteThumbUp2Line /> مفید بود
       </span>

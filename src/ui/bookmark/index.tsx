@@ -14,7 +14,7 @@ interface Props {
 
 export default function Bookmark({ isBookmarked, title, onClick }: Props) {
   return (
-    <span onClick={onClick} className={styles.container}>
+    <span onClick={onClick} className={styles.bookmark}>
       {isBookmarked ? <MingcuteBookmarkFill /> : <MingcuteBookmarkLine />}
       <span>{title}</span>
     </span>

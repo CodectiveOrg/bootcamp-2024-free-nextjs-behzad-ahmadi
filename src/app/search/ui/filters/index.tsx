@@ -9,7 +9,7 @@ import { SearchParams } from '@/hook/useSearch';
 
 export default function ResultsType() {
   return (
-    <Card className={styles.container}>
+    <Card className={styles.results}>
       <FilterRadioGroup
         items={filters.resultType}
         groupName="result_type"

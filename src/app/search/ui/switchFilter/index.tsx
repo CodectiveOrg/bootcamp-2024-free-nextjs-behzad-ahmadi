@@ -1,7 +1,6 @@
 'use client';
 
 import Switch from '@/ui/Switch';
-import styles from './style.module.css';
 import useSearch, { SearchParam, SearchParams } from '@/hook/useSearch';
 import { useMemo } from 'react';
 
@@ -20,12 +19,10 @@ export default function SwitchFilter({ id, title }: Props) {
   };
 
   return (
-    <div className={styles.container}>
-      <Switch
-        title={title}
-        checked={checkedItem}
-        onClick={() => handleSetFilter({ name: id, value: title })}
-      />
-    </div>
+    <Switch
+      title={title}
+      checked={checkedItem}
+      onClick={() => handleSetFilter({ name: id, value: title })}
+    />
   );
 }

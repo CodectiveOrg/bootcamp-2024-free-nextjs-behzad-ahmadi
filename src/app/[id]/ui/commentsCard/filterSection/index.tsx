@@ -20,7 +20,7 @@ export default function FilterSection() {
   const { setFeedbackSort, setFeedbackType, setSearch } = useCommentContext();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.filters}>
       <div className={styles.selects}>
         <SelectInput
           options={feedbackTypeOptions}

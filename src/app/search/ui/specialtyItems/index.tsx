@@ -13,7 +13,7 @@ export default function SpecialtyItems() {
   };
 
   return (
-    <Card className={styles.container}>
+    <Card className={styles.specialty}>
       <ul className={styles.list}>
         {doctorSpecialties.map((item, index) => (
           <li

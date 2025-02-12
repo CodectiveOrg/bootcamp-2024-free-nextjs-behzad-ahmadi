@@ -14,7 +14,7 @@ export default function CommentSection({ id, comments }: Props) {
   return (
     <div className={styles.list}>
       {comments?.map(comment => (
-        <div className={styles.container} key={comment.Id}>
+        <div className={styles.comments} key={comment.Id}>
           <div className={styles.header}>
             <UserInfo
               name={comment?.user_display_name}

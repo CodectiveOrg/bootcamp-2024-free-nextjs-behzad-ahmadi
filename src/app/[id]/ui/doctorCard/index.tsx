@@ -12,7 +12,7 @@ interface Props {
 
 export default function DoctorCard({ doctor }: Props) {
   return (
-    <Card className={styles.container}>
+    <Card className={styles.doctor}>
       <div className={styles.actions}>
         <Actions
           viewCount={doctor.totalVotes}

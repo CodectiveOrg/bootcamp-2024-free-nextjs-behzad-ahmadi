@@ -25,7 +25,7 @@ export default function Share({ title, shareData, className }: Props) {
   };
 
   return (
-    <span className={clsx(styles.container, className)} onClick={handleClick}>
+    <span className={clsx(styles.share, className)} onClick={handleClick}>
       <MingcuteShare2Line />
 
       <span>{title}</span>

@@ -21,7 +21,7 @@ export default function Actions({
   const { bookmark, toggleBookmark } = useBookmark({ isBookmarked });
 
   return (
-    <div className={styles.container}>
+    <div className={styles.actions}>
       <Bookmark
         isBookmarked={bookmark}
         title="ذخیره"

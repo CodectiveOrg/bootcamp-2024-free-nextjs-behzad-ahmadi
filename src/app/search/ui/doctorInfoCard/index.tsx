@@ -21,7 +21,7 @@ export default function DoctorCard({ info }: Props) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.container}>
+      <div className={styles.doctor}>
         <div>
           <Link href={`/${info.id}`}>
             <Avatar

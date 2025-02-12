@@ -7,7 +7,7 @@ const searchHistory = ['ارتوپد', 'قلب و عروق', 'داخلی'];
 
 export default async function Home() {
   return (
-    <div className={styles.container}>
+    <div className={styles.home}>
       <h1>
         <SmartDocLogo />
         <span>پزشک؛ هوشمند</span>

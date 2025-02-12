@@ -22,7 +22,7 @@ export default function ContactCard({ address, location, name, phone }: Props) {
 
   return (
     <Card>
-      <div className={styles.container}>
+      <div className={styles.contact}>
         <div className={styles.name}>{name}</div>
         <div className={styles.address}>{address}</div>
 

@@ -20,7 +20,7 @@ export default function UserInfo({ name, status, date }: Props) {
   }, [status]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.user}>
       <div className={clsx(styles.avatar, styles[`bg-color-${color}`])}>
         {name?.slice(0, 1)}
       </div>

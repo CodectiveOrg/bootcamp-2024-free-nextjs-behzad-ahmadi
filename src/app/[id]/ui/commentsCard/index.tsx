@@ -90,7 +90,7 @@ export default function CommentsCard() {
     <Card>
       {error && <div>{error}</div>}
 
-      <div className={styles.container}>
+      <div className={styles.comments}>
         <RatingBars ratings={CommentRatings} />
 
         <hr />

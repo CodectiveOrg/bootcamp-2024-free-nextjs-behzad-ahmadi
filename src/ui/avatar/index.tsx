@@ -15,7 +15,7 @@ interface Props {
 
 export default function Avatar({ ...info }: Props) {
   return (
-    <div className={styles.container}>
+    <div className={styles.avatar}>
       <Image
         src={info.image}
         alt="Doctor profile"

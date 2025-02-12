@@ -33,7 +33,7 @@ export default function SortInputs() {
   );
 
   return (
-    <div className={styles.container}>
+    <div className={styles.sort}>
       <SelectInput
         options={sortOptions}
         onChange={handleSortChange}
