@@ -2,20 +2,18 @@
 
 import Bookmark, { useBookmark } from '@/ui/Bookmark';
 import styles from './style.module.css';
-import Share from '@/ui/Share';
+import Share, { ShareData } from '@/ui/Share';
 import ViewCount from '@/ui/ViewCount';
 
 interface Props {
   isBookmarked: boolean;
-  shareUrl: string;
-  shareTitle: string;
+  shareData: ShareData;
   viewCount: number;
 }
 
 export default function Actions({
   viewCount,
-  shareTitle,
-  shareUrl,
+  shareData,
   isBookmarked,
 }: Props): JSX.Element {
   const { bookmark, toggleBookmark } = useBookmark({ isBookmarked });
@@ -28,10 +26,7 @@ export default function Actions({
         onClick={toggleBookmark}
       />
 
-      <Share
-        title="اشتراک گذاری"
-        shareData={{ title: shareTitle, url: shareUrl }}
-      />
+      <Share title="اشتراک گذاری" shareData={shareData} />
 
       <ViewCount label={viewCount.toString()} />
     </div>

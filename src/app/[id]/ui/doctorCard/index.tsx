@@ -17,8 +17,10 @@ export default function DoctorCard({ doctor }: Props): JSX.Element {
         <Actions
           viewCount={doctor.totalVotes}
           isBookmarked={false}
-          shareTitle={doctor.name}
-          shareUrl={`${BaseSiteURL}/${doctor.id}`}
+          shareData={{
+            title: doctor.name,
+            url: `${BaseSiteURL}/${doctor.id}`,
+          }}
         />
       </div>
 

@@ -5,13 +5,15 @@ import MingcuteShare2Line from '@/icons/MingcuteShare2Line';
 import styles from './style.module.css';
 import clsx from 'clsx';
 
+export type ShareData = {
+  title: string;
+  url: string;
+};
+
 interface Props {
   title?: string;
   className?: string;
-  shareData: {
-    title: string;
-    url: string;
-  };
+  shareData: ShareData;
 }
 
 export default function Share({
@@ -20,12 +22,14 @@ export default function Share({
   className,
 }: Props): JSX.Element {
   const handleClick = (): void => {
-    if (navigator.share) {
-      navigator
-        .share({ title: shareData.title, url: shareData.url })
-        .then(() => console.log('Successful share'))
-        .catch(error => console.log('Error sharing:', error));
+    if (!navigator.share) {
+      return;
     }
+
+    navigator
+      .share({ title: shareData.title, url: shareData.url })
+      .then(() => console.log('Successful share'))
+      .catch(error => console.log('Error sharing:', error));
   };
 
   return (

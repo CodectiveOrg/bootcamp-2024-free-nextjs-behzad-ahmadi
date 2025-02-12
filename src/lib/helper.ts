@@ -1,3 +1,5 @@
+import { ShareData } from '@/ui/Share';
+
 export function formatDateToRelativePersian(dateString: string): string {
   const now = new Date();
   const date = new Date(dateString);
@@ -34,17 +36,11 @@ export function formatDateToRelativePersian(dateString: string): string {
 
 export const shareContent = async ({
   title,
-  text,
   url,
-}: {
-  title: string;
-  text: string;
-  url: string;
-}): Promise<void> => {
+}: ShareData): Promise<void> => {
   try {
     await navigator.share({
       title,
-      text,
       url,
     });
   } catch (err) {

@@ -3,14 +3,11 @@ import styles from './style.module.css';
 import MingcuteShare2Line from '@/icons/MingcuteShare2Line';
 import MingcuteThumbUp2Line from '@/icons/MingcuteThumbUp2Line';
 import { shareContent } from '@/lib/helper';
+import { ShareData } from '@/ui/Share';
 
-type Props = { shareUrl: string; shareTitle: string; shareText: string };
+type Props = { shareData: ShareData };
 
-export default function Actions({
-  shareText,
-  shareTitle,
-  shareUrl,
-}: Props): JSX.Element {
+export default function Actions({ shareData }: Props) {
   return (
     <div className={styles.actions}>
       <span>
@@ -19,7 +16,7 @@ export default function Actions({
 
       <span
         onClick={() => {
-          shareContent({ url: shareUrl, text: shareText, title: shareTitle });
+          shareContent(shareData);
         }}
       >
         <MingcuteShare2Line />

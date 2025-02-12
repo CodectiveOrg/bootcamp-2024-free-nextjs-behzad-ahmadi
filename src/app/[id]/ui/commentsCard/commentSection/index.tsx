@@ -34,12 +34,10 @@ export default function CommentSection({ id, comments }: Props): JSX.Element {
 
           <div className={styles.actions}>
             <Actions
-              shareUrl={shareUrl}
-              shareText={comment.description?.slice(
-                0,
-                Math.min(10, comment.description.length - 10),
-              )}
-              shareTitle={comment.doctor_slug}
+              shareData={{
+                title: comment.doctor_slug,
+                url: shareUrl,
+              }}
             />
           </div>
 
