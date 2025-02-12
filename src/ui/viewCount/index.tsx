@@ -11,7 +11,6 @@ export default function ViewCount({ label, className }: Props) {
   return (
     <span className={clsx(styles['view-count'], className)}>
       <span>{label}</span>
-
       <MingcuteEye2Line />
     </span>
   );
