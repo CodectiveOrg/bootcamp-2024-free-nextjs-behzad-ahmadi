@@ -3,26 +3,26 @@ import styles from './style.module.css';
 
 interface Props {
   label: string;
-  score: number;
+  rating: number;
   maxScore?: number;
 }
 
 export default function RatingBar({
   label,
-  score,
+  rating,
   maxScore = 5,
 }: Props): JSX.Element {
   return (
     <div className={styles.ratingItem}>
       <div className={styles.ratingHeader}>
         <span className={styles.ratingLabel}>{label}</span>
-        <span className={styles.ratingScore}>{score.toFixed(1)}</span>
+        <span className={styles.ratingScore}>{rating.toFixed(1)}</span>
       </div>
       <div className={styles.progressBar}>
         <div
           className={styles.progressed}
           style={{
-            width: `${(score / maxScore) * 100}%`,
+            inlineSize: `${(rating / maxScore) * 100}%`,
           }}
         />
       </div>

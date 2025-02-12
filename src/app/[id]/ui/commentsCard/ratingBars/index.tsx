@@ -13,7 +13,7 @@ export default function RatingBars({ ratings }: Props): JSX.Element {
   return (
     <div className={styles.ratingsWrapper}>
       {ratings.map((rating, index) => (
-        <RatingBar key={index} label={rating.label} score={rating.score} />
+        <RatingBar key={index} label={rating.label} rating={rating.score} />
       ))}
     </div>
   );
