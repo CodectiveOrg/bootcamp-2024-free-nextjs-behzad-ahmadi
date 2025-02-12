@@ -6,7 +6,7 @@
   .ratingHeader {
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: var(--color-gray-98);
 
     .ratingLabel,
     .ratingScore {

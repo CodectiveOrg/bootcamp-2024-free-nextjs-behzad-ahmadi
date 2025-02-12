@@ -5,7 +5,7 @@
   cursor: pointer;
 
   .view-count {
-    background-color: red;
+    background-color: var(--color-error);
     flex: 1;
     justify-content: end;
   }

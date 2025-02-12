@@ -56,8 +56,8 @@
         gap: 1rem;
 
         .button {
-          background-color: #3366ff;
-          color: white;
+          background-color: var(--color-secondary);
+          color: var(--color-gray-98);
           border: none;
           border-radius: 8px;
           padding-inline: 0.8rem;
@@ -65,10 +65,10 @@
           font-size: 0.8rem;
           cursor: pointer;
           white-space: nowrap;
-          transition: background-color 0.2s;
+          transition: background-color var(--animation-duration-fast);
 
           &:hover {
-            background-color: #2952cc;
+            background-color: var(--color-secondary-darker);
           }
         }
 
