@@ -36,7 +36,7 @@ export default function SelectInput({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleOptionClick = (option: SelectOption, event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent the click event from propagating
+    event.stopPropagation();
     setSelectedOption(option);
     onChange?.(option);
     setIsDropdownOpen(false);
