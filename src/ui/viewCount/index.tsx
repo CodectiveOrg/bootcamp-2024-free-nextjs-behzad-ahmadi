@@ -1,7 +1,7 @@
 import MingcuteEye2Line from '@/icons/MingcuteEye2Line';
-
 import styles from './style.module.css';
 import clsx from 'clsx';
+
 interface Props {
   label?: string;
   className?: string;
