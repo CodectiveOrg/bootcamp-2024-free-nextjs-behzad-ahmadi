@@ -16,7 +16,7 @@
 
   .progressBar {
     height: 0.5rem;
-    width: 100%;
+    block-size: 100%;
     background-color: var(--color-gray-20);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -25,7 +25,7 @@
       block-size: 100%;
       background-color: var(--color-primary);
       border-radius: 0.5rem;
-      transition: width 300ms ease;
+      transition: block-size 300ms ease;
     }
   }
 }
