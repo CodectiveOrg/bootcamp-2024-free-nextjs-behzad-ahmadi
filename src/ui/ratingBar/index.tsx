@@ -16,7 +16,9 @@ export default function RatingBar({
     <div className={styles.ratingItem}>
       <div className={styles.ratingHeader}>
         <span className={styles.ratingLabel}>{label}</span>
-        <span className={styles.ratingScore}>{rating.toFixed(1)}</span>
+        <span className={styles.ratingScore}>
+          {Math.floor(rating * 10) / 10}
+        </span>
       </div>
       <div className={styles.progressBar}>
         <div
