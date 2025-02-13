@@ -29,7 +29,7 @@ export default function DoctorCard({ doctor }: Props): JSX.Element {
           image={doctor.image}
           name={doctor.name}
           averageRating={doctor.averageRating}
-          subtitle1={doctor.brief}
+          description={doctor.brief}
         />
 
         <div className={styles.badges}>

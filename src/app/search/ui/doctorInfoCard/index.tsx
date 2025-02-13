@@ -28,7 +28,7 @@ export default function DoctorCard({ info }: Props): JSX.Element {
               image={info.image}
               name={info.name}
               averageRating={info.averageRating}
-              subtitle1={
+              description={
                 <>
                   <span>تخصص: </span>
                   <span>{info.brief}</span>
