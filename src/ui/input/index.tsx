@@ -4,7 +4,7 @@ import React, { forwardRef } from 'react';
 import styles from './style.module.css';
 import clsx from 'clsx';
 
-interface Props {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   label: React.ReactNode;
   className?: string;
   inputClassName?: string;
