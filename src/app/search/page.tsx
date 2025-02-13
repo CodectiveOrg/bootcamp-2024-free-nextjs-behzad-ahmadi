@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './style.module.css';
-import GlobalSearchBox from '@/ui/globalSearchBox';
-import SearchedItems from '@/app/search/ui/searchedItems';
-import SpecialtyItems from '@/app/search/ui/specialtyItems';
-import ResultsType from '@/app/search/ui/filters';
-import SortInputs from '@/app/search/ui/sortInputs';
+import GlobalSearchBox from '@/ui/GlobalSearchBox';
+import SearchedItems from '@/app/search/ui/SearchedItems';
+import SpecialtyItems from '@/app/search/ui/SpecialtyItems';
+import ResultsType from '@/app/search/ui/Filters';
+import SortInputs from '@/app/search/ui/SortInputs';
 import { doctors } from '@/mock/doctors';
 import { DoctorData } from '@/types/type';
-import DoctorCard from '@/app/search/ui/doctorInfoCard';
+import DoctorCard from '@/app/search/ui/DoctorInfoCard';
 import { SearchParams } from '@/hook/useSearch';
 
 interface Props {
@@ -42,14 +42,6 @@ export default function Search({ searchParams }: Props) {
 
   return (
     <>
-      <div className={styles.description}>
-        <small>
-          توضیح: به دلیل Data ناقص فقط برخی از فیلتر ها عمکرد صحیحی یا نسبتا
-          صحیح دارد. مانند تایپ در باکس جستجو، مرتب سازی، خوش برخورد، کمترین
-          معطلی
-        </small>
-      </div>
-
       <div className={styles.search}>
         <GlobalSearchBox />
       </div>

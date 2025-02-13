@@ -1,62 +1,72 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './style.module.css';
-import MingcuteStarFill from '@/icons/MingcuteStarFill';
-import Badge from '@/ui/badge';
+import Badge from '@/ui/Badge';
 import MingcuteLocationLine from '@/icons/MingcuteLocationLine';
 import { DoctorData } from '@/types/type';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Avatar from '@/ui/Avatar';
 
 interface Props {
   info: DoctorData;
 }
 
-export default function DoctorCard({ info }: Props) {
+export default function DoctorCard({ info }: Props): JSX.Element {
+  const router = useRouter();
+
+  const handleReserve = () => {
+    router.push(`/${info.id}`);
+  };
+
   return (
     <div className={styles.card}>
-      <div className={styles.header}>
-        <Image
-          src={info.image}
-          alt="Doctor profile"
-          width={80}
-          height={80}
-          className={styles.profileImage}
-        />
+      <div className={styles.doctor}>
+        <div>
+          <Link href={`/${info.id}`}>
+            <Avatar
+              image={info.image}
+              name={info.name}
+              averageRating={info.averageRating}
+              description={
+                <>
+                  <span>تخصص: </span>
+                  <span>{info.brief}</span>
+                </>
+              }
+            />
+          </Link>
 
-        <div className={styles.info}>
-          <h2 className={styles.name}>{info.name}</h2>
-          <p className={styles.credentials}>{info.brief}</p>
-          <div className={styles.rating}>
-            <div className={styles.stars}>
-              <MingcuteStarFill />
+          <div className={styles.status}>
+            <div className={styles.statusItem}>
+              {info.badges.map((item, index) => (
+                <Badge key={index} className={styles.statusItem}>
+                  {item}
+                </Badge>
+              ))}
             </div>
-            <span>{info.averageRating}</span>
-            <span>({info.totalVotes} نظر)</span>
           </div>
         </div>
-      </div>
 
-      <div className={styles.location}>
-        <MingcuteLocationLine />
-        <span>{info.address}</span>
-      </div>
+        <div className={styles.info}>
+          <div>اولین نوبت: {info.firstAvailableAppointment}</div>
 
-      <div className={styles.status}>
-        <div className={styles.statusItem}>
-          {info.badges.map((item, index) => (
-            <Badge key={index}>{item}</Badge>
-          ))}
+          <div className={styles.location}>
+            <MingcuteLocationLine />
+            <span>{info.address}</span>
+          </div>
+
+          <div className={styles.actionsContainer}>
+            <div className={styles.actions}>
+              <button className={styles.button} onClick={handleReserve}>
+                نوبت دهی اینترنتی
+              </button>
+              <button className={styles.button} onClick={handleReserve}>
+                ویزیت آنلاین
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.nextAvailable}>
-        <span>اولین نوبت: {info.firstAvailableAppointment}</span>
-        {/*<span>پاسخ: آنلاین و آماده مشاوره</span>*/}
-      </div>
-
-      <div className={styles.actions}>
-        <button className={styles.button}>نوبت دهی اینترنتی</button>
-        <button className={styles.button}>ویزیت آنلاین</button>
       </div>
     </div>
   );

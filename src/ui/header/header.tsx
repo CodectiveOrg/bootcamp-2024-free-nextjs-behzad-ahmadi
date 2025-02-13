@@ -12,7 +12,7 @@ const headerItems: HeaderItem[] = [
   { title: 'جستجو', href: '/search' },
 ];
 
-export default function Header() {
+export default function Header(): JSX.Element {
   const pathname = usePathname();
 
   return (
@@ -31,7 +31,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <button className={styles.cta}>ورود ثبنام</button>
+      <button className={styles.cta}>ورود - ثبت نام</button>
     </header>
   );
 }

@@ -1,0 +1,19 @@
+.doctor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    border-radius: var(--border-radius);
+    background-color: var(--color-gray-12);
+
+    .badges {
+      display: flex;
+      column-gap: 0.4rem;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+  }
+}

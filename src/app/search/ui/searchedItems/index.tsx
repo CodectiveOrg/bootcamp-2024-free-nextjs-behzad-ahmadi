@@ -3,19 +3,30 @@
 import useSearch from '@/hook/useSearch';
 import styles from './style.module.css';
 import { MingcuteCloseLine } from '@/icons/MingcuteCloseLine';
-import Card from '@/app/search/ui/card';
+import Card from '@/ui/Card';
 
-export default function SearchedItems() {
-  const { paramsList, deleteParam } = useSearch();
+export default function SearchedItems(): JSX.Element | null {
+  const { paramsList, deleteParam, clearAll } = useSearch();
 
   const handleDelete = (name: string) => {
     deleteParam(name);
+  };
+
+  const handleClearAll = () => {
+    clearAll();
   };
 
   if (!paramsList.length) return null;
 
   return (
     <Card>
+      <span className={styles['delete-all']} onClick={handleClearAll}>
+        حذف همه
+        <span className={styles.delete}>
+          <MingcuteCloseLine />
+        </span>
+      </span>
+
       <div className={styles['search-items']}>
         {paramsList?.map((item, index) => (
           <div key={index}>

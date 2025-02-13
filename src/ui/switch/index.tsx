@@ -8,9 +8,14 @@ interface Props {
   checked?: boolean;
 }
 
-export default function Switch({ onClick, title, checked, className }: Props) {
+export default function Switch({
+  onClick,
+  title,
+  checked,
+  className,
+}: Props): JSX.Element {
   return (
-    <label className={styles.container}>
+    <label className={styles['switch-container']}>
       <span className={styles.title}>{title}</span>
 
       <label className={clsx(styles.switch, className)}>

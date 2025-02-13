@@ -1,0 +1,23 @@
+.details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 8rem;
+
+  hr {
+    border: 1px solid var(--color-gray-40);
+    opacity: 0.2;
+  }
+
+  .contact-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -4,7 +4,7 @@ const url = 'https://cdn.paziresh24.com';
 
 export const doctors: DoctorData[] = [
   {
-    id: '97420f0d-b576-4f65-9ffc-a81b4b1b4e77',
+    id: '97420f0d',
     name: 'پوراندخت جعفري',
     image:
       url +
@@ -16,10 +16,12 @@ export const doctors: DoctorData[] = [
       'خرم آباد,خرم آباد، بین چهارراه بانک و میدان شهدا،ساختمان پزشکان مانا طبقه چهارم',
     firstAvailableAppointment: 'کمتر از یک ساعت دیگر',
     brief: 'متخصص گفتاردرمانی ، گفتار درمانی کودکان',
-    badges: ['خوش برخورد', 'کمترین معطلی'],
+    badges: ['خوش برخورد', 'کمترین معطلی', 'متخصص برتر'],
+    phone: '09156415151',
+    location: 'geo:37.786971,-122.399677',
   },
   {
-    id: 'e6719f23-e846-4a95-88f9-c013c5d9cb4f',
+    id: 'e6719f23',
     name: 'مجتبی قدسی',
     image:
       url +
@@ -31,10 +33,12 @@ export const doctors: DoctorData[] = [
       'اردبیل,اردبیل، اول خیابان والی، خیابان شهیدان نوعی اقدم، نرسیده به بیمارستان امام خمینی، جنب داروخانه دکترنصیرپور',
     firstAvailableAppointment: '16 دی 11 صبح',
     brief: 'متخصص بیماری‌های کودکان',
-    badges: ['خوش برخورد', 'کمترین معطلی'],
+    badges: ['تجربه بالا', 'امکانات پیشرفته', 'کمترین معطلی'],
+    phone: '09153456789',
+    location: 'geo:38.210000,48.300000',
   },
   {
-    id: '4a7403d4-e0a2-406c-8dea-3e557bae54d2',
+    id: '4a7403d4',
     name: 'امیرحسین پورداود',
     image:
       url +
@@ -45,10 +49,12 @@ export const doctors: DoctorData[] = [
     address: 'جهرم,خیابان ۲۲ بهمن ،جنب بانک مسکن ،ساختمان حکیم ،طبقه سوم',
     firstAvailableAppointment: '15 دی 4 عصر',
     brief: 'جراحی عمومی،جراحی پلاستیک و زیبایی،درمان هموروئید و فیشر و...',
-    badges: ['خوش برخورد', 'کمترین معطلی'],
+    badges: ['خوش برخورد', 'نتایج درمانی عالی', 'دسترسی آسان'],
+    phone: '09176543210',
+    location: 'geo:28.500000,53.566667',
   },
   {
-    id: '06d3a495-160d-4722-815e-286ff5d82ed2',
+    id: '06d3a495',
     name: 'اعظم قهساره اردستانی',
     image: url + '/getImage/p24/search-women/noimage.url+png?size=150',
     isVerified: true,
@@ -59,9 +65,11 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '13 اسفند 5 عصر',
     brief: 'فوق تخصص طب نوزادی و پیرامون تولد',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 12 دی 23:59', 'خوش برخورد'],
+    phone: '09132456789',
+    location: 'geo:32.654238,51.667446',
   },
   {
-    id: '7f39ff5b-4c81-4c59-80fa-7872b675bb18',
+    id: '7f39ff5b',
     name: 'رضا پورعلی',
     image:
       url +
@@ -74,13 +82,15 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '16 دی 8 صبح',
     brief: 'متخصص ارتوپدی',
     badges: [
-      'فعال شدن نوبت‌دهی اینترنتی 13 دی 08:00',
+      'فعال شدن نوبت‌دهی اینترنتی 12 دی 23:59',
       'خوش برخورد',
-      'کمترین معطلی',
+      'متخصص کودکان',
     ],
+    phone: '09153334444',
+    location: 'geo:36.216080,58.779830',
   },
   {
-    id: '1515',
+    id: '151',
     name: 'نادیا پرور',
     image: url + '/getImage/p24/search-women/noimage.url+png?size=150',
     isVerified: true,
@@ -89,10 +99,16 @@ export const doctors: DoctorData[] = [
     address: 'کلینیک تخصصی و فوق تخصصی کودکان بندرعباس|بندرعباس,گلشهر شمالی',
     firstAvailableAppointment: '20 دی 9 صبح',
     brief: 'متخصص اطفال',
-    badges: ['فعال شدن نوبت‌دهی اینترنتی 18 دی 23:59', 'کمترین معطلی'],
+    badges: [
+      'فعال شدن نوبت‌دهی اینترنتی 13 دی 08:00',
+      'تجهیزات مدرن',
+      'کمترین معطلی',
+    ],
+    phone: '09176543210',
+    location: 'geo:27.186389,56.276944',
   },
   {
-    id: 'ba7333ef-9e18-11ea-9877-005056b09c11',
+    id: 'ba7333ef',
     name: 'محمدرضا ادراکی',
     image:
       url +
@@ -103,10 +119,16 @@ export const doctors: DoctorData[] = [
     address: 'شیراز,خیابان زند، روبرو هتل پارس، ساختمان صدر زاده، طبقه دوم',
     firstAvailableAppointment: '15 دی 1 عصر',
     brief: 'فوق تخصص بیماری‌های قلب کودکان',
-    badges: ['خوش برخورد'],
+    badges: [
+      'فعال شدن نوبت‌دهی اینترنتی 18 دی 23:59',
+      'متخصص اطفال',
+      'مشاوره آنلاین',
+    ],
+    phone: '09171234567',
+    location: 'geo:29.621460,52.538540',
   },
   {
-    id: 'a8a27637-9e67-11ea-9877-005056b09c11',
+    id: 'a8a27637',
     name: 'محسن رضائی مقدم',
     image:
       url +
@@ -118,10 +140,12 @@ export const doctors: DoctorData[] = [
       'قائن,قائن، خیابان دکتر امین زاده، تقاطع جانبازان، ساختمان پزشکان امام جواد',
     firstAvailableAppointment: '19 دی 7 عصر',
     brief: 'متخصص چشم پزشکی دارای بورد تخصصی',
-    badges: ['خوش برخورد'],
+    badges: ['خوش برخورد', 'فوق تخصص قلب کودکان', 'سابقه درخشان'],
+    phone: '09153334444',
+    location: 'geo:33.723000,59.510000',
   },
   {
-    id: '286439d9-617a-4d5c-a77a-e1ac0c088780',
+    id: '286439d9',
     name: 'پیمان شاه حسینی',
     image:
       url +
@@ -132,10 +156,12 @@ export const doctors: DoctorData[] = [
     address: 'تهران,تهران، خ شهرارا،خیابان بیستم،پلاک۸',
     firstAvailableAppointment: '16 دی 4 عصر',
     brief: 'فوق تخصص طب نوزادی و پیرامون تولد متخصص کودکان',
-    badges: ['خوش برخورد'],
+    badges: ['خوش برخورد', 'جراح ماهر', 'مشاوره رایگان'],
+    phone: '09121112233',
+    location: 'geo:35.696111,51.423056',
   },
   {
-    id: '601e14cb-c7f7-4668-b883-3c61ebd11f52',
+    id: '601e14cb',
     name: 'رضا افتخار',
     image:
       url +
@@ -147,10 +173,12 @@ export const doctors: DoctorData[] = [
       'مشهد,حد فاصل بین چهارراه دکتری و میدان امام رضا(ع)، ابن سینا 3،ساختمان اویدنس، طبقه 2، واحد 8',
     firstAvailableAppointment: 'فردا 9 صبح',
     brief: 'کارشناسی علوم تغذیه',
-    badges: ['خوش برخورد', 'کمترین معطلی'],
+    badges: ['خوش برخورد', 'متخصص نوزادان', 'پیگیری منظم بیماران'],
+    phone: '09155556666',
+    location: 'geo:36.299900,59.610000',
   },
   {
-    id: '4009802',
+    id: '400980',
     name: 'سیدرامین مدنی',
     image:
       url +
@@ -162,10 +190,12 @@ export const doctors: DoctorData[] = [
       'بیمارستان شهید بهشتی کاشان|کاشان,بلوار قطب راوندی-مجتمع بیمارستانی شهید بهشتی-کد پستی 87159/81151',
     firstAvailableAppointment: '17 دی 5 عصر',
     brief: 'فوق تخصص گوارش اطفال',
-    badges: ['فعال شدن نوبت‌دهی اینترنتی 15 دی 06:00', 'خوش برخورد'],
+    badges: ['خوش برخورد', 'کمترین معطلی', 'مشاوره تغذیه'],
+    phone: '09131234567',
+    location: 'geo:33.983333,51.433333',
   },
   {
-    id: '85882eb5-1d70-4453-9f67-2a232527590c',
+    id: '85882eb5',
     name: 'پژمان روحانی',
     image:
       url +
@@ -177,10 +207,12 @@ export const doctors: DoctorData[] = [
       'تهران,تهران، خیابان دکتر قریب، بعد نصرت سر کوچه سوسن ساختمان شباهنگ واحد۳۴',
     firstAvailableAppointment: 'کمتر از پنج ساعت دیگر',
     brief: 'فوق تخصص گوارش اطفال',
-    badges: ['خوش برخورد'],
+    badges: ['خوش برخورد', 'متخصص گوارش کودکان'],
+    phone: '09122223333',
+    location: 'geo:35.696111,51.423056',
   },
   {
-    id: '6b59b263-73fe-4316-ae81-4fe50968a723',
+    id: '6b59b263',
     name: 'عباس ریحانی',
     image:
       url +
@@ -191,10 +223,12 @@ export const doctors: DoctorData[] = [
     address: 'همدان,همدان، بلوار زینبیه، سبدبافان، کلینیک امید',
     firstAvailableAppointment: 'کمتر از پنج ساعت دیگر',
     brief: 'متخصص بیماری‌های قلب و عروق',
-    badges: ['خوش برخورد'],
+    badges: ['خوش برخورد', 'درمان سریع', 'مشاوره 24 ساعته'],
+    phone: '09183334444',
+    location: 'geo:34.800000,48.516667',
   },
   {
-    id: '1eb139dc-42d2-4110-8a09-f04a2561372c',
+    id: '1eb139dc',
     name: 'نرگس رخش بهار',
     image:
       url +
@@ -207,9 +241,11 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'کمتر از یک ساعت دیگر',
     brief: 'متخصص زنان و زایمان',
     badges: ['خوش برخورد', 'کمترین معطلی'],
+    phone: '09151112233',
+    location: 'geo:36.299900,59.610000',
   },
   {
-    id: '7572',
+    id: '757',
     name: 'مهران شکری',
     image:
       url +
@@ -222,9 +258,11 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: 'کمتر از پنج ساعت دیگر',
     brief: 'متخصص بیماریهای عفونی و گرمسیری',
     badges: [],
+    phone: '09112223344',
+    location: 'geo:36.551111,52.676111',
   },
   {
-    id: '4917678e-5e19-4322-b9e4-eb73e8ec622c',
+    id: '4917678e',
     name: 'نوید دانائی',
     image:
       url +
@@ -237,9 +275,11 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '15 دی 4 عصر',
     brief: 'فوق تخصص طب نوزادی و پیرامون تولد',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 13 دی 23:59', 'خوش برخورد'],
+    phone: '09123334444',
+    location: 'geo:35.583333,53.383333',
   },
   {
-    id: '22409',
+    id: '2240',
     name: 'یوسف رحمانی',
     image:
       url +
@@ -252,9 +292,11 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '16 دی 4 عصر',
     brief: 'متخصص بیماریهای قلب و عروق',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 15 دی 08:00', 'خوش برخورد'],
+    phone: '09121112233',
+    location: 'geo:34.316667,47.066667',
   },
   {
-    id: '2488',
+    id: '248',
     name: 'منصور مظفری',
     image:
       url +
@@ -267,9 +309,11 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '9 فروردین 5 عصر',
     brief: 'متخصص چشم پزشکی',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 9 اسفند 00:01'],
+    phone: '09131112233',
+    location: 'geo:35.696111,51.423056',
   },
   {
-    id: '1855',
+    id: 'c1d1fa23',
     name: 'مهراد فخرالدینی',
     image:
       url +
@@ -282,9 +326,11 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '18 دی 6 عصر',
     brief: 'متخصص قلب و عروق',
     badges: ['کمترین معطلی'],
+    phone: '09112223344',
+    location: 'geo:35.783333,51.416667',
   },
   {
-    id: 'c1d1fa23-ec60-11ec-b214-005056ad7555',
+    id: 'c1d1fa23',
     name: 'جلال امینی',
     image: url + '/getImage/p24/search-men/noimage.url+png?size=150',
     isVerified: true,
@@ -295,5 +341,7 @@ export const doctors: DoctorData[] = [
     firstAvailableAppointment: '14 اردیبهشت 12 عصر',
     brief: 'فلوشیپ ارولوژی اطفال',
     badges: ['فعال شدن نوبت‌دهی اینترنتی 30 فروردین 23:59', 'خوش برخورد'],
+    phone: '09121112233',
+    location: 'geo:35.696111,51.423056',
   },
 ];

@@ -10,7 +10,9 @@
   --color-gray-12: hsl(0deg 0% 12%);
   --color-gray-10: hsl(0deg 0% 10%);
 
-  --color-default-background: var(--color-gray-10);
+  --color-card-background: var(--color-gray-12);
+
+  --color-default-background: hsl(200deg 4% 10%);
   --color-default-foreground: var(--color-gray-98);
 
   --color-primary: hsl(120deg 50% 48%);
@@ -19,7 +21,16 @@
   --color-primary-darker: hsl(120deg 50% 44%);
   --color-primary-opposite: var(--color-gray-10);
 
-  ---color-rating: hsl(51, 100%, 50%);
+  --color-secondary: hsl(210deg, 100%, 47%);
+  --color-secondary-fade: hsl(210deg, 100%, 95%);
+  --color-secondary-lighter: hsl(210deg, 100%, 59%);
+  --color-secondary-darker: hsl(210deg, 100%, 42%);
+  --color-secondary-opposite: var(--color-gray-10);
+
+  --color-accent: hsl(45deg, 65%, 50%);
+  --color-error: hsl(0, 100%, 63%);
+
+  --color-rating: hsl(45deg, 65%, 50%);
 
   --border-radius: 0.875rem;
 
@@ -33,6 +44,8 @@
 
 html {
   color-scheme: dark;
+  font-feature-settings: 'ss01';
+  font-family: 'Vazirmatn', system-ui;
 }
 
 *,

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import SmartDocImage from '@/assets/images/smart-doc.png';
 import styles from './not-found.module.css';
-import GlobalSearchBox from '@/ui/globalSearchBox';
+import GlobalSearchBox from '@/ui/GlobalSearchBox';
 import Link from 'next/link';
 
 export default function NotFound() {

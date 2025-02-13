@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,7 +11,7 @@ import MingcuteYoutubeFill from '@/icons/MingcuteYoutubeFill';
 
 import styles from './style.module.css';
 
-export default function Footer(): ReactElement {
+export default function Footer(): JSX.Element {
   return (
     <footer className={styles.footer}>
       <div className={styles.writings}>

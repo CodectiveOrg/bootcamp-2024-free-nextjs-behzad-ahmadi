@@ -9,6 +9,8 @@ export type DoctorData = {
   firstAvailableAppointment: string;
   brief: string;
   badges: string[];
+  phone: string;
+  location: string;
 };
 
 export type DoctorSpecialty =
@@ -58,4 +60,30 @@ export interface Filters {
   degree: Array<FilterItem>;
   turnType: Array<FilterItem>;
   filters: Array<FilterFilterItem>;
+}
+
+export interface Feedback {
+  Id: number;
+  avg_rate_value: number;
+  description: string;
+  user_display_name: string;
+  recommended: boolean;
+  treatment_status: string;
+  quality_of_treatment: number;
+  count_like: number;
+  show: number;
+  doctor_encounter: number;
+  reply_to_feedback_id: number;
+  recommend_range: number;
+  explanation_of_issue: number;
+  center_name: string;
+  created_at: string; // ISO date string
+  visit_date: string;
+  visit_status: 'visited' | 'not_visited';
+  visit_reason: string;
+  user_id: number;
+  waiting_time: number;
+  centerId: string;
+  clinic_feedback_id: string;
+  doctor_slug: string;
 }
