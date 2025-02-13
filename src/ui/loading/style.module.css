@@ -7,12 +7,12 @@
     display: flex;
     inline-size: 100%;
     justify-content: center;
-    width: 98.6px;
-    height: 13.4px;
+    inline-size: 6rem;
+    block-size: 0.8125rem;
     background:
       radial-gradient(farthest-side, #474bff 90%, #0000) 25% 0,
       radial-gradient(farthest-side, #474bff 90%, #0000) 75% 0;
-    background-size: 13.4px 13.4px;
+    background-size: 0.8125rem 0.8125rem;
     background-repeat: no-repeat;
     position: relative;
     animation: dots-q4kofwmd 1s linear infinite;
@@ -20,8 +20,8 @@
     &:before {
       content: '';
       position: absolute;
-      width: 13.4px;
-      height: 13.4px;
+      inline-size: 0.8125rem;
+      block-size: 0.8125rem;
       border-radius: 50%;
       background: #474bff;
       inset: 0;
