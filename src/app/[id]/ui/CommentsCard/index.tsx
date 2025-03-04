@@ -56,7 +56,8 @@ export default function CommentsCard(): JSX.Element {
         });
 
         if (!response.ok) {
-          throw new Error(`Failed to fetch feedbacks: ${response.statusText}`);
+          console.log(`Failed to fetch feedbacks: ${response.statusText}`);
+          return;
         }
 
         const result: ApiResponse = await response.json();
