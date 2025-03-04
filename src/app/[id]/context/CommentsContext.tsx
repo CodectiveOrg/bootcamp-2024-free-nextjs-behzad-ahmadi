@@ -8,12 +8,6 @@ import React, {
   useState,
 } from 'react';
 
-const me = {
-  name: 'Behzad',
-  profession: 'Frontend Developer',
-  tags: ['next.js', 'typescript', 'tailwind'],
-};
-
 interface CommentContextType {
   feedbackSort: string;
   setFeedbackSort: (value: string) => void;
