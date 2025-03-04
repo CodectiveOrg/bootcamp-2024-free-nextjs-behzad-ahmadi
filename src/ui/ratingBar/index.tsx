@@ -11,7 +11,7 @@ export default function RatingBar({
   label,
   rating,
   maxScore = 5,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   return (
     <div className={styles.ratingItem}>
       <div className={styles.ratingHeader}>

@@ -2,7 +2,7 @@ import React, { SVGProps } from 'react';
 
 export default function SmartDocLogo(
   props: SVGProps<SVGSVGElement>,
-): JSX.Element {
+): React.ReactNode {
   return (
     <svg
       version="1.1"

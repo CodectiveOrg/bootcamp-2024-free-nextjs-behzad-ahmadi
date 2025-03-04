@@ -12,7 +12,7 @@ interface Props {
   totalVotes?: number;
 }
 
-export default function Avatar({ ...info }: Props): JSX.Element {
+export default function Avatar({ ...info }: Props): React.ReactNode {
   return (
     <div className={styles.avatar}>
       <Image

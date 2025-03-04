@@ -9,7 +9,7 @@ interface Props {
   }[];
 }
 
-export default function RatingBars({ ratings }: Props): JSX.Element {
+export default function RatingBars({ ratings }: Props): React.ReactNode {
   return (
     <div className={styles.ratingsWrapper}>
       {ratings.map((rating, index) => (

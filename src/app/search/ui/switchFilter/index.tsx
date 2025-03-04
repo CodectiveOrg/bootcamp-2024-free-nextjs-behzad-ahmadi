@@ -9,7 +9,7 @@ interface Props {
   title: string;
 }
 
-export default function SwitchFilter({ id, title }: Props): JSX.Element {
+export default function SwitchFilter({ id, title }: Props): React.ReactNode {
   const { setParam, getParam, deleteParam } = useSearch();
   const checkedItem = useMemo(() => getParam(id) != null, [getParam, id]);
 

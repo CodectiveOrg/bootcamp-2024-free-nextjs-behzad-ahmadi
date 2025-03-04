@@ -12,7 +12,7 @@ const headerItems: HeaderItem[] = [
   { title: 'جستجو', href: '/search' },
 ];
 
-export default function Header(): JSX.Element {
+export default function Header(): React.ReactNode {
   const pathname = usePathname();
 
   return (

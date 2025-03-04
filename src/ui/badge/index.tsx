@@ -7,6 +7,6 @@ interface Props extends PropsWithChildren {
   className?: string;
 }
 
-export default function Badge({ children, className }: Props): JSX.Element {
+export default function Badge({ children, className }: Props): React.ReactNode {
   return <div className={clsx(styles.badge, className)}>{children}</div>;
 }

@@ -16,7 +16,7 @@ export default function FilterRadioGroup({
   items,
   groupName,
   title,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   const { setParam, getParam } = useSearch();
 
   const handleSetFilter = ({ name, value }: SearchParam) => {

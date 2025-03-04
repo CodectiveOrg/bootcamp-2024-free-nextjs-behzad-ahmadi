@@ -16,7 +16,7 @@ const sortOptions = [
   { label: 'محبوب ترین', value: '-count_like' },
 ];
 
-export default function FilterSection(): JSX.Element {
+export default function FilterSection(): React.ReactNode {
   const { setFeedbackSort, setFeedbackType, setSearch } = useCommentContext();
 
   return (

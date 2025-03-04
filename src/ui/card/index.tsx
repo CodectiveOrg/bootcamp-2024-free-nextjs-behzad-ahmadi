@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 type Props = PropsWithChildren & { className?: string };
 
-export default function Card({ children, className }: Props): JSX.Element {
+export default function Card({ children, className }: Props): React.ReactNode {
   return (
     <div className={styles.card}>
       <div className={clsx(styles.card, className)}>{children}</div>

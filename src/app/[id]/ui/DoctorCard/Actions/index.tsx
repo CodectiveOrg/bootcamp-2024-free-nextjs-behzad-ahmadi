@@ -15,7 +15,7 @@ export default function Actions({
   viewCount,
   shareData,
   isBookmarked,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   const { bookmark, toggleBookmark } = useBookmark({ isBookmarked });
 
   return (

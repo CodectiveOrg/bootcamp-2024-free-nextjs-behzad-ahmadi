@@ -5,7 +5,7 @@ import styles from './style.module.css';
 import { MingcuteCloseLine } from '@/icons/MingcuteCloseLine';
 import Card from '@/ui/Card';
 
-export default function SearchedItems(): JSX.Element | null {
+export default function SearchedItems(): React.ReactNode | null {
   const { paramsList, deleteParam, clearAll } = useSearch();
 
   const handleDelete = (name: string) => {

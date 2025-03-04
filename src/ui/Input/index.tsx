@@ -11,7 +11,10 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input = forwardRef<HTMLInputElement, Props>(
-  ({ label, className, inputClassName, ...otherProps }, ref): JSX.Element => {
+  (
+    { label, className, inputClassName, ...otherProps },
+    ref,
+  ): React.ReactNode => {
     return (
       <div className={clsx(styles.input, className)}>
         <span className={styles.label}>{label}</span>

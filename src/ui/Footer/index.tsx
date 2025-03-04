@@ -11,7 +11,7 @@ import MingcuteYoutubeFill from '@/icons/MingcuteYoutubeFill';
 
 import styles from './style.module.css';
 
-export default function Footer(): JSX.Element {
+export default function Footer(): React.ReactNode {
   return (
     <footer className={styles.footer}>
       <div className={styles.writings}>

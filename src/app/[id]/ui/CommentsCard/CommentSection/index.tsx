@@ -8,7 +8,10 @@ import { BaseSiteURL } from '@/lib/constants';
 
 type Props = { id: string; comments: Feedback[] };
 
-export default function CommentSection({ id, comments }: Props): JSX.Element {
+export default function CommentSection({
+  id,
+  comments,
+}: Props): React.ReactNode {
   const shareUrl = `${BaseSiteURL}/${id}`;
 
   return (

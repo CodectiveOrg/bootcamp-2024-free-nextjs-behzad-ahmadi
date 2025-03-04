@@ -16,7 +16,7 @@ export default function Bookmark({
   isBookmarked,
   title,
   onClick,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   return (
     <span onClick={onClick} className={styles.bookmark}>
       {isBookmarked ? <MingcuteBookmarkFill /> : <MingcuteBookmarkLine />}

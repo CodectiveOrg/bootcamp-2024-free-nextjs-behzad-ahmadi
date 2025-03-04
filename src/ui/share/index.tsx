@@ -20,7 +20,7 @@ export default function Share({
   title,
   shareData,
   className,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   const handleClick = (): void => {
     if (!navigator.share) {
       return;

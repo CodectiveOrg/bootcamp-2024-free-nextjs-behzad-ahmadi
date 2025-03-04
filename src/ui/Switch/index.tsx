@@ -13,7 +13,7 @@ export default function Switch({
   title,
   checked,
   className,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   return (
     <label className={styles['switch-container']}>
       <span className={styles.title}>{title}</span>

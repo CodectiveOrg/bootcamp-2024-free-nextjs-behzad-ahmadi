@@ -5,7 +5,11 @@ import { formatDateToRelativePersian } from '@/lib/helper';
 
 type Props = { name: string; id: number; status: string; date: string };
 
-export default function UserInfo({ name, status, date }: Props): JSX.Element {
+export default function UserInfo({
+  name,
+  status,
+  date,
+}: Props): React.ReactNode {
   const color = useMemo(() => Math.trunc(Math.random() * 5 + 1), []);
 
   const translatedStatus = useMemo(() => {

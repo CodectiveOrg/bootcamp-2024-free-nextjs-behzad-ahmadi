@@ -25,7 +25,7 @@ export const CommentProvider = ({
   children,
 }: {
   children: ReactNode;
-}): JSX.Element => {
+}): React.ReactNode => {
   const [feedbackSort, setFeedbackSort] = useState<string>('');
   const [feedbackType, setFeedbackType] = useState<string | null>('all');
   const [search, setSearch] = useState<string>('');

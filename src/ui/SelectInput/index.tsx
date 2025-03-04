@@ -28,7 +28,7 @@ export default function SelectInput({
   placeholder,
   className,
   inputClassName,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   const [selectedOption, setSelectedOption] = useState<SelectOption | null>(
     null,
   );

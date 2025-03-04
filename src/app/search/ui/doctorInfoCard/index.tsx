@@ -12,7 +12,7 @@ interface Props {
   info: DoctorData;
 }
 
-export default function DoctorCard({ info }: Props): JSX.Element {
+export default function DoctorCard({ info }: Props): React.ReactNode {
   const router = useRouter();
 
   const handleReserve = () => {

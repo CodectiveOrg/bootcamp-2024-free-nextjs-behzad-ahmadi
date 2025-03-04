@@ -25,7 +25,7 @@ type ApiResponse = {
   };
 };
 
-export default function CommentsCard(): JSX.Element {
+export default function CommentsCard(): React.ReactNode {
   const [feedbacks, setFeedbacks] = React.useState<Feedback[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

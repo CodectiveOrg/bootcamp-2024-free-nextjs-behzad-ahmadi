@@ -20,7 +20,7 @@ export default function ContactCard({
   location,
   name,
   phone,
-}: Props): JSX.Element {
+}: Props): React.ReactNode {
   const call = () => {
     window?.open(`tel:${phone}`);
   };

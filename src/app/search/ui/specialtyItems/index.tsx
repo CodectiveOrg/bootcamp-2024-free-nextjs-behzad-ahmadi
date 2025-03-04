@@ -5,7 +5,7 @@ import styles from './style.module.css';
 import useSearch, { SearchParam } from '@/hook/useSearch';
 import Card from '@/ui/Card';
 
-export default function SpecialtyItems(): JSX.Element {
+export default function SpecialtyItems(): React.ReactNode {
   const { setParam } = useSearch();
 
   const handleAddFilter = ({ name, value }: SearchParam) => {

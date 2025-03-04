@@ -25,7 +25,7 @@ type ApiResponse = {
   };
 };
 
-export default function CommentsCard(): JSX.Element {
+export default function CommentsCard(): React.ReactNode {
   const [feedbacks, setFeedbacks] = React.useState<Feedback[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -56,7 +56,8 @@ export default function CommentsCard(): JSX.Element {
         });
 
         if (!response.ok) {
-          throw new Error(`Failed to fetch feedbacks: ${response.statusText}`);
+          console.log(`Failed to fetch feedbacks: ${response.statusText}`);
+          return;
         }
 
         const result: ApiResponse = await response.json();
