@@ -2,11 +2,17 @@
 
 import React, {
   createContext,
+  ReactNode,
   useContext,
   useMemo,
   useState,
-  ReactNode,
 } from 'react';
+
+const me = {
+  name: 'Behzad',
+  profession: 'Frontend Developer',
+  tags: ['next.js', 'typescript', 'tailwind'],
+};
 
 interface CommentContextType {
   feedbackSort: string;

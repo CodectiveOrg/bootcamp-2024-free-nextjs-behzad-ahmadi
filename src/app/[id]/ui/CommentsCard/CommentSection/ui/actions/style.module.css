@@ -1,0 +1,14 @@
+.actions {
+  display: flex;
+  justify-content: end;
+  inline-size: 100%;
+  gap: 1rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: var(--fz-300);
+    cursor: pointer;
+  }
+}
