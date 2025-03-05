@@ -4,6 +4,7 @@ import { doctorSpecialties } from '@/mock/doctorSpecialties';
 import styles from './style.module.css';
 import useSearch, { SearchParam } from '@/hook/useSearch';
 import Card from '@/ui/Card';
+import React from 'react';
 
 export default function SpecialtyItems(): React.ReactNode {
   const { setParam } = useSearch();

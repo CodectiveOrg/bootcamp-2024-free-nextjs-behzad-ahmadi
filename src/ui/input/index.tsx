@@ -1,33 +1,44 @@
-'use client';
+import { ComponentProps, ForwardedRef, forwardRef, ReactElement } from 'react';
 
-import React, { forwardRef } from 'react';
-import styles from './style.module.css';
 import clsx from 'clsx';
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: React.ReactNode;
-  className?: string;
-  inputClassName?: string;
+import styles from './style.module.css';
+import { Button } from '@/ui/Button/button';
+
+type Props = ComponentProps<'input'> & {
+  label: string;
+  prefixIcon?: ReactElement;
+  suffixIcon?: ReactElement;
+  onSuffixClick?: ComponentProps<typeof Button>['onClick'];
+};
+
+function NormalInputComponent(
+  {
+    label,
+    prefixIcon,
+    suffixIcon,
+    onSuffixClick,
+    className,
+    ...otherProps
+  }: Props,
+  ref: ForwardedRef<HTMLInputElement>,
+): ReactElement {
+  return (
+    <label className={clsx(styles['input'], className)}>
+      <div className={styles['label-text']}>{label}</div>
+      <div className={styles.box}>
+        {prefixIcon && (
+          <div className={styles['prefix-icon']}>{prefixIcon}</div>
+        )}
+        <input ref={ref} {...otherProps} />
+        {suffixIcon && (
+          <Button type="button" shape="inherit" onClick={onSuffixClick}>
+            <div className={styles['suffix-icon']}>{suffixIcon}</div>
+          </Button>
+        )}
+      </div>
+    </label>
+  );
 }
 
-export const Input = forwardRef<HTMLInputElement, Props>(
-  (
-    { label, className, inputClassName, ...otherProps },
-    ref,
-  ): React.ReactNode => {
-    return (
-      <div className={clsx(styles.input, className)}>
-        <span className={styles.label}>{label}</span>
-        <div className={styles['input-wrapper']}>
-          <input
-            ref={ref}
-            className={clsx(styles.input, inputClassName)}
-            {...otherProps}
-          />
-        </div>
-      </div>
-    );
-  },
-);
-
-Input.displayName = 'Input';
+export default forwardRef(NormalInputComponent);
