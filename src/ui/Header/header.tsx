@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from './header.module.css';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import { ButtonLink } from '@/ui/Button/button';
 
 type HeaderItem = { title: string; href: string };
 
@@ -31,7 +32,15 @@ export default function Header(): React.ReactNode {
           ))}
         </ul>
       </nav>
-      <button className={styles.cta}>ورود - ثبت نام</button>
+      <ButtonLink
+        variant="primary"
+        shape="outlined"
+        href="/auth/sign-in"
+        size="medium"
+        className={styles.cta}
+      >
+        ورود - ثبت نام
+      </ButtonLink>
     </header>
   );
 }
