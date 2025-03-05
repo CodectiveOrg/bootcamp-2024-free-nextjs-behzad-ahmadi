@@ -1,45 +1,45 @@
 .avatar {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .profileImage {
-    inline-size: 64px;
-    block-size: 64px;
-    border-radius: 50%;
-    border: 2px solid var(--color-secondary);
+  inline-size: 64px;
+  block-size: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--color-secondary);
 }
 
 .info {
-    flex: 1;
-    margin-inline-end: 1rem;
+  flex: 1;
+  margin-inline-end: 1rem;
 
-    .name {
-        font-size: var(--fz-400);
+  .name {
+    font-size: var(--fz-400);
+  }
+
+  .sub-title1 {
+    margin-block-start: 0.5rem;
+    font-size: var(--fz-100);
+  }
+
+  .sub-title2 {
+    margin-block-start: 0.5rem;
+    font-size: var(--fz-100);
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-block-start: 0.5rem;
+    line-height: 1rem;
+    font-size: var(--fz-200);
+
+    .stars {
+      color: var(--color-rating);
     }
-
-    .sub-title1 {
-        margin-block-start: 0.5rem;
-        font-size: var(--fz-100);
-    }
-
-    .sub-title2 {
-        margin-block-start: 0.5rem;
-        font-size: var(--fz-100);
-    }
-
-    .rating {
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        margin-block-start: 0.5rem;
-        line-height: 1rem;
-        font-size: var(--fz-200);
-
-        .stars {
-            color: var(--color-rating);
-        }
-    }
+  }
 }
