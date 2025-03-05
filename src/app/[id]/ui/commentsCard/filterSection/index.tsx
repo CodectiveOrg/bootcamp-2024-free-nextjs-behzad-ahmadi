@@ -2,7 +2,7 @@
 
 import SelectInput from '@/ui/SelectInput';
 import styles from './style.module.css';
-import { Input } from '@/ui/Input';
+import Input from '@/ui/Input';
 import { useCommentContext } from '@/app/[id]/context/CommentsContext';
 
 const feedbackTypeOptions = [
