@@ -8,6 +8,7 @@ import PasswordInput from '@/ui/PasswordInput/passwordInput';
 import Input from '@/ui/Input';
 import Card from '@/ui/Card';
 import MingcuteMailLine from '@/icons/MingcuteMailLine';
+import Link from 'next/link';
 
 export default function SignUpForm(): ReactElement {
   const formSubmitHandler = async (
@@ -43,6 +44,9 @@ export default function SignUpForm(): ReactElement {
               />
               <Button variant="primary">ورود</Button>
             </form>
+            <div className={styles['change-form']}>
+              <Link href="/auth/sign-in">قبلا ثبت نام کردم</Link>
+            </div>
           </div>
         </div>
       </Card>
