@@ -3,6 +3,7 @@ import Header from '@/ui/Header/header';
 import Footer from '@/ui/Footer';
 import './globals.css';
 import '@/styles/typography.css';
+import Toast from '@/ui/Toast';
 
 export const metadata: Metadata = {
   title: 'روز نوبت هوشمند',
@@ -28,6 +29,8 @@ export default function RootLayout({
         <main>{children}</main>
         <p className="tagline">نوبت دهی هوشمند پزشکان</p>
         <Footer />
+
+        <Toast />
       </body>
     </html>
   );
