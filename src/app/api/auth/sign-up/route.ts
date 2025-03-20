@@ -10,13 +10,6 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
 
     if (error !== null) return NextResponse.json({ error }, { status: 400 });
 
-    const foundUser = await prisma.user.findUnique({
-      where: { username: body.username },
-    });
-
-    if (foundUser)
-      return NextResponse.json({ error: 'کاربر تکراری است' }, { status: 400 });
-
     const foundEmail = await prisma.user.findUnique({
       where: { email: body.email },
     });
@@ -24,7 +17,7 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
     if (foundEmail)
       return NextResponse.json({ error: 'ایمیل تکراری است' }, { status: 400 });
 
-    await prisma.user.create({ data: body });
+    await prisma.user.create({ data: { ...body, username: body.email } });
 
     return NextResponse.json({ data: null }, { status: 201 });
   });
