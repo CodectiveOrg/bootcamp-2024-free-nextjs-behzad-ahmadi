@@ -3,6 +3,7 @@ import prisma from '@/lib/prisma';
 import { parsBody, safeApiCall, setAuthToken } from '@/lib/apiHelper';
 import { ApiResponse } from '@/types/api.response.type';
 import { SignInDTO } from '@/types/dto/auth';
+import { comparePassword } from '@/lib/bcrypt';
 
 export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
   return await safeApiCall(async (): Promise<ApiResponse<null>> => {
@@ -15,7 +16,7 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
       where: { email: body.email },
     });
 
-    if (!user || user.password !== body.password)
+    if (!user || !(await comparePassword(body?.password, user.password)))
       return NextResponse.json(
         { error: 'ایمیل یا پسورد اشتباه است' },
         { status: 401 },
