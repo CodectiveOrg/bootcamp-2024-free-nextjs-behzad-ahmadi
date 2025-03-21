@@ -55,7 +55,7 @@ export async function fetcher<T>(
 
     if (showToast) toast.error(message);
 
-    return result.error;
+    return result;
   }
 
   if (showToast) toast.success(result.message);

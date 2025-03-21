@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, ReactElement } from 'react';
+import { FormEvent, ReactElement, useRef } from 'react';
 import styles from '@/app/auth/styles/auth-form.module.css';
 import { Button } from '@/ui/Button/button';
 import PasswordInput from '@/ui/PasswordInput/passwordInput';
@@ -9,10 +9,10 @@ import Card from '@/ui/Card';
 import MingcuteMailLine from '@/icons/MingcuteMailLine';
 import Link from 'next/link';
 import { SignUpDTO } from '@/types/dto/auth';
-import { toast } from 'react-toastify';
 import { fetcher } from '@/lib/apiHelper';
 
 export default function SignUpForm(): ReactElement {
+  const formRef = useRef<HTMLFormElement>(null);
   const formSubmitHandler = async (
     e: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
@@ -30,8 +30,10 @@ export default function SignUpForm(): ReactElement {
       body: JSON.stringify(dto),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    console.log('res', res);
     if (res.error) return;
+
+    formRef.current?.reset();
   };
 
   return (
@@ -40,7 +42,7 @@ export default function SignUpForm(): ReactElement {
         <div className={styles['card-content']}>
           <div className={styles.writings}>
             <h1>ثبت نام</h1>
-            <form onSubmit={formSubmitHandler}>
+            <form onSubmit={formSubmitHandler} ref={formRef}>
               <Input
                 label="ایمیل"
                 type="text"
