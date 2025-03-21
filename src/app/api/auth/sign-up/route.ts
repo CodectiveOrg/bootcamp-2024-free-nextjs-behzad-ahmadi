@@ -17,8 +17,6 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
       return NextResponse.json({ error: validationErrors }, { status: 400 });
     }
 
-    // body?.['confirm-password'].de;
-
     const sanitizedEmail = body.email.trim().toLowerCase();
     const foundEmail = await prisma.user.findUnique({
       where: { email: sanitizedEmail },
