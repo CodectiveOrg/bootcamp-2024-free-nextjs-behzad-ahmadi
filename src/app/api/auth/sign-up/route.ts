@@ -57,3 +57,5 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
     );
   });
 }
+
+export const runtime = 'edge';
