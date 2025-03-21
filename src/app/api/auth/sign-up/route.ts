@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from 'next/server';
 import prisma from '@/lib/prisma';
-import { parsBody, safeApiCall } from '@/lib/apiHelper';
+import { parsBody, safeApiCall, setAuthToken } from '@/lib/apiHelper';
 import { ApiResponse } from '@/types/api.response.type';
 import { hashPassword } from '@/lib/bcrypt';
 import { Prisma } from '@prisma/client';
@@ -50,6 +50,8 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
     await prisma.user.create({
       data: userData,
     });
+
+    await setAuthToken();
 
     return NextResponse.json(
       { data: null, message: 'ثبت نام با موفقیت انجام شد' },
