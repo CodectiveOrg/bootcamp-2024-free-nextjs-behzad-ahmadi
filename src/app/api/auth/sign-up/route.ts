@@ -58,4 +58,4 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
   });
 }
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
