@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, ReactElement, useRef, useState } from 'react';
+import { FormEvent, ReactElement, useRef } from 'react';
 import Link from 'next/link';
 import MingcuteUser3Line from '@/icons/MingcuteUser3Line';
 import styles from '@/app/auth/styles/auth-form.module.css';
