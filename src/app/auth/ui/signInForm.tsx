@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, ReactElement, useRef } from 'react';
+import { FormEvent, ReactElement, useRef, useState } from 'react';
 import Link from 'next/link';
 import MingcuteUser3Line from '@/icons/MingcuteUser3Line';
 import styles from '@/app/auth/styles/auth-form.module.css';
@@ -15,6 +15,7 @@ import { fetcher } from '@/lib/helper';
 export default function SignInForm(): ReactElement {
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
+
   const formSubmitHandler = async (
     e: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
@@ -32,7 +33,9 @@ export default function SignInForm(): ReactElement {
       body: JSON.stringify(dto),
     });
 
-    if (res.error) return;
+    if (res.error) {
+      return;
+    }
 
     formRef.current?.reset();
 
@@ -52,11 +55,13 @@ export default function SignInForm(): ReactElement {
                 name="email"
                 prefixIcon={<MingcuteUser3Line />}
               />
+
               <PasswordInput
                 label="رمز عبور"
                 name="password"
                 autoComplete="current-password"
               />
+
               <Button variant="primary">ورود</Button>
             </form>
             <div className={styles['change-form']}>

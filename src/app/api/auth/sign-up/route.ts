@@ -4,6 +4,7 @@ import { parsBody, safeApiCall, setAuthToken } from '@/lib/apiHelper';
 import { ApiResponse } from '@/types/api.response.type';
 import { SignUpDTO } from '@/types/dto/auth';
 import { hashPassword } from '@/lib/bcrypt';
+import { validateSignUp } from '@/app/api/auth/sign-up/validation';
 
 export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
   return await safeApiCall(async (): Promise<ApiResponse<null>> => {
@@ -11,8 +12,16 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
 
     if (error !== null) return NextResponse.json({ error }, { status: 400 });
 
+    const validationErrors = validateSignUp(body);
+    if (Object.keys(validationErrors).length > 0) {
+      return NextResponse.json({ error: validationErrors }, { status: 400 });
+    }
+
+    // body?.['confirm-password'].de;
+
+    const sanitizedEmail = body.email.trim().toLowerCase();
     const foundEmail = await prisma.user.findUnique({
-      where: { email: body.email },
+      where: { email: sanitizedEmail },
     });
 
     if (foundEmail)
@@ -20,8 +29,8 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
 
     await prisma.user.create({
       data: {
-        ...body,
-        username: body.email,
+        email: sanitizedEmail,
+        username: sanitizedEmail,
         password: await hashPassword(body.password),
       },
     });

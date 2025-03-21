@@ -7,6 +7,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 
 import styles from './button.module.css';
+import { CircularLoading } from '@/ui/Loading/loading';
 
 export type ButtonVariant = 'default' | 'primary' | 'danger';
 export type ButtonShape = 'inherit' | 'solid' | 'outlined';
@@ -18,6 +19,7 @@ type CommonProps = {
   shape?: ButtonShape;
   size?: ButtonSize;
   position?: ButtonPosition;
+  loading?: boolean;
 };
 
 type ButtonProps = ComponentProps<'button'> & CommonProps;
@@ -31,6 +33,7 @@ export function Button({
   position = 'default',
   className,
   children,
+  loading = false,
   ...otherProps
 }: ButtonProps): ReactElement {
   return (
@@ -44,8 +47,11 @@ export function Button({
         className,
       )}
       {...otherProps}
+      disabled={otherProps.disabled || loading}
     >
       {children}
+
+      {loading && <CircularLoading />}
     </button>
   );
 }

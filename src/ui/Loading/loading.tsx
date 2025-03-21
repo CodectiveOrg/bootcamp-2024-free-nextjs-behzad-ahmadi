@@ -7,3 +7,7 @@ export default function Loading(): React.ReactNode {
     </div>
   );
 }
+
+export function CircularLoading(): React.ReactNode {
+  return <div className={styles.circular}></div>;
+}
