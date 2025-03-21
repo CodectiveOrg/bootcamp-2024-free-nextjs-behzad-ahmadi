@@ -19,6 +19,9 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
 
     await prisma.user.create({ data: { ...body, username: body.email } });
 
-    return NextResponse.json({ data: null }, { status: 201 });
+    return NextResponse.json(
+      { data: null, message: 'ثبتنام با موفقیت انجام شد' },
+      { status: 201 },
+    );
   });
 }

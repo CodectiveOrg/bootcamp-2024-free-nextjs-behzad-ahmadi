@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ApiResponse } from '@/types/api.response.type';
+import { ApiResponse, FetchData } from '@/types/api.response.type';
+import { toast } from 'react-toastify';
 
 type ParsBodyResult<T> = [error: null, data: T] | [error: string, data: null];
 
@@ -33,4 +34,31 @@ export async function safeApiCall<T>(
 
     return NextResponse.json({ error: 'خطای غیر منتطره' }, { status: 500 });
   }
+}
+
+export async function fetcher<T>(
+  input: string | URL | Request,
+  init?: RequestInit,
+  showToast: boolean = true,
+): Promise<FetchData<T>> {
+  const res = await fetch(input, {
+    headers: { 'Content-Type': 'application/json' },
+    ...init,
+  });
+
+  const result = await res.json();
+
+  if (!res.ok) {
+    let message = 'خطای غیر منتظره';
+
+    if ('error' in result) message = result.error;
+
+    if (showToast) toast.error(message);
+
+    return result.error;
+  }
+
+  if (showToast) toast.success(result.message);
+
+  return result;
 }

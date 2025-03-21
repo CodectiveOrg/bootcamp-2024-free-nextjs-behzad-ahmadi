@@ -10,6 +10,7 @@ import MingcuteMailLine from '@/icons/MingcuteMailLine';
 import Link from 'next/link';
 import { SignUpDTO } from '@/types/dto/auth';
 import { toast } from 'react-toastify';
+import { fetcher } from '@/lib/apiHelper';
 
 export default function SignUpForm(): ReactElement {
   const formSubmitHandler = async (
@@ -24,27 +25,13 @@ export default function SignUpForm(): ReactElement {
       password: formData.get('password') as string,
     };
 
-    const res = await fetch('/api/auth/sign-up', {
+    const res = await fetcher('/api/auth/sign-up', {
       method: 'POST',
       body: JSON.stringify(dto),
       headers: { 'Content-Type': 'application/json' },
     });
 
-    const data = await res.json();
-
-    if (!res.ok) {
-      let message = 'خطای غیر منتظره';
-
-      if ('error' in data) message = data.error;
-
-      toast.error(message);
-
-      console.log('sign up', message);
-
-      return;
-    }
-
-    toast.success('ثبتنام با موفقیت انجام شد');
+    if (res.error) return;
   };
 
   return (
