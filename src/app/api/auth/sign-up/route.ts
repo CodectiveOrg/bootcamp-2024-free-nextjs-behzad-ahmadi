@@ -1,16 +1,20 @@
 import { NextResponse, NextRequest } from 'next/server';
 import prisma from '@/lib/prisma';
-import { parsBody, safeApiCall, setAuthToken } from '@/lib/apiHelper';
+import { parsBody, safeApiCall } from '@/lib/apiHelper';
 import { ApiResponse } from '@/types/api.response.type';
-import { SignUpDTO } from '@/types/dto/auth';
 import { hashPassword } from '@/lib/bcrypt';
+import { Prisma } from '@prisma/client';
 import { validateSignUp } from '@/app/api/auth/sign-up/validation';
+import { SignUpDTO } from '@/types/dto/auth';
 
 export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
   return await safeApiCall(async (): Promise<ApiResponse<null>> => {
-    const [error, body] = await parsBody<SignUpDTO>(req);
-
-    if (error !== null) return NextResponse.json({ error }, { status: 400 });
+    const [parseError, body] = await parsBody<SignUpDTO>(req);
+    if (parseError !== null)
+      return NextResponse.json(
+        { error: 'خطا در پردازش درخواست' },
+        { status: 400 },
+      );
 
     const validationErrors = validateSignUp(body);
     if (Object.keys(validationErrors).length > 0) {
@@ -18,25 +22,37 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
     }
 
     const sanitizedEmail = body.email.trim().toLowerCase();
-    const foundEmail = await prisma.user.findUnique({
-      where: { email: sanitizedEmail },
-    });
 
-    if (foundEmail)
-      return NextResponse.json({ error: 'ایمیل تکراری است' }, { status: 400 });
-
-    await prisma.user.create({
-      data: {
-        email: sanitizedEmail,
-        username: sanitizedEmail,
-        password: await hashPassword(body.password),
+    const existingUser = await prisma.user.findFirst({
+      where: {
+        OR: [{ email: sanitizedEmail }, { username: sanitizedEmail }],
       },
     });
 
-    await setAuthToken();
+    if (existingUser) {
+      return NextResponse.json(
+        {
+          error: {
+            [existingUser.email === sanitizedEmail ? 'email' : 'username']:
+              'این ایمیل یا نام کاربری قبلاً استفاده شده است',
+          },
+        },
+        { status: 409 },
+      );
+    }
+
+    const userData: Prisma.UserCreateInput = {
+      email: sanitizedEmail,
+      username: sanitizedEmail,
+      password: await hashPassword(body.password),
+    };
+
+    await prisma.user.create({
+      data: userData,
+    });
 
     return NextResponse.json(
-      { data: null, message: 'ثبتنام با موفقیت انجام شد' },
+      { data: null, message: 'ثبت نام با موفقیت انجام شد' },
       { status: 201 },
     );
   });
