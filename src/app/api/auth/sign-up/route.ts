@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from 'next/server';
 import prisma from '@/lib/prisma';
-import { parsBody, safeApiCall, setAuthToken } from '@/lib/apiHelper';
+import { parsBody, safeApiCall } from '@/lib/apiHelper';
 import { ApiResponse } from '@/types/api.response.type';
 import { SignUpDTO } from '@/types/dto/auth';
 
@@ -18,8 +18,6 @@ export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
       return NextResponse.json({ error: 'ایمیل تکراری است' }, { status: 400 });
 
     await prisma.user.create({ data: { ...body, username: body.email } });
-
-    await setAuthToken();
 
     return NextResponse.json(
       { data: null, message: 'ثبتنام با موفقیت انجام شد' },

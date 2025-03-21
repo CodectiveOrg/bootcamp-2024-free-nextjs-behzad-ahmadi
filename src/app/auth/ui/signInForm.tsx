@@ -47,7 +47,7 @@ export default function SignInForm(): ReactElement {
             <h1>ورود</h1>
             <form onSubmit={formSubmitHandler} ref={formRef}>
               <Input
-                label="email"
+                label="ایمیل"
                 type="text"
                 name="email"
                 prefixIcon={<MingcuteUser3Line />}
