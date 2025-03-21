@@ -9,3 +9,5 @@ export async function GET(): Promise<ApiResponse<null>> {
     return NextResponse.json({ data: null }, { status: 200 });
   });
 }
+
+export const runtime = 'nodejs';
