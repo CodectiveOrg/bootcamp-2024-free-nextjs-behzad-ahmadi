@@ -28,9 +28,8 @@ export default function SignUpForm(): ReactElement {
     const res = await fetcher('/api/auth/sign-up', {
       method: 'POST',
       body: JSON.stringify(dto),
-      headers: { 'Content-Type': 'application/json' },
     });
-    console.log('res', res);
+
     if (res.error) return;
 
     formRef.current?.reset();
