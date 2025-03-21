@@ -8,8 +8,7 @@ import { comparePassword } from '@/lib/bcrypt';
 export async function POST(req: NextRequest): Promise<ApiResponse<null>> {
   return await safeApiCall(async (): Promise<ApiResponse<null>> => {
     const [error, body] = await parsBody<SignInDTO>(req);
-    console.log('body', body);
-    console.log('e', error);
+
     if (error !== null) return NextResponse.json({ error }, { status: 400 });
 
     const user = await prisma.user.findUnique({
