@@ -56,3 +56,17 @@ export async function setAuthToken(): Promise<void> {
     maxAge: 60 * 60 * 24 * 3,
   });
 }
+
+export async function isSignedIn(req: NextRequest): Promise<boolean> {
+  const token = req.cookies.get(process.env.TOKEN_KEY!)?.value;
+
+  if (!token) return false;
+
+  try {
+    await jose.jwtVerify(token, secret);
+    return true;
+  } catch (error) {
+    console.log('token error', error);
+    return false;
+  }
+}
