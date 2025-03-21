@@ -9,10 +9,12 @@ import Card from '@/ui/Card';
 import MingcuteMailLine from '@/icons/MingcuteMailLine';
 import Link from 'next/link';
 import { SignUpDTO } from '@/types/dto/auth';
-import { fetcher } from '@/lib/apiHelper';
+import { useRouter } from 'next/navigation';
+import { fetcher } from '@/lib/helper';
 
 export default function SignUpForm(): ReactElement {
   const formRef = useRef<HTMLFormElement>(null);
+  const router = useRouter();
   const formSubmitHandler = async (
     e: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
@@ -33,6 +35,8 @@ export default function SignUpForm(): ReactElement {
     if (res.error) return;
 
     formRef.current?.reset();
+
+    router.push('/dashboard');
   };
 
   return (

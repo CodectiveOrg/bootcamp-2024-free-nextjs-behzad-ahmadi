@@ -9,10 +9,12 @@ import PasswordInput from '@/ui/PasswordInput/passwordInput';
 import Input from '@/ui/Input';
 import Card from '@/ui/Card';
 import { SignInDTO } from '@/types/dto/auth';
-import { fetcher } from '@/lib/apiHelper';
+import { useRouter } from 'next/navigation';
+import { fetcher } from '@/lib/helper';
 
 export default function SignInForm(): ReactElement {
   const formRef = useRef<HTMLFormElement>(null);
+  const router = useRouter();
   const formSubmitHandler = async (
     e: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
@@ -33,6 +35,8 @@ export default function SignInForm(): ReactElement {
     if (res.error) return;
 
     formRef.current?.reset();
+
+    router.push('/dashboard');
   };
 
   return (

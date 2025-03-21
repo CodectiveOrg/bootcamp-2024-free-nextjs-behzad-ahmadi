@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ApiResponse, FetchData } from '@/types/api.response.type';
-import { toast } from 'react-toastify';
+import { ApiResponse } from '@/types/api.response.type';
+import { cookies } from 'next/headers';
+import * as jose from 'jose';
 
 type ParsBodyResult<T> = [error: null, data: T] | [error: string, data: null];
+
+const alg = 'HS256';
+const secret = new TextEncoder().encode(process.env.TOKEN_SECRET);
 
 export async function parsBody<T>(
   req: NextRequest,
@@ -36,29 +40,19 @@ export async function safeApiCall<T>(
   }
 }
 
-export async function fetcher<T>(
-  input: string | URL | Request,
-  init?: RequestInit,
-  showToast: boolean = true,
-): Promise<FetchData<T>> {
-  const res = await fetch(input, {
-    headers: { 'Content-Type': 'application/json' },
-    ...init,
+export async function setAuthToken(): Promise<void> {
+  const cookieStore = cookies();
+
+  const token = await new jose.SignJWT()
+    .setProtectedHeader({ alg })
+    .setIssuedAt()
+    .setExpirationTime('3d')
+    .sign(secret);
+
+  cookieStore.set(process.env.TOKEN_KEY!, token, {
+    secure: true,
+    httpOnly: true,
+    sameSite: 'none',
+    maxAge: 60 * 60 * 24 * 3,
   });
-
-  const result = await res.json();
-
-  if (!res.ok) {
-    let message = 'خطای غیر منتظره';
-
-    if ('error' in result) message = result.error;
-
-    if (showToast) toast.error(message);
-
-    return result;
-  }
-
-  if (showToast) toast.success(result.message);
-
-  return result;
 }
