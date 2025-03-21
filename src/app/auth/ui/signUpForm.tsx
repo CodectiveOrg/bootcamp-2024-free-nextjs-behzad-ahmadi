@@ -35,7 +35,7 @@ export default function SignUpForm(): ReactElement {
     const dto: SignUpDTO = {
       email: formData.get('email') as string,
       password: formData.get('password') as string,
-      'confirm-password': formData.get('confirm-password') as string,
+      confirm_password: formData.get('confirm_password') as string,
     };
 
     const validationErrors = validateSignUp(dto);
@@ -87,9 +87,9 @@ export default function SignUpForm(): ReactElement {
 
               <PasswordInput
                 label="تایید رمز عبور"
-                name="confirm-password"
+                name="confirm_password"
                 autoComplete="new-password"
-                errorLabel={errors['confirm-password']}
+                errorLabel={errors.confirm_password}
               />
               <Button variant="primary" loading={loading}>
                 ثبت نام

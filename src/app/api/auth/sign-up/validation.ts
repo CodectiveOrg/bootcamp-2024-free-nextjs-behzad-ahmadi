@@ -3,7 +3,7 @@ import { SignUpDTO } from '@/types/dto/auth';
 export type ValidationErrors = {
   email?: string;
   password?: string;
-  'confirm-password'?: string;
+  confirm_password?: string;
 };
 
 export function validateSignUp(body: SignUpDTO): ValidationErrors {
@@ -26,8 +26,8 @@ export function validateSignUp(body: SignUpDTO): ValidationErrors {
     errors.password = 'پسورد نمی‌تواند بیشتر از ۱۰۰ کاراکتر باشد';
   else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(body.password))
     errors.password = 'پسورد باید شامل حروف بزرگ، کوچک و عدد باشد';
-  else if (body.password !== body['confirm-password'])
-    errors['confirm-password'] = 'تایید رمز صحیح نیست';
+  else if (body.password !== body.confirm_password)
+    errors.confirm_password = 'تایید رمز صحیح نیست';
 
   return errors;
 }
