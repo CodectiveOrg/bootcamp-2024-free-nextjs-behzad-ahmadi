@@ -41,6 +41,11 @@
     }
   }
 
+  .error {
+    font-size: var(--fz-200);
+    color: var(--color-danger);
+  }
+
   &:focus-within {
     .box {
       color: var(--color-primary);

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "prettier:check": "prettier . --check",
@@ -15,12 +15,16 @@
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",
+    "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
+    "jose": "^6.0.10",
     "next": "14.2.20",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -29,7 +33,7 @@
     "postcss": "^8.4.49",
     "postcss-nesting": "^13.0.1",
     "prettier": "^3.4.2",
-    "prisma": "^6.4.1",
+    "prisma": "^6.5.0",
     "tsx": "^4.19.3",
     "typescript": "^5"
   }

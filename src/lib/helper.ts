@@ -1,4 +1,6 @@
 import { ShareData } from '@/ui/Share';
+import { FetchData } from '@/types/api.response.type';
+import { toast } from 'react-toastify';
 
 export function formatDateToRelativePersian(dateString: string): string {
   const now = new Date();
@@ -47,3 +49,30 @@ export const shareContent = async ({
     console.log('Sharing failed:', err);
   }
 };
+
+export async function fetcher<T>(
+  input: string | URL | Request,
+  init?: RequestInit,
+  showToast: boolean = true,
+): Promise<FetchData<T>> {
+  const res = await fetch(input, {
+    headers: { 'Content-Type': 'application/json' },
+    ...init,
+  });
+
+  const result = await res.json();
+
+  if (!res.ok) {
+    let message = 'خطای غیر منتظره';
+
+    if ('error' in result) message = result.error;
+
+    if (showToast) toast.error(message);
+
+    return result;
+  }
+
+  if (showToast) toast.success(result.message);
+
+  return result;
+}
